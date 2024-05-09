@@ -10,19 +10,26 @@ public class BrakeEmissionController : MonoBehaviour
 
     void Update()
     {
-        // Check if the brake input is pressed
-        if (carController.brakeInput > 0)
+        if (carController.enabled)
         {
-            isBraking = true;
-            SetEmission(true);
+            // Check if the brake input is pressed
+            if (carController.brakeInput > 0)
+            {
+                isBraking = true;
+                SetEmission(true);
+            }
+            else
+            {
+                if (isBraking)
+                {
+                    isBraking = false;
+                    SetEmission(false);
+                }
+            }
         }
         else
         {
-            if (isBraking)
-            {
-                isBraking = false;
-                SetEmission(false);
-            }
+            return;
         }
     }
 

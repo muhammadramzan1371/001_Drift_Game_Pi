@@ -65,7 +65,7 @@ public class RCCButtons : MonoBehaviour {
             rightButton.pressing = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        /*if (Input.GetKeyDown(KeyCode.F))
         {
             nitroButton.pressing = true;
         }
@@ -73,7 +73,7 @@ public class RCCButtons : MonoBehaviour {
         {
             nitroButton.pressing = false;
             
-        }
+        }*/
 
 
     }
