@@ -75,12 +75,11 @@ public class RCC_WheelCollider : MonoBehaviour {
 	private float minSidewaysStiffness = .75f;
 	private float maxSidewaysStiffness = 1f;
 	
-	void Awake (){
+	 void  Awake (){
 
 		carController = GetComponentInParent<RCC_CarControllerV3>();
 		rigid = carController.GetComponent<Rigidbody> ();
 		wheelCollider = GetComponent<WheelCollider>();
-
 		if (!RCC_Settings.Instance.dontUseSkidmarks) {
 			if (FindObjectOfType (typeof(RCC_Skidmarks))) {
 				skidmarks = FindObjectOfType (typeof(RCC_Skidmarks)) as RCC_Skidmarks;
@@ -162,14 +161,15 @@ public class RCC_WheelCollider : MonoBehaviour {
 			}
 
 		}
-			
+		
+		wheelModel.transform.RotateAround(wheelModel.transform.position, transform.forward, -camberAngle );		
 	}
 
 	void Start(){
 
 		allWheelColliders = carController.allWheelColliders.ToList();
 		allWheelColliders.Remove(this);
-
+		wheelModel.transform.RotateAround(wheelModel.transform.position, transform.forward, -camberAngle );	
 	}
 
 	WheelFrictionCurve SetFrictionCurves(WheelFrictionCurve curve, float extremumSlip, float extremumValue, float asymptoteSlip, float asymptoteValue){
@@ -243,10 +243,11 @@ public class RCC_WheelCollider : MonoBehaviour {
 		}
 
 		wheelRotation += wheelCollider.rpm * 6 * Time.deltaTime;
+		
 		wheelModel.transform.rotation = wheelCollider.transform.rotation * Quaternion.Euler(wheelRotation, wheelCollider.steerAngle, wheelCollider.transform.rotation.z);
-
+		wheelModel.transform.RotateAround(wheelModel.transform.position, transform.forward, -camberAngle );	
 	}
-
+	public float camberAngle = 0f;
 	public void WheelCamber (){
 
 		Vector3 wheelLocalEuler;
@@ -460,8 +461,8 @@ public class RCC_WheelCollider : MonoBehaviour {
 				audioSource.Play();
 
 			if(rigid.velocity.magnitude > 1f){
-				audioSource.volume = Mathf.Lerp(audioSource.volume, Mathf.Lerp(0f, 1f, totalSlip - startSlipValue), Time.deltaTime * 5f);
-				audioSource.pitch = Mathf.Lerp(1f, .8f, audioSource.volume);
+				audioSource.volume = Mathf.Lerp(audioSource.volume, Mathf.Lerp(0f, 0.3f, totalSlip - startSlipValue), Time.deltaTime * 5f);
+				audioSource.pitch = Mathf.Lerp(.5f, .4f, audioSource.volume);
 			}else{
 				audioSource.volume = Mathf.Lerp(audioSource.volume, 0f, Time.deltaTime * 5f);
 			}

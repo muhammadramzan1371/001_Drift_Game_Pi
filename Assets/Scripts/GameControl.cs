@@ -10,7 +10,7 @@ public class GameControl: MonoBehaviour
 {
 
     public static GameControl manager;
-    public GameObject getInBike, getInVehicle,getoutBike;
+    public GameObject getInVehicle;
     public static float accelFwd,accelBack;
     public static float steerAmount;
     

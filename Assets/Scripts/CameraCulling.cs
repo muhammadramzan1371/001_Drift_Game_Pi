@@ -26,16 +26,16 @@ public class CameraCulling : MonoBehaviour
 
          if (SystemInfo.systemMemorySize <= 2560 || PrefsManager.GetGameQuality()==2)
          {
-             distances[26] = LowLargeDistance;
-             distances[27] = LowMedDistance;
-             distances[28] = LowSmallDistance;
+             distances[6] = LowLargeDistance;
+             distances[7] = LowMedDistance;
+             distances[8] = LowSmallDistance;
              camera.farClipPlane = LowSmallCameraFar;
          }
          else
          {
-             distances[26] = LargeDistance;
-             distances[27] = MedDistance;
-             distances[28] = SmallDistance;
+             distances[6] = LargeDistance;
+             distances[8] = MedDistance;
+             distances[8] = SmallDistance;
          }
          
 
@@ -48,9 +48,9 @@ public class CameraCulling : MonoBehaviour
     {
         if (updatevalue)
         {
-            distances[26] = LargeDistance;
-            distances[27] = MedDistance;
-            distances[28] = SmallDistance;
+            distances[6] = LargeDistance;
+            distances[7] = MedDistance;
+            distances[8] = SmallDistance;
             camera.layerCullDistances = distances;
             updatevalue = false;
         }

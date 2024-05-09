@@ -26,11 +26,24 @@ public class VehicleProperties : MonoBehaviour
     public Transform TpsPosition;
     public GameObject[] StuntEffect;
     public GameObject ConeEffect;
-    public GameObject lights;
     public Rigidbody Rb;
     public RCC_CarControllerV3 controller;
     
     public bool Highbrake = false;
+    
+    [Header("SettIngWheel")]
+    
+    public bool isSetWheelsModel=false;
+
+    private void OnDrawGizmos()
+    {
+        if (isSetWheelsModel)
+        {
+            isSetWheelsModel = false;
+            GetComponent<RCC_CarControllerV3>().SetColliderToModel();
+        }
+    }
+    
     public void HighForceBrake()
     {
         if (Highbrake=true)
@@ -271,12 +284,12 @@ public class VehicleProperties : MonoBehaviour
 
     public void Playlights()
     {
-        lights.SetActive(true);
+       // lights.SetActive(true);
       //  UiManagerObject.instance.fader.SetActive(true);
     }
     public void Stoplights()
     {
-        lights.SetActive(false);
+      //  lights.SetActive(false);
        // UiManagerObject.instance.fader.SetActive(false);
     }
 }

@@ -37,7 +37,7 @@ public class DrawMapPath : MonoBehaviour
     {
         if (line==null)
         {
-            line = LevelManager.instace.Line;
+          //  line = LevelManager.instace.Line;
         }
         path = agent.path;
         NavMesh.CalculatePath(startTrans.position, Target.position, RoadArea, path); //Saves the path in the path variable.

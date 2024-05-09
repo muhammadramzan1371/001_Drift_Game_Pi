@@ -427,7 +427,14 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 		changingGear = false;
 
 	}
-	
+	public void SetColliderToModel()
+	{
+		FrontLeftWheelCollider.wheelModel = FrontLeftWheelTransform;
+		FrontRightWheelCollider.wheelModel = FrontRightWheelTransform;
+		RearLeftWheelCollider.wheelModel = RearLeftWheelTransform;
+		RearRightWheelCollider.wheelModel = RearRightWheelTransform;
+	}
+
 	public void CreateWheelColliders (){
 		
 		List <Transform> allWheelModels = new List<Transform>();
@@ -712,6 +719,9 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 
 	void CollisionParticles(Vector3 contactPoint){
 		
+		if (GameManager.Instance.TpsStatus==PlayerStatus.ThirdPerson)
+			return;
+
 		for(int i = 0; i < contactSparkeList.Count; i++){
 			if(contactSparkeList[i].isPlaying)
 				return;

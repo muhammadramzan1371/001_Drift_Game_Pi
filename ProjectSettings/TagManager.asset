@@ -3,17 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SoundManager
+  - MainMenu
+  - TrafficCar
+  - GoldTrigger
+  - CarTrigger
+  - Carhandle
+  - DriftOK
+  - RigidKine
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Large
+  - Med
+  - Small
   - 
   - 
   - 

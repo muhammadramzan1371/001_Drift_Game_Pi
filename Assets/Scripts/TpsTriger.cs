@@ -10,7 +10,7 @@ public class TpsTriger : MonoBehaviour
       //this forbike
       if (other.gameObject.tag == "HandleTrigger")
       {
-         GameControl.manager.getInBike.SetActive(true);
+        // GameControl.manager.getInBike.SetActive(true);
          GameControl.manager.getInVehicle.SetActive(false);
       //   GameManager.Instance.CurrentCar = other.GetComponentInParent<BikeControl>().gameObject;
         // GameManager.Instance.  mapPath = GameManager.Instance. CurrentCar.GetComponent<BikeControl>().mapPath;
@@ -19,7 +19,7 @@ public class TpsTriger : MonoBehaviour
       if (other.gameObject.tag == "Carhandle")
       {
          GameControl.manager.getInVehicle.SetActive(true);
-         GameControl.manager.getInBike.SetActive(false);
+        // GameControl.manager.getInBike.SetActive(false);
          GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
         // GameManager.Instance.  mapPath =  GameManager.Instance. CurrentCar.GetComponent<VehicleProperties>().MapPath;
       }
@@ -29,7 +29,7 @@ public class TpsTriger : MonoBehaviour
    {
       if (other.gameObject.tag == "HandleTrigger")
       {
-         GameControl.manager.getInBike.SetActive(true);
+      //   GameControl.manager.getInBike.SetActive(true);
          GameControl.manager.getInVehicle.SetActive(false);
       //   GameManager.Instance.CurrentCar = other.GetComponentInParent<BikeControl>().gameObject;
        //  GameManager.Instance.  mapPath =  GameManager.Instance. CurrentCar.GetComponent<BikeControl>().mapPath;
@@ -38,7 +38,7 @@ public class TpsTriger : MonoBehaviour
       if (other.gameObject.tag == "Carhandle")
       {
          GameControl.manager.getInVehicle.SetActive(true);
-         GameControl.manager.getInBike.SetActive(false);
+     //    GameControl.manager.getInBike.SetActive(false);
          GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
         // GameManager.Instance.  mapPath =  GameManager.Instance. CurrentCar.GetComponent<VehicleProperties>().MapPath;
       }
@@ -48,7 +48,7 @@ public class TpsTriger : MonoBehaviour
    {
       if (other.gameObject.tag == "HandleTrigger")
       {
-         GameControl.manager.getInBike.SetActive(false);
+      //    GameControl.manager.getInBike.SetActive(false);
        //  GameManager.Instance.mapPath =  null;
          GameManager.Instance.CurrentCar = null;
          Debug.Log("Car HandleTrigger");

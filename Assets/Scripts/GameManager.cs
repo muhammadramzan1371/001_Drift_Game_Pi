@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     [Space(5)]
     [Header("Car Stuff")]
     public Transform VehicleCamera; 
-    public Transform bikecamera; 
+  //  public Transform bikecamera; 
     
 
     public Transform TpsCamera; 
@@ -91,13 +91,6 @@ public class GameManager : MonoBehaviour
             TrafficSpawn.position = VehicleCamera.position;
             TrafficSpawn.rotation = VehicleCamera.rotation;
         }
-        else if (TpsStatus==PlayerStatus.BikeDriving)
-        { 
-          //  Weather.transform.position = bikecamera.transform.position; 
-          //  Weather.transform.rotation = bikecamera.transform.rotation; 
-            TrafficSpawn.position = bikecamera.position;
-            TrafficSpawn.rotation = bikecamera.rotation;
-        }
         else
         {
           //  Weather.transform.position = TpsCamera.transform.position; 
@@ -106,7 +99,10 @@ public class GameManager : MonoBehaviour
             TrafficSpawn.rotation = TpsCamera.rotation;
         }
     }
-
+    public void offimage()
+    {
+        UiManagerObject.instance.blankimage.SetActive(false);
+    }
     public async void GetOutVehicle()
     {
         Time.timeScale = 1;
