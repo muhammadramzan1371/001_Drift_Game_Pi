@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         UiManagerObject.instance.blankimage.SetActive(true);
         Invoke("offimage", 0.5f);
-        UiManagerObject.instance.panels.vehicleControl.SetActive(true);
+        UiManagerObject.instance.panels.CarControle.SetActive(true);
         UiManagerObject.instance.panels.TpsControle.SetActive(false);
         CurrentCar.GetComponent<Rigidbody>().angularDrag = 0.05f;
         if (CurrentCar.GetComponent<VehicleProperties>() == null)
@@ -107,7 +107,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         UiManagerObject.instance.blankimage.SetActive(true);
-        UiManagerObject.instance.panels.vehicleControl.SetActive(false);
+        Debug.Log("Here");
+        UiManagerObject.instance.panels.CarControle.SetActive(false);
         UiManagerObject.instance.panels.TpsControle.SetActive(true);
         Invoke("offimage",0.5f);
         TPSPlayer.SetActive(true);

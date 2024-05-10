@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BrakeEmissionController : MonoBehaviour
@@ -7,6 +8,9 @@ public class BrakeEmissionController : MonoBehaviour
     public float emissionIntensity = 1.0f; // Intensity of the emission when braking
 
     private bool isBraking = false;
+
+
+ 
 
     void Update()
     {

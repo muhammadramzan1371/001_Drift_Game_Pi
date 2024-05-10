@@ -11,13 +11,13 @@ public class UiManagerObject : MonoBehaviour
     public class Panels
     {
         //public GameObject tachometer;
-        public GameObject vehicleControl;
+        public GameObject CarControle;
         public GameObject TpsControle;
         public GameObject  RateUsPanel;
     }
     public Panels panels;
     // Start is called before the first frame update
-    public GameObject ObjectivePannel, Pause, Fail, Complete, controls, Loading,OutOfFuel,error;
+    public GameObject ObjectivePannel, Pause, Fail, Complete, Loading,OutOfFuel,error;
     public Text ObjectiveText,NosCountText;
     public static UiManagerObject instance;
     public int TotalLevels;
@@ -71,8 +71,8 @@ public class UiManagerObject : MonoBehaviour
     }
     public void OnRateusPanel()
     {
-        panels.RateUsPanel.SetActive(true);
-        HideGamePlay();
+      ///  panels.RateUsPanel.SetActive(true);
+      //  HideGamePlay();
     }
     public void ShowObjective(string statment)
     {
@@ -134,9 +134,10 @@ public class UiManagerObject : MonoBehaviour
    public void HideGamePlay()
    {
        LevelManager.instace.canvashud.gameObject.SetActive(false);
-       panels. vehicleControl.SetActive(false);
+       Debug.Log("Here");
+       panels. CarControle.SetActive(false);
        panels.TpsControle.SetActive(false);
-       controls.SetActive(false);
+     
    }
 
    public void ShowGamePlay()
@@ -145,23 +146,23 @@ public class UiManagerObject : MonoBehaviour
        if (GameManager.Instance.TpsStatus == PlayerStatus.BikeDriving)
        {
        
-           panels.vehicleControl.SetActive(false);
+           panels.CarControle.SetActive(false);
            panels.TpsControle.SetActive(false);
        }
 
        if (GameManager.Instance.TpsStatus == PlayerStatus.CarDriving)
        {
-           panels. vehicleControl.SetActive(true);
+           panels. CarControle.SetActive(true);
            panels. TpsControle.SetActive(false);
        }
 
        if (GameManager.Instance.TpsStatus == PlayerStatus.ThirdPerson)
        {
-           panels. vehicleControl.SetActive(false);
+           panels. CarControle.SetActive(false);
            panels. TpsControle.SetActive(true);
        }
        LevelManager.instace.canvashud.gameObject.SetActive(true);
-       controls.SetActive(true);
+     
    }
 
     public void HideObjectivePannel()

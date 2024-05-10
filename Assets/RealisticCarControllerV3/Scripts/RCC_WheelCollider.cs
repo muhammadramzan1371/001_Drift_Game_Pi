@@ -147,7 +147,6 @@ public class RCC_WheelCollider : MonoBehaviour {
 		}
 
 		if (!RCC_Settings.Instance.dontUseAnyParticleEffects) {
-
 			for (int i = 0; i < RCC_GroundMaterials.Instance.frictions.Length; i++) {
 
 				GameObject ps = (GameObject)Instantiate (RCC_GroundMaterials.Instance.frictions [i].groundParticles, transform.position, transform.rotation) as GameObject;
@@ -159,9 +158,8 @@ public class RCC_WheelCollider : MonoBehaviour {
 				allWheelParticles.Add (ps.GetComponent<ParticleSystem> ());
 
 			}
-
 		}
-		
+
 		wheelModel.transform.RotateAround(wheelModel.transform.position, transform.forward, -camberAngle );		
 	}
 
@@ -169,7 +167,17 @@ public class RCC_WheelCollider : MonoBehaviour {
 
 		allWheelColliders = carController.allWheelColliders.ToList();
 		allWheelColliders.Remove(this);
+		
+	
+
+		
+		
 		wheelModel.transform.RotateAround(wheelModel.transform.position, transform.forward, -camberAngle );	
+		
+		
+		
+		
+		
 	}
 
 	WheelFrictionCurve SetFrictionCurves(WheelFrictionCurve curve, float extremumSlip, float extremumValue, float asymptoteSlip, float asymptoteValue){

@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Aluminium
   m_Shader: {fileID: 4800000, guid: 6dd929e5fb224f94293a6ed06403c5e0, type: 3}
-  m_ShaderKeywords: Cubemap_T
+  m_ShaderKeywords: Both_T
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cube:
-        m_Texture: {fileID: 8900000, guid: 8446d4454693a684d930860d6545eba0, type: 3}
+        m_Texture: {fileID: 8900000, guid: 8e527b4b5f37f574a99621c12aaca7ea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DiffuseBumpMap:
@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d982f7d6f0e31c744993d197236409cf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2c1ffe220af1b5a46a1a717844358481, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RenderedTexture:
@@ -47,7 +47,7 @@ Material:
     - _BumpDens: 1
     - _CandyPower: 0
     - _CandyScale: 0
-    - _DiffuseUVScale: 4
+    - _DiffuseUVScale: 1
     - _FlakeDens: 1
     - _FresnelPower: 1.66
     - _FresnelScale: 0.322
@@ -55,12 +55,12 @@ Material:
     - _MetalScale: 0
     - _MetalicPower: 0
     - _MetalicScale: 1.21
-    - _RefIntensity: 0.513
-    - _RefVisibility: 1.84
+    - _RefIntensity: 0.85
+    - _RefVisibility: 0.1
     - _Reflect: 0.24038462
     - _ShadowIntensity: 0.48076925
     - _Shininess: 2
-    - _ShininessIntensity: 1.148
+    - _ShininessIntensity: 2
     - _ShininessScale: 0
     m_Colors:
     - _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
@@ -69,6 +69,7 @@ Material:
     - _DecalColor: {r: 1, g: 1, b: 1, a: 1}
     - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6

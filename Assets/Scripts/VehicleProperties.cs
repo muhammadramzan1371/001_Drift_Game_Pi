@@ -116,6 +116,17 @@ public class VehicleProperties : MonoBehaviour
         controller.FrontRightWheelCollider.enabled = true;
         controller.RearLeftWheelCollider.enabled = true;
         controller.RearRightWheelCollider.enabled = true;
+
+
+        controller.FrontLeftWheelCollider.transform.GetChild(0).gameObject.SetActive(true);
+        controller.FrontRightWheelCollider.transform.GetChild(0).gameObject.SetActive(true);
+        controller.RearLeftWheelCollider.transform.GetChild(0).gameObject.SetActive(true);
+        controller.RearRightWheelCollider.transform.GetChild(0).gameObject.SetActive(true);
+        
+        
+        
+        
+        
         if ( GetComponent<CarShadow>())
         {
             GetComponent<CarShadow>().enabled = true;
@@ -149,7 +160,21 @@ public class VehicleProperties : MonoBehaviour
         controller.FrontRightWheelCollider.enabled = false;
         controller.RearLeftWheelCollider.enabled = false;
         controller.RearRightWheelCollider.enabled = false;
+        
+        
+        
+        
+        
+        controller.FrontLeftWheelCollider.transform.GetChild(0).gameObject.SetActive(false);
+        controller.FrontRightWheelCollider.transform.GetChild(0).gameObject.SetActive(false);
+        controller.RearLeftWheelCollider.transform.GetChild(0).gameObject.SetActive(false);
+        controller.RearRightWheelCollider.transform.GetChild(0).gameObject.SetActive(false);
+        
+        
         GetComponent<RCC_CameraConfig>().enabled = false;
+        
+        
+        
         if (GetComponent<CarShadow>())
         {
             GetComponent<CarShadow>().enabled = false;
