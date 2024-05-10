@@ -17,6 +17,23 @@ public class LevelManager : MonoBehaviour
     public PlayerCamera_New Tpscamera;
     public OpenWorldManager OpenWorldManager;
     public GameObject TpsPlayer;
+    
+    
+    [Header("WheatherArea")]
+    
+    public ParticleSystem snowParticleSystem;
+    
+    
+   
+    
+    public Material daySkybox;
+    public Material nightSkybox;
+
+    public bool snowing = false;
+    public bool isDay = true;
+
+    
+    
     void Awake()
     {
         instace = this;
@@ -34,7 +51,6 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-
             Time.timeScale = 1; 
             FreeMode.SetActive(true);
             SelectedPlayer = Players[PrefsManager.GetSelectedPlayerValue()];
@@ -54,11 +70,33 @@ public class LevelManager : MonoBehaviour
         SelectedPlayer.transform.rotation = defulcar.rotation;
         
     }
-public IEnumerator Start(){
-    if (PrefsManager.GetLevelMode()!=1)
+
+    public IEnumerator Start()
     {
-        yield return new WaitForSeconds(0.5f);
-        UiManagerObject.instance.ShowObjective(CurrentLevelProperties.LevelStatment);
+        if (PrefsManager.GetLevelMode() != 1)
+        {
+            yield return new WaitForSeconds(0.5f);
+            UiManagerObject.instance.ShowObjective(CurrentLevelProperties.LevelStatment);
+        }
     }
-}
+
+    public void RestCar()
+    {
+        GameManager.Instance.CurrentCar.GetComponent<RCC_CarControllerV3>().RestCar();
+    }
+    void Update()
+    {
+        if (snowing && isDay)
+        {
+            RenderSettings.skybox = daySkybox;
+            snowParticleSystem.Stop();
+            snowParticleSystem.gameObject.SetActive(false);
+        }
+        else if (!isDay)
+        {
+            RenderSettings.skybox = nightSkybox;
+            snowParticleSystem.Play();
+            snowParticleSystem.gameObject.SetActive(true);
+        }
+    }
 }

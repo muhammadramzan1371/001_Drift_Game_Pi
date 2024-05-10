@@ -757,7 +757,12 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 		indicatorTimer += Time.deltaTime;
 		
 	}
-
+	public void RestCar()
+	{
+		Vector3 currentPosition = transform.position;
+		currentPosition.y += 5f; 
+		transform.position = currentPosition;
+	}
 	void Inputs(){
 		
 		switch(RCCSettings.controllerType){

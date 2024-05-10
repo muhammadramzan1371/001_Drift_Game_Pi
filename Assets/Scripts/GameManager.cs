@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public Transform TpsCamera; 
     public GameObject CurrentCar;
     public Transform TrafficSpawn;
-    //public Transform Weather;
+    public Transform Weather;
 
     public HUDNavigationSystem hud;
     private void Awake()
@@ -86,14 +86,14 @@ public class GameManager : MonoBehaviour
         
         if (TpsStatus==PlayerStatus.CarDriving)
         {
-          //  Weather.transform.position = VehicleCamera.transform.position; 
-           // Weather.transform.rotation = VehicleCamera.transform.rotation; 
+            Weather.transform.position = VehicleCamera.transform.position; 
+        //    Weather.transform.rotation = VehicleCamera.transform.rotation; 
             TrafficSpawn.position = VehicleCamera.position;
             TrafficSpawn.rotation = VehicleCamera.rotation;
         }
         else
         {
-          //  Weather.transform.position = TpsCamera.transform.position; 
+            Weather.transform.position = TpsCamera.transform.position;
           //  Weather.transform.rotation = TpsCamera.transform.rotation; 
             TrafficSpawn.position = TpsCamera.position;
             TrafficSpawn.rotation = TpsCamera.rotation;
