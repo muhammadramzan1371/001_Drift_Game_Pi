@@ -80,7 +80,7 @@ public class CameraRotate : MonoBehaviour
 		rotation = base.transform.rotation;
 		currentRotation = base.transform.rotation;
 		desiredRotation = base.transform.rotation;
-		position = targetObject.position - (rotation * Vector3.forward * currentDistance + targetOffset);
+		position = targetObject.position - (rotation*  Vector3.forward * currentDistance + targetOffset);
         SetMianPos();
 	}
 
@@ -159,14 +159,14 @@ public class CameraRotate : MonoBehaviour
 		}
 		else if(!isrimSelect)
 		{
-            xDeg +=xSpeed * AutoSpeed * Time.deltaTime;
+            xDeg +=xSpeed  *AutoSpeed  *Time.deltaTime;
             yDeg = ClampAngle(yDeg, yMinLimit, yMaxLimit);
 			desiredRotation = Quaternion.Euler(yDeg, xDeg, 0f);
 			currentRotation = base.transform.rotation;
 			rotation = Quaternion.Lerp(currentRotation, desiredRotation, 0.02f * zoomDampening * 2f);
 			base.transform.rotation = rotation;
 		}
-		//desiredDistance -= Input.GetAxis("Mouse ScrollWheel") * 0.02f * (float)zoomSpeed * Mathf.Abs(desiredDistance);
+		//desiredDistance -= Input.GetAxis("Mouse ScrollWheel")  0.02f  (float)zoomSpeed * Mathf.Abs(desiredDistance);
 		desiredDistance = Mathf.Clamp(desiredDistance, minDistance, maxDistance);
 		currentDistance = Mathf.Lerp(currentDistance, desiredDistance, 0.02f * zoomDampening);
 		position = targetObject.position - (rotation * Vector3.forward * currentDistance + targetOffset);
