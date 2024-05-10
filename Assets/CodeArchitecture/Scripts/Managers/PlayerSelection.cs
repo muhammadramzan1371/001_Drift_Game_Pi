@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 [System.Serializable]
@@ -8,7 +9,7 @@ public class Specification
     public int[] Values;
 }
 
-public class PlayerSelectionEG : MonoBehaviour
+public class PlayerSelection : MonoBehaviour
 {
 
     public Specification[] SpecificationValue;
@@ -23,9 +24,17 @@ public class PlayerSelectionEG : MonoBehaviour
     bool isReadyForPurchase;
     int ActivePlayervalue = 1;
     int coinValue;
-    public static PlayerSelectionEG instance;
+    public static PlayerSelection instance;
     
 
+[Header("CarSoldCutSSceane")]
+
+public GameObject Timeline;
+public PlayableDirector Director;
+public GameObject CutSceanCamera;
+
+public CanvasGroup GrageUi;
+public GameObject MainCamera;
 
     void Start()
     {
@@ -207,7 +216,7 @@ public class PlayerSelectionEG : MonoBehaviour
     public void LoadGamePlay()
     {
         LOADING.SetActive(true);
-        LOADING.GetComponentInChildren<bl_SceneLoader>().LoadLevel("GamePlay_EG");
+        LOADING.GetComponentInChildren<bl_SceneLoader>().LoadLevel("GamePlay");
         Debug.Log("Called it");
     }
 
@@ -241,17 +250,38 @@ public class PlayerSelectionEG : MonoBehaviour
     {
         successPannel.SetActive(false);
     }
+
     public void Success_purchase()
     {
-        isReadyForPurchase = true;
-        successPannel.SetActive(true);
-        lockSprite.SetActive(false);
-        unlockPlayerButton.SetActive(false);
-        Play.SetActive(true);
-        Invoke("Offsuccess", 3f);
-        coinText.text = "" + PrefsManager.GetCoinsValue();
-        coinText2.text = "" + PrefsManager.GetCoinsValue();
-        PriceText.transform.parent.gameObject.SetActive(false);
+        Time.timeScale = 1f;
+        GrageUi.alpha = 0;
+        CutSceanCamera.SetActive(true);
+        MainCamera.SetActive(false);
+        Timeline.SetActive(true);
+        Director.Play();
+        Invoke("HideTimeline", (float)Director.duration - 0.9f);
+
     }
+public void HideTimeline()
+{
+    GrageUi.alpha = 1;
+    CutSceanCamera.SetActive(false);
+    MainCamera.SetActive(true);
+    Timeline.SetActive(false);
+  
+    
+    
+    
+  
+    isReadyForPurchase = true;
+    successPannel.SetActive(true);
+    lockSprite.SetActive(false);
+    unlockPlayerButton.SetActive(false);
+    Play.SetActive(true);
+    Invoke("Offsuccess", 3f);
+    coinText.text = "" + PrefsManager.GetCoinsValue();
+    coinText2.text = "" + PrefsManager.GetCoinsValue();
+    PriceText.transform.parent.gameObject.SetActive(false);
+}
 
 }

@@ -123,7 +123,7 @@ public class Data : MonoBehaviour {
 
         if (AdType == 5)
         {
-	        PlayerSelectionEG.instance.TestDrive();
+	        PlayerSelection.instance.TestDrive();
            // FindObjectOfType<MoneyCounterAdd>().DoubleReward();
             //VehicleSelectionScript.instance.AddCashOnRewardedVideo();
         }
@@ -162,7 +162,7 @@ public class Data : MonoBehaviour {
         else if (AdType == 16)
         {
             PrefsManager.SetCoinsValue(PrefsManager.GetCoinsValue() + 500);
-            FindObjectOfType<PlayerSelectionEG>().OffNoCash();
+            FindObjectOfType<PlayerSelection>().OffNoCash();
         }
 
         //GameObject.Find ("Canvas").GetComponent<ShowAds_GP>().EnableRewarded();

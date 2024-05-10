@@ -438,7 +438,7 @@ public class MainMenu : MonoBehaviour
     public void FreeMode(int number)
     {
         PrefsManager.SetGameMode("Free");
-        PlayerSelectionEG.instance.RedirectToDogSelection();
+        PlayerSelection.instance.RedirectToDogSelection();
         
 //        PrefsManager.SetWeather(number);
 //        Play();
@@ -466,12 +466,12 @@ public class MainMenu : MonoBehaviour
         if (modselect == 1)
         {
            
-            PlayerSelectionEG.instance.dogSelectionCanvas.SetActive(true);
-            PlayerSelectionEG.instance.menuCanvas.SetActive(false);
-            PlayerSelectionEG.instance.SelectDogPlay();
+            PlayerSelection.instance.dogSelectionCanvas.SetActive(true);
+            PlayerSelection.instance.menuCanvas.SetActive(false);
+            PlayerSelection.instance.SelectDogPlay();
         }
         else { 
-        PlayerSelectionEG.instance.RedirectToDogSelection();
+        PlayerSelection.instance.RedirectToDogSelection();
 
         }
 

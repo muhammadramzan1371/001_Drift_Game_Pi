@@ -89,8 +89,8 @@ public class CameraRotate : MonoBehaviour
 	    isDragging = true;
 	    StartCoroutine(SetPos(-90, 14, 4f));
 	    isrimSelect = false;
-        maxDistance = 18;
-        minDistance = 18;
+        maxDistance = 8;
+        minDistance = 8;
     }
     public void SetPlatePaintPos()
     {
