@@ -96,16 +96,16 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _LightStuff: 0.67
-    - _MetalBrightnessIntensity: 1
+    - _MetalBrightnessIntensity: 1.42
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PearlUVScale: 28.1
-    - _RefIntensity: 0.4
+    - _RefIntensity: 0.16
     - _RefShininessIntensity: 1
     - _RefType: 0
-    - _RefVisibility: 2
+    - _RefVisibility: 1.72
     - _ShininessIntensity: 0.9
     - _ShininessScale: 1
     - _Shinniness: 0.03
@@ -115,8 +115,8 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.40665886, g: 0, b: 0, a: 1}
-    - _DecalColor: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 0}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _DecalColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PearlescentColor: {r: 0.40665886, g: 0, b: 0, a: 1}
+    - _PearlescentColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

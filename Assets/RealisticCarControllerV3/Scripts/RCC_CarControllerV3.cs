@@ -1561,17 +1561,20 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter (Collision collision){
+
+		if (GameManager.Instance.TpsStatus==PlayerStatus.ThirdPerson)
+		        return;
 		
 		if (collision.contacts.Length < 1 || collision.relativeVelocity.magnitude < minimumCollisionForce)
 			return;
 
-			if(crashClips.Length > 0){
-				if (collision.contacts[0].thisCollider.gameObject.transform != transform.parent){
-					crashSound = RCC_CreateAudioSource.NewAudioSource(gameObject, "Crash Sound AudioSource", 5, 20, RCCSettings.maxCrashSoundVolume, crashClips[UnityEngine.Random.Range(0, crashClips.Length)], false, true, true);
+		if(crashClips.Length > 0){
+			if (collision.contacts[0].thisCollider.gameObject.transform != transform.parent){ 
+				crashSound = RCC_CreateAudioSource.NewAudioSource(gameObject, "Crash Sound AudioSource", 5, 20, RCCSettings.maxCrashSoundVolume, crashClips[UnityEngine.Random.Range(0, crashClips.Length)], false, true, true);
 				if(!crashSound.isPlaying)
-					crashSound.Play();
-				}
-			}
+					crashSound.Play(); 
+			} 
+		}
 
 		if(useDamage){
 

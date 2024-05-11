@@ -1743,7 +1743,7 @@ MonoBehaviour:
   superSimplePhysics: 0
   turnSpeed: 3
   carGrip: 70
-  maxSpeed: 50
+  maxSpeed: 100
   maxSpeedToTurn: 0.2
   crashed: 0
   carCanCrash: 0

@@ -87,10 +87,10 @@ public class CameraRotate : MonoBehaviour
     public void SetMianPos()
     {
 	    isDragging = true;
-	    StartCoroutine(SetPos(-90, 14, 4f));
+	    StartCoroutine(SetPos(-207, 7, 4f));
 	    isrimSelect = false;
-        maxDistance = 8;
-        minDistance = 8;
+        maxDistance = 6;
+        minDistance = 6;
     }
     public void SetPlatePaintPos()
     {
@@ -233,9 +233,10 @@ public class CameraRotate : MonoBehaviour
     }
     
     private bool DragCheck = false;
-    public void OnBeginDrag(bool DragValue)
+    
+    public void Drage(bool DragValue)
     {
-	    DragCheck = DragValue;
 	    isDragging = DragValue;
+	    DragCheck = DragValue;
     }
 }

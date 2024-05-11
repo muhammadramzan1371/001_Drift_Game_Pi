@@ -13,12 +13,12 @@ namespace CnControls
         /// <summary>
         /// The name of the horizontal axis for this touchpad to update
         /// </summary>
-        public string HorizontalAxisName = "Horizontal";
+        public string HorizontalAxisName = "Mouse X";
 
         /// <summary>
         /// The name of the vertical axis for this touchpad to update
         /// </summary>
-        public string VerticalAxisName = "Vertical";
+        public string VerticalAxisName = "Mouse Y";
 
         /// <summary>
         /// Whether this touchpad should preserve inertia when the finger is lifted

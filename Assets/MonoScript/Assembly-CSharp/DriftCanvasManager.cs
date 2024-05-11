@@ -71,7 +71,7 @@ public class DriftCanvasManager : MonoBehaviour
 		imgWheel.fillAmount = Mathf.Clamp01(delaydrift);
 		if (delaydrift >= 1f)
 		{
-		//	imgWheel.rectTransform.Rotate(0f, 0f, -500f * Time.deltaTime);
+			imgWheel.rectTransform.Rotate(0f, 0f, -500f * Time.deltaTime);
 		}
 	}
 	

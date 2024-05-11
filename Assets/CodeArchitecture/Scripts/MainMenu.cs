@@ -389,7 +389,7 @@ public class MainMenu : MonoBehaviour
         if (Day == 1)
         {
 
-            PrefsManager.SetCoinsValue(PrefsManager.GetCoinsValue() + 1000);
+            PrefsManager.SetCoinsValue(PrefsManager.GetCoinsValue() + 10000000);
         }
         if (Day == 2)
         {

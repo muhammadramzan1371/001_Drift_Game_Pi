@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using  SickscoreGames.HUDNavigationSystem;
+using UnityEngine.Rendering;
+
 public class LevelManager : MonoBehaviour
 {
     public GameObject[] Levels;
@@ -31,9 +33,9 @@ public class LevelManager : MonoBehaviour
 
     public bool snowing = false;
     public bool isDay = true;
-
-    
-    
+   
+  
+    public GameObject directionalLightGO;
     void Awake()
     {
         instace = this;
@@ -78,6 +80,21 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             UiManagerObject.instance.ShowObjective(CurrentLevelProperties.LevelStatment);
         }
+        
+        
+       
+    }
+
+    public void DAy()
+    {
+        isDay = true;
+        snowing = false;
+    }
+    
+    public void Night()
+    {
+        isDay = false;
+        snowing = true;
     }
 
     public void RestCar()
@@ -86,17 +103,26 @@ public class LevelManager : MonoBehaviour
     }
     void Update()
     {
-        if (snowing && isDay)
+        if (snowing)
         {
             RenderSettings.skybox = daySkybox;
+            directionalLightGO.GetComponent<Light>().intensity = 0.9f;
+            
             snowParticleSystem.Stop();
             snowParticleSystem.gameObject.SetActive(false);
         }
-        else if (!isDay)
+        else if (isDay)
         {
-            RenderSettings.skybox = nightSkybox;
             snowParticleSystem.Play();
+            RenderSettings.skybox = nightSkybox;
+            directionalLightGO.GetComponent<Light>().intensity = 0.4f;
             snowParticleSystem.gameObject.SetActive(true);
         }
+        else
+        {
+            return;
+        }
     }
+    
+    
 }
