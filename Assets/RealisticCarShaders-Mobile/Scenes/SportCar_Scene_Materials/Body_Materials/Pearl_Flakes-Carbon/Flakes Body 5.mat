@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Decal:
-        m_Texture: {fileID: 2800000, guid: 8b1c6d1d98f60e446a8c8604737c31e8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9219ce35a2e0992418dbaf204622e584, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -102,7 +102,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PearlUVScale: 28.1
-    - _RefIntensity: 0.84
+    - _RefIntensity: 0.11
     - _RefShininessIntensity: 1
     - _RefType: 0
     - _RefVisibility: 2
