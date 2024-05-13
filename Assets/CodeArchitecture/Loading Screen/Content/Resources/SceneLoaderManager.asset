@@ -17,9 +17,9 @@ MonoBehaviour:
     - SceneName: Splash
       DisplayName: Splash
       Description: 
-      SkipType: 0
-      LoadingType: 1
-      FakeLoadingTime: 5
+      SkipType: 2
+      LoadingType: 0
+      FakeLoadingTime: 8
       Backgrounds: []
     - SceneName: MenuScene
       DisplayName: MenuScene

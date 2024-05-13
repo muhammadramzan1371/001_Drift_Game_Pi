@@ -87,7 +87,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DecalReflection: 1
-    - _DecalTransparency: 0.74
+    - _DecalTransparency: 0.906
     - _DecalUVScale: 1
     - _DetailNormalMapScale: 1
     - _DiffuseUVScale: 1

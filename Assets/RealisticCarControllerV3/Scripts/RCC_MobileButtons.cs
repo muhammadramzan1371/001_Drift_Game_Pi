@@ -235,7 +235,7 @@ public class RCC_MobileButtons : MonoBehaviour {
 		//	GameObject.FindObjectOfType<RCC_Camera_Old>().ChangeCamera();
 
 	}
-
+public GameObject Tile,arrow,staring;
 	public void ChangeController(int index)
 	{
 
@@ -245,14 +245,23 @@ public class RCC_MobileButtons : MonoBehaviour {
 		case 0:
 			RCC_Settings.Instance.useAccelerometerForSteering = false;
 			RCC_Settings.Instance.useSteeringWheelForSteering = false;
+			Tile.SetActive(false);
+			arrow.SetActive(true);
+			staring.SetActive(false);
 			break;
 		case 1:
 			RCC_Settings.Instance.useAccelerometerForSteering = true;
 			RCC_Settings.Instance.useSteeringWheelForSteering = false;
+			Tile.SetActive(false);
+			arrow.SetActive(false);
+			staring.SetActive(true);
 			break;
 		case 2:
 			RCC_Settings.Instance.useAccelerometerForSteering = false;
 			RCC_Settings.Instance.useSteeringWheelForSteering = true;
+			Tile.SetActive(true);
+			arrow.SetActive(false);
+			staring.SetActive(false);
 			break;
 
 		}

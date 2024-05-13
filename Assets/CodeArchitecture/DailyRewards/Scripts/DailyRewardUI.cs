@@ -86,13 +86,13 @@ namespace NiobiumStudios
             switch (state)
             {
                 case DailyRewardState.UNCLAIMED_AVAILABLE:
-                    //hover.SetActive(true);
+                    hover.SetActive(true);
                     break;
                 case DailyRewardState.UNCLAIMED_UNAVAILABLE:
-                   // hover.SetActive(false);
+                    hover.SetActive(false);
                     break;
                 case DailyRewardState.CLAIMED:
-                    //hover.SetActive(true);
+                    hover.SetActive(true);
                     break;
             }
         }

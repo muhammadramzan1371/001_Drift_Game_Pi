@@ -7,6 +7,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Ads Data/RectBannerHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CoinBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CoinBar.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -70,7 +75,8 @@
       <workItem from="1715266641809" duration="2111000" />
       <workItem from="1715323175290" duration="11832000" />
       <workItem from="1715372082298" duration="2396000" />
-      <workItem from="1715411278383" duration="11589000" />
+      <workItem from="1715411278383" duration="12149000" />
+      <workItem from="1715583935142" duration="11254000" />
     </task>
     <servers />
   </component>

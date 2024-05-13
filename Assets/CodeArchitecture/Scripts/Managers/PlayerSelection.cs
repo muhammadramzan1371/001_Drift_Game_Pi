@@ -20,7 +20,7 @@ public class PlayerSelection : MonoBehaviour
     public GameObject nextBtn, backBtn, dogSelectionCanvas, menuCanvas, 
         levelSelectionCanvas, lockSprite, LOADING, Play, notCash, successPannel, unlockPlayerButton,TestDriveButton
       ,MainNextBack;
-    public Text coinText,coinText2, ls_cointext, PriceText;
+    public Text  PriceText;
     bool isReadyForPurchase;
     int ActivePlayervalue = 1;
     int coinValue;
@@ -39,17 +39,9 @@ public GameObject MainCamera;
     void Start()
     {
         instance = this;
-        coinText.text = "" + PrefsManager.GetCoinsValue();
-        coinText2.text = "" + PrefsManager.GetCoinsValue();
         Time.timeScale = 1;
-
     } 
-    private void Update()
-    {
-        coinText.text = "" + PrefsManager.GetCoinsValue();
-        coinText2.text = "" + PrefsManager.GetCoinsValue();
-        ls_cointext.text = "" + PrefsManager.GetCoinsValue();
-    }
+   
     public void OnNextPressed()
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
@@ -151,8 +143,7 @@ public GameObject MainCamera;
         {
             selectedDogArray[i].SetActive(false);
         }
-
-        ls_cointext.text = PrefsManager.GetCoinsValue().ToString();
+        
         SelectDogPlay();
     }
 
@@ -279,8 +270,6 @@ public void HideTimeline()
     unlockPlayerButton.SetActive(false);
     Play.SetActive(true);
     Invoke("Offsuccess", 3f);
-    coinText.text = "" + PrefsManager.GetCoinsValue();
-    coinText2.text = "" + PrefsManager.GetCoinsValue();
     PriceText.transform.parent.gameObject.SetActive(false);
 }
 

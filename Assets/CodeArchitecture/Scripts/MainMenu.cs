@@ -6,66 +6,36 @@ using NiobiumStudios;
 
 public class MainMenu : MonoBehaviour
 {
-	public GameObject soundOn,soundOff,ExitDialog, settingPannel, Modes,adclose, rewarded;
+	public GameObject ExitDialog,settingPannel;
     public Slider volume_value;
-    public Scrollbar bar;
-    public Text CoinText,CoinOnSpin;
     public static MainMenu instance;
-
     public GameObject lMark, MMark, HMark;
-
     public GameObject arrow,tild,steering;
- 
-    public GameObject Desertmode, snowmode,errorOnMode,ModeSelection;
     private bool isStart=false;
 
     // Use this for initialization
     void Start ()
 	{
-        //AdmobAdsManager.Instance.ShowBanner();
-      //  AdmobAdsManager.Instance.ShowBanner2();
-      //  AdmobAdsManager.Instance.HideMediumBannerEvent();
-      //  AdmobAdsManager.Instance.LoadInterstitialAd();
+      
         instance = this;
 		SoundManager.Instance.PlayAudio(SoundManager.Instance.menuSound);
-
-      //  if (PrefsManager.GetFirstTimeGame() == 1)
-        //    dailyreward.SetActive(true);
-        //if (PrefsManager.GetSound () == 1) {
-        //	soundOn.SetActive (false);
-
-        //} else {
-        //	soundOff.SetActive (false);
-
-        //}
 
         AudioListener.volume = PrefsManager.GetSound();
         volume_value.value = PrefsManager.GetSound();
 
         Time.timeScale = 1;
-       
-        CoinText.text = PrefsManager.GetCoinsValue().ToString();
-        CoinOnSpin.text = PrefsManager.GetCoinsValue().ToString();
+        
 
         isStart = true;
         currentNumberQuality = PrefsManager.GetGameQuality();
         QualityClick(currentNumberQuality);
-      //  SetGraphicQuality(PrefsManager.GetGameQuality());
+     
 
         currentNumber = PrefsManager.GetControlls();
-
-
+        
         SetControlls(currentNumber);
 
         ShowPrivacyDialog();
-
-        if (PrefsManager.GetComeForModeSelection() == 1)
-        {
-            ModeSelection.SetActive(true);
-            PrefsManager.SetComeForModeSelection(0);
-        }
-
-      
         //UnlockModes();
     }
 
@@ -126,32 +96,11 @@ public class MainMenu : MonoBehaviour
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
     }
 
-    public void PlayButtonClick()
-    {
-
-        PlayOneShot();
-        ModeSelection.SetActive(true);
-
-    }
-
-    public void ShowAdd()
-    {
-        //AdmobAdsManager.Instance.ShowInt(ShowAddNow,false);
-        ShowAddNow();
-    }
-
-    public void ShowAddNow()
-    {
-        
-    }
 
 
+  
 
-    private void Update()
-    {
-        CoinText.text = PrefsManager.GetCoinsValue().ToString();
-        CoinOnSpin.text = PrefsManager.GetCoinsValue().ToString();
-    }
+
 
     /// <summary>
     /// /////////main menu 
@@ -193,8 +142,7 @@ public class MainMenu : MonoBehaviour
 	{
 		GameObject.FindGameObjectWithTag ("SoundManager").GetComponent<AudioSource> ().enabled = false;
 		GameObject.FindGameObjectWithTag ("SoundManager").transform.GetChild (0).gameObject.GetComponent<AudioSource> ().enabled = false;
-		soundOn.SetActive (true);
-		soundOff.SetActive (false);
+	
 		PrefsManager.SetSound (0);
 	}
 
@@ -202,8 +150,7 @@ public class MainMenu : MonoBehaviour
 	{
 		GameObject.FindGameObjectWithTag ("SoundManager").GetComponent<AudioSource> ().enabled = true;
 		GameObject.FindGameObjectWithTag ("SoundManager").transform.GetChild (0).gameObject.GetComponent<AudioSource> ().enabled = true;
-		soundOn.SetActive (false);
-		soundOff.SetActive (true);
+		
 		SoundManager.Instance.PlayOneShotSounds (SoundManager.Instance.click);
 		PrefsManager.SetSound (1);
 	}
@@ -221,7 +168,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void ShowModeSelection() {
-        Modes.SetActive(true);
+     
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
        // UnlockModes();
     }
@@ -261,20 +208,16 @@ public class MainMenu : MonoBehaviour
         
         
            case 0:
-               
-                    
-                    lMark.SetActive(false);
-                    MMark.SetActive(false);
-                    HMark.SetActive(true);
-                    QualitySettings.SetQualityLevel(6);
-              
-                break;
-
-            case  1:
+               lMark.SetActive(false);
+               MMark.SetActive(false);
+               HMark.SetActive(true);
+               QualitySettings.SetQualityLevel(6); 
+               break;
+           
+           case  1:
                 lMark.SetActive(false);
                 MMark.SetActive(true);
                 HMark.SetActive(false);
-               
                 QualitySettings.SetQualityLevel(3);
                 break;
 
@@ -282,7 +225,6 @@ public class MainMenu : MonoBehaviour
                 lMark.SetActive(true);
                 MMark.SetActive(false);
                 HMark.SetActive(false);
-                    
                 QualitySettings.SetQualityLevel(1);
                
                 break;
@@ -302,8 +244,6 @@ public class MainMenu : MonoBehaviour
     public void RewardedToUser()
     {
 
-        rewarded.transform.GetChild(0).GetComponent<Text>().text = "You are rewarded 50 Coins.";
-        rewarded.SetActive(true);
         PrefsManager.SetCoinsValue(PrefsManager.GetCoinsValue() + 50);
 
         Invoke("offitagain", 2f);
@@ -312,7 +252,7 @@ public class MainMenu : MonoBehaviour
 
     public void offitagain()
     {
-        rewarded.SetActive(false);
+     
     }
 
 
@@ -460,7 +400,7 @@ public class MainMenu : MonoBehaviour
     public void ModeSelected(int modselect)
     {
       //  SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
-        Modes.SetActive(false);
+     
         PrefsManager.SetGameMode("challange");
         PrefsManager.SetLevelMode(modselect);
         if (modselect == 1)

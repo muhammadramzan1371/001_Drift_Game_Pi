@@ -11,7 +11,7 @@ public class MoneyCounterAuto : MonoBehaviour {
     public List<int> addCointList=new List<int>();
     private int tempMoney;
     public AudioClip coinsCountSound;
-	
+    public GameObject CoinEffect;
    public int reward;
     // Use this for initialization
     private void OnChecking()
@@ -38,8 +38,8 @@ public class MoneyCounterAuto : MonoBehaviour {
 		Invoke("ScoreCounter", 0.2f);
 	}
 
-    void StartOn() {
-
+    void Start() {
+	    CoinEffect.SetActive(false);
     }
     void ScoreCounter()
     {
@@ -75,6 +75,7 @@ public class MoneyCounterAuto : MonoBehaviour {
             tempMoney += reminder;
             rewradMoneyText[i].text = tempMoney + "";
             coinsSource.Stop();
+            CoinEffect.SetActive(true);
         }
         
         rewradMoneyText[0].text =reward+"";
