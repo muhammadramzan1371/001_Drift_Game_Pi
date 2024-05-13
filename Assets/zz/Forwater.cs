@@ -1,18 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Forwater : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   private async void OnTriggerEnter(Collider other)
+   {
+      if (other.gameObject.tag == "Player")
+      {
+         LevelManager.instace.vehicleCamera.GetComponent<RCC_Camera>().enabled = false;
+         UiManagerObject.instance.HideGamePlay();
+         await Task.Delay(2000);
+         UiManagerObject.instance.Restart();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+      }
+   }
 }

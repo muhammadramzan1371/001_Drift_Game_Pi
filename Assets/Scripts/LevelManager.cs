@@ -59,6 +59,11 @@ public class LevelManager : MonoBehaviour
             SetTransform(OpenWorldManager.TpsPosition, OpenWorldManager.CarPostiom);
         }
         SelectedPlayer.SetActive(true);
+        SelectedPlayer.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        SelectedPlayer.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        SelectedPlayer.GetComponent<Rigidbody>().isKinematic = false;
+        SelectedPlayer.GetComponent<VehicleProperties>().ConeEffect.SetActive(false);
+        SelectedPlayer.GetComponent<CarShadow>().enabled = true;
     }
     public void SetTransform(Transform playerposition, Transform defulcar)
     {
@@ -101,6 +106,11 @@ public class LevelManager : MonoBehaviour
     {
         GameManager.Instance.CurrentCar.GetComponent<RCC_CarControllerV3>().RestCar();
     }
+
+    public Material CarEffect;
+    public float multiplaxer;
+    private float offset;
+
     void Update()
     {
         if (snowing)
@@ -122,6 +132,8 @@ public class LevelManager : MonoBehaviour
         {
             return;
         }
+        offset += Time.deltaTime * multiplaxer;
+        CarEffect.mainTextureOffset=new Vector2(0, offset);
     }
     
     

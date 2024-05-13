@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-/*using Google.Play.Review;*/
+using Google.Play.Review;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,23 +13,28 @@ public class RateUsHandler : MonoBehaviour
     // Start is called before the first frame update
     public void FillImage(float fillAmount) {
     
-        Time.timeScale = 1;
       for (int i = 0; i < fillAmount*5; i++)
       {
           AllStars[i].SetActive(true);
       }
       PlayerPrefs.SetInt("RateUsStatus", 1);
-      if (fillAmount >= 0.8f)
+      //firebasecall.Instance.Event("RateUs_Stars_"+fillAmount*5);
+        if (fillAmount >= 0.8f)
         {
-            Time.timeScale = 1;
             ReviewObject.SetActive(true);
-          //  PrefsManager.SetRateUs(1);
-          
+            PrefsManager.SetProfileFill(1);
+            UiManagerObject.instance.ShowGamePlay();
+         
+        //   firebasecall.Instance.Event("RateUs_Pannel_Opened");
             RatePannel.SetActive(false);
+            PrefsManager.SetProfileFill(1);
+            UiManagerObject.instance.ShowGamePlay();
         }
         else {
             LetterClick();
             RatePannel.SetActive(false);
+            PrefsManager.SetProfileFill(1);
+            UiManagerObject.instance.ShowGamePlay();
         }
 
         Hand.SetActive(false);

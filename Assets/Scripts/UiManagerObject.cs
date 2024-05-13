@@ -61,7 +61,7 @@ public class UiManagerObject : MonoBehaviour
        
         if (PrefsManager.GetProfileFill()==0)
         {
-            Invoke("OnRateusPanel",50f);
+            Invoke("OnRateusPanel",40f);
         }
         else
         {
@@ -71,8 +71,10 @@ public class UiManagerObject : MonoBehaviour
     }
     public void OnRateusPanel()
     {
-      ///  panels.RateUsPanel.SetActive(true);
-      //  HideGamePlay();
+        panels.RateUsPanel.SetActive(true);
+        GameManager.Instance.CurrentCar.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GameManager.Instance.CurrentCar.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        HideGamePlay();
     }
     public void ShowObjective(string statment)
     {
@@ -145,7 +147,6 @@ public class UiManagerObject : MonoBehaviour
       
        if (GameManager.Instance.TpsStatus == PlayerStatus.BikeDriving)
        {
-       
            panels.CarControle.SetActive(false);
            panels.TpsControle.SetActive(false);
        }
@@ -162,7 +163,6 @@ public class UiManagerObject : MonoBehaviour
            panels. TpsControle.SetActive(true);
        }
        LevelManager.instace.canvashud.gameObject.SetActive(true);
-     
    }
 
     public void HideObjectivePannel()
@@ -176,8 +176,6 @@ public class UiManagerObject : MonoBehaviour
 
     public void ShowPause()
     {
-        
-       
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
       //  AdmobAdsManager.Instance.ShowInt(ShowPauseNow,true);
       ShowPauseNow();
@@ -186,6 +184,8 @@ public class UiManagerObject : MonoBehaviour
     public void ShowPauseNow()
     {
         Pause.SetActive(true);
+        GameManager.Instance.CurrentCar.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GameManager.Instance.CurrentCar.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         SetTimeScale(0);
         HideGamePlay();
     }
