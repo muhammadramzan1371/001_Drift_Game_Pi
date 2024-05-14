@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "689492725250",
+    "project_id": "drift-car-drive-drifting-dff53",
+    "storage_bucket": "drift-car-drive-drifting-dff53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689492725250:android:e466fab15ef8cfb928211b",
+        "android_client_info": {
+          "package_name": "com.pi.car.drift.car.racing.games"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAu2noWFEY_b91Y1LyYJeaTA_xMlkQvFiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

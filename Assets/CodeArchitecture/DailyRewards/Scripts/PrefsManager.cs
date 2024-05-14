@@ -30,7 +30,24 @@ public class PrefsManager : MonoBehaviour
     static string TestDrivePlayer = "Testdrive";
     static string ProfileFill = "ProfileFill";
     static string NosCounter = "NosCounter";
+    static string LoadInt = "LoadInt";
     // Use this for initialization
+    
+    
+    
+    
+    
+    
+    public static int GetInterInt()
+    {
+        return PlayerPrefs.GetInt(LoadInt, 1);
+        //return 1;
+    }
+
+    public static void SetInterInt(int quality)
+    {
+        PlayerPrefs.SetInt(LoadInt, quality);
+    }
     public static void SetNosCounter(int value)
     {
         PlayerPrefs.SetInt(NosCounter, value);

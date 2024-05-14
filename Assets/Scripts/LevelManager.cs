@@ -25,14 +25,10 @@ public class LevelManager : MonoBehaviour
     
     public ParticleSystem snowParticleSystem;
     
-    
-   
-    
     public Material daySkybox;
     public Material nightSkybox;
 
-    public bool snowing = false;
-    public bool isDay = true;
+
    
   
     public GameObject directionalLightGO;
@@ -92,14 +88,19 @@ public class LevelManager : MonoBehaviour
 
     public void DAy()
     {
-        isDay = true;
-        snowing = false;
+        snowParticleSystem.Play();
+        RenderSettings.skybox = nightSkybox;
+        directionalLightGO.GetComponent<Light>().intensity = 0.4f;
+        snowParticleSystem.gameObject.SetActive(true);
     }
     
     public void Night()
     {
-        isDay = false;
-        snowing = true;
+        RenderSettings.skybox = daySkybox;
+        directionalLightGO.GetComponent<Light>().intensity = 0.9f;
+            
+        snowParticleSystem.Stop();
+        snowParticleSystem.gameObject.SetActive(false);
     }
 
     public void RestCar()
@@ -107,33 +108,19 @@ public class LevelManager : MonoBehaviour
         GameManager.Instance.CurrentCar.GetComponent<RCC_CarControllerV3>().RestCar();
     }
 
-    public Material CarEffect;
+    public Material[] CarEffect;
     public float multiplaxer;
     private float offset;
 
     void Update()
     {
-        if (snowing)
-        {
-            RenderSettings.skybox = daySkybox;
-            directionalLightGO.GetComponent<Light>().intensity = 0.9f;
-            
-            snowParticleSystem.Stop();
-            snowParticleSystem.gameObject.SetActive(false);
-        }
-        else if (isDay)
-        {
-            snowParticleSystem.Play();
-            RenderSettings.skybox = nightSkybox;
-            directionalLightGO.GetComponent<Light>().intensity = 0.4f;
-            snowParticleSystem.gameObject.SetActive(true);
-        }
-        else
-        {
-            return;
-        }
+       
         offset += Time.deltaTime * multiplaxer;
-        CarEffect.mainTextureOffset=new Vector2(0, offset);
+        foreach (var VARIABLE in CarEffect)
+        {
+            VARIABLE.mainTextureOffset=new Vector2(0, offset);
+        }
+       
     }
     
     

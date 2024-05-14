@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using GameAnalyticsSDK;
+using PlayerInteractive_Mediation;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -33,39 +36,32 @@ public class UiManagerObject : MonoBehaviour
         Time.timeScale = 1f;
         
     }
+    
     void Start()
     {
-       // GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, PrefsManager.GetGameMode(),PrefsManager.GetCurrentLevel());
-       if (PrefsManager.GetLevelMode() == 1)
-        {
-            //MiniMap.GetComponent<CanvasGroup>().alpha = 0;
-        }
-     if(PrefsManager.GetGameMode()== "free") 
-        {
-            //MiniMap.GetComponent<CanvasGroup>().alpha = 0;
-           // Admob_LogHelper.MissionOrLevelStartedEventLog("Free",0);
-
-        }
-     else
-     {
-        // Admob_LogHelper.MissionOrLevelStartedEventLog(PrefsManager.GetGameMode(),PrefsManager.GetCurrentLevel());
-     }
-
-   //  AdmobAdsManager.Instance.ShowBanner();
-    // AdmobAdsManager.Instance.ShowBanner2();
-   //  AdmobAdsManager.Instance.HideMediumBannerEvent();
-    // AdmobAdsManager.Instance.LoadInterstitialAd();
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, PrefsManager.GetGameMode(),PrefsManager.GetCurrentLevel());
+      
     }
     void OnEnable()
     {
        
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            FindObjectOfType<Pi_AdsCall>().showBanner1();
+            FindObjectOfType<Pi_AdsCall>().showBanner2();
+            FindObjectOfType<Pi_AdsCall>().hideBigBanner();
+            if (PrefsManager.GetInterInt()!=5)
+            {
+                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+            }
+        }
         if (PrefsManager.GetProfileFill()==0)
         {
-            Invoke("OnRateusPanel",40f);
+          //  Invoke("OnRateusPanel",40f);
         }
         else
         {
-            panels.RateUsPanel.SetActive(false);
+          //  panels.RateUsPanel.SetActive(false);
         }
         
     }
@@ -181,39 +177,82 @@ public class UiManagerObject : MonoBehaviour
       ShowPauseNow();
     }
 
-    public void ShowPauseNow()
+    public async void ShowPauseNow()
     {
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
+            PrefsManager.SetInterInt(1);
+        }
         Pause.SetActive(true);
+        HideGamePlay();
+        SetTimeScale(0);
+        await Task.Delay(2000);
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            if (PrefsManager.GetInterInt() != 5)
+            {
+                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+            }
+        }
+      
         GameManager.Instance.CurrentCar.GetComponent<Rigidbody>().velocity = Vector3.zero;
         GameManager.Instance.CurrentCar.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        SetTimeScale(0);
-        HideGamePlay();
+       
     }
 
     public void Resume()
     {
-        Pause.SetActive(false);
-        SetTimeScale(1);
-        ShowGamePlay();
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
-        //AdmobAdsManager.Instance.LoadInterstitialAd();
+        Pause.SetActive(false);
+        ShowGamePlay();
+        SetTimeScale(1);
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            if (PrefsManager.GetInterInt() != 5)
+            {
+                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+            }
+        }
     }
 
     public void Restart()
     {
-        Loading.SetActive(true);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
-
-
+        SetTimeScale(1);
+        Loading.SetActive(true);
+        Loading.GetComponentInChildren<bl_SceneLoader>().LoadLevel("GamePlay");
+        if (PrefsManager.GetInterInt()!=5)
+        {
+            FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+        }
+        Invoke(nameof(showInterAd),7f);
     }
 
     public void Home()
     {
-        Loading.SetActive(true);
-        SceneManager.LoadSceneAsync(1);
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
-
+        SetTimeScale(1);
+        Loading.SetActive(true);
+        Loading.GetComponentInChildren<bl_SceneLoader>().LoadLevel("MenuScene");
+        if (PrefsManager.GetInterInt()!=5)
+        {
+            FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+        }
+        Invoke(nameof(showInterAd),7f);
+    }
+    public GameObject AdBrakepanel;
+    public async void showInterAd()
+    {
+        AdBrakepanel.SetActive(true);
+        await Task.Delay(1000);
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
+			
+            PrefsManager.SetInterInt(1);
+        }
+        AdBrakepanel.SetActive(false);
     }
 
     public void LevelCompleteNow()

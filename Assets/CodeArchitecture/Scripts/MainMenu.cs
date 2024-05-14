@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using NiobiumStudios;
+using PlayerInteractive_Mediation;
 
 public class MainMenu : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class MainMenu : MonoBehaviour
     // Use this for initialization
     void Start ()
 	{
-      
+       
+
         instance = this;
 		SoundManager.Instance.PlayAudio(SoundManager.Instance.menuSound);
 
@@ -129,7 +131,7 @@ public class MainMenu : MonoBehaviour
 	public void MoreGamesEvent ()
 	{
 		SoundManager.Instance.PlayOneShotSounds (SoundManager.Instance.click);
-		Application.OpenURL("https://play.google.com/store/apps/dev?id=8181417484042973102");
+		Application.OpenURL("https://play.google.com/store/apps/dev?id=8615786039404712360");
     }
 
 	public void RateUsButtonEvent ()
@@ -211,21 +213,21 @@ public class MainMenu : MonoBehaviour
                lMark.SetActive(false);
                MMark.SetActive(false);
                HMark.SetActive(true);
-               QualitySettings.SetQualityLevel(6); 
+               QualitySettings.SetQualityLevel(0); 
                break;
            
            case  1:
                 lMark.SetActive(false);
                 MMark.SetActive(true);
                 HMark.SetActive(false);
-                QualitySettings.SetQualityLevel(3);
+                QualitySettings.SetQualityLevel(1);
                 break;
 
             case 2:
                 lMark.SetActive(true);
                 MMark.SetActive(false);
                 HMark.SetActive(false);
-                QualitySettings.SetQualityLevel(1);
+                QualitySettings.SetQualityLevel(2);
                
                 break;
         }
@@ -312,6 +314,16 @@ public class MainMenu : MonoBehaviour
 
     private void OnEnable()
     {
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            FindObjectOfType<Pi_AdsCall>().showBanner1();
+            FindObjectOfType<Pi_AdsCall>().showBanner2();
+            FindObjectOfType<Pi_AdsCall>().hideBigBanner();
+            if (PrefsManager.GetInterInt()!=5)
+            {
+                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+            }
+        }
 
         DailyRewards.onClaimPrize += Claim;
      
@@ -329,7 +341,7 @@ public class MainMenu : MonoBehaviour
         if (Day == 1)
         {
 
-            PrefsManager.SetCoinsValue(PrefsManager.GetCoinsValue() + 10000000);
+            PrefsManager.SetCoinsValue(PrefsManager.GetCoinsValue() + 1000);
         }
         if (Day == 2)
         {

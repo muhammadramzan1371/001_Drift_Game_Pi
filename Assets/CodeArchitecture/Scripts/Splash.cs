@@ -10,13 +10,13 @@ public class Splash : MonoBehaviour
 
     void Awake() {
 
-        //GameAnalyticsSDK.GameAnalytics.Initialize();
-    
+        GameAnalyticsSDK.GameAnalytics.Initialize();
     }
     
     void Start()
     {
         StartCoroutine("changeScene");
+        Application.targetFrameRate = 60;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
     IEnumerator changeScene()

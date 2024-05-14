@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PlayerInteractive_Mediation;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
 
@@ -11,13 +12,13 @@ public class StoreScript : MonoBehaviour
     public Text[] watchvideoCount;
    // public Text[] TotalWatchVideoText;
     public Text[] rewardText;
-    public Text money, cashtext;
+   // public Text money, cashtext;
     public GameObject erroPanel;
     int CurrentVideoNo, nextvideoNo;
     public static StoreScript instance;
     void Start()
     {
-        money.text = PrefsManager.GetCoinsValue() + "";
+       // money.text = PrefsManager.GetCoin() + "";
         nextvideoNo = 1;
         instance = this;
         for (int i = 0; i < numberOfvideo.Length; i++)
@@ -49,8 +50,8 @@ public class StoreScript : MonoBehaviour
             PlayerPrefs.SetInt("GetWatchVideo" + CurrentVideoNo, 0);
         }
         watchvideoCount[CurrentVideoNo].text = PlayerPrefs.GetInt("GetWatchVideo" + CurrentVideoNo)  +" / " + numberOfvideo[CurrentVideoNo];
-        money.text = PrefsManager.GetCoinsValue() + "";
-        cashtext.text = PrefsManager.GetCoinsValue() + "";
+     //   money.text = PrefsManager.GetCoin() + "";
+     //   cashtext.text = PrefsManager.GetCoin() + "";
     }
 
 
@@ -81,21 +82,26 @@ public class StoreScript : MonoBehaviour
         int cash = PrefsManager.GetCoinsValue();
         cash += newCoins;
         PrefsManager.SetCoinsValue(cash);
-
-
-        money.text = cash + "";
+       // money.text = cash + "";
     }
 
     private void Update()
     {
-        money.text = PrefsManager.GetCoinsValue() + "";
+     //   money.text = PrefsManager.GetCoin() + "";
     }
     public void ShowRewardedAd(int no)
     {
         CurrentVideoNo = no;
         Data.AdType = 6;
-     //  AdCalls.instance.ShowRewarded();
-       //AdmobAdsManager.Instance.ShowRewardVideo();
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            FindObjectOfType<Pi_AdsCall>().showRewardADsBoth(GiverewaredNow);
+        }
+    }
+    public void GiverewaredNow()
+    {
+        Data.RewardedAdWatched();
+        Debug.Log("RewardGiven");
     }
 
   

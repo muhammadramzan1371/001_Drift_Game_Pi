@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Threading.Tasks;
+using PlayerInteractive_Mediation;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -36,10 +38,15 @@ public GameObject CutSceanCamera;
 public CanvasGroup GrageUi;
 public GameObject MainCamera;
 
+
+public Sprite[] CarSprites;
+
+public Image CarIconImage;
     void Start()
     {
         instance = this;
         Time.timeScale = 1;
+       
     } 
    
     public void OnNextPressed()
@@ -48,7 +55,9 @@ public GameObject MainCamera;
         if (selectedPlayerValue < selectedDogArray.Length - 1)
         {
             selectedPlayerValue++;
+            
             ShowPlayerNow(selectedPlayerValue);
+            CarIconImage.sprite = CarSprites[selectedPlayerValue];
         }
 
     }
@@ -60,6 +69,7 @@ public GameObject MainCamera;
         {
             selectedPlayerValue--;
             ShowPlayerNow(selectedPlayerValue);
+            CarIconImage.sprite = CarSprites[selectedPlayerValue];
         }
 
     }
@@ -122,6 +132,7 @@ public GameObject MainCamera;
 
     public void TestDrive()
     {
+        
         lockSprite.SetActive(false);
         PriceText.transform.parent.gameObject.SetActive(false);
         Play.SetActive(true);
@@ -151,6 +162,7 @@ public GameObject MainCamera;
     public void SelectDogPlay()
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
+        fakeLoading.SetActive(true);
         levelSelectionCanvas.SetActive(true);
     }
 
@@ -166,21 +178,26 @@ public GameObject MainCamera;
 
     }
 
+    public GameObject fakeLoading;
     public void RedirectToDogSelection()
     {
         //  AdmobAdsManager.Instance.LoadInterstitialAd();
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
+        
+        fakeLoading.SetActive(true);
         dogSelectionCanvas.SetActive(true);
         menuCanvas.SetActive(false);
         ShowPlayerNow(PrefsManager.GetLastJeepUnlock());
         MainNextBack.SetActive(true);
         selectedPlayerValue = PrefsManager.GetLastJeepUnlock();
+        CarIconImage.sprite = CarSprites[selectedPlayerValue];
     }
     
     public void BackToMainCanvas()
     {
       //  AdmobAdsManager.Instance.LoadInterstitialAd();
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
+        fakeLoading.SetActive(true);
         dogSelectionCanvas.SetActive(false);
         menuCanvas.SetActive(true);
         Debug.Log("Enable Here");
@@ -189,6 +206,7 @@ public GameObject MainCamera;
     public void BackFromLevelScreen()
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
+        fakeLoading.SetActive(true);
         levelSelectionCanvas.SetActive(false);
         dogSelectionCanvas.SetActive(true);
         ShowPlayerNow(PrefsManager.GetSelectedPlayerValue());
@@ -208,8 +226,26 @@ public GameObject MainCamera;
     {
         LOADING.SetActive(true);
         LOADING.GetComponentInChildren<bl_SceneLoader>().LoadLevel("GamePlay");
-        Debug.Log("Called it");
+        if (PrefsManager.GetInterInt()!=5)
+        {
+            FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+        }
+        Invoke(nameof(showInterAd),7f);
     }
+    public GameObject AdBrakepanel;
+    public async void showInterAd()
+    {
+        AdBrakepanel.SetActive(true);
+        await Task.Delay(1000);
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
+			
+            PrefsManager.SetInterInt(1);
+        }
+        AdBrakepanel.SetActive(false);
+    }
+    
 
     public void UnlockSelectedDog()
     {
@@ -253,6 +289,49 @@ public GameObject MainCamera;
         Invoke("HideTimeline", (float)Director.duration - 0.9f);
 
     }
+
+
+
+    public async void PlayCutScne()
+    {
+        Time.timeScale = 1f;
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            if (PrefsManager.GetInterInt() != 5)
+            {
+                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+            }
+        }
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
+            PrefsManager.SetInterInt(1);
+        }
+        GrageUi.alpha = 0;
+        CutSceanCamera.SetActive(true);
+        MainCamera.SetActive(false);
+        Timeline.SetActive(true);
+        Director.Play();
+        Invoke("StopCutScene", (float)Director.duration - 0.9f);
+        await Task.Delay(2000);
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            if (PrefsManager.GetInterInt() != 5)
+            {
+                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+            }
+        }
+    }
+
+
+    public void StopCutScene()
+    {
+        GrageUi.alpha = 1;
+        CutSceanCamera.SetActive(false);
+        MainCamera.SetActive(true);
+        Timeline.SetActive(false);
+    }
+    
 public void HideTimeline()
 {
     GrageUi.alpha = 1;

@@ -1,5 +1,4 @@
-﻿/*
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using GoogleMobileAds.Api;
 using PlayerInteractive_Mediation;
@@ -24,4 +23,3 @@ public class RectBannerHandler : MonoBehaviour
         }
     }
 }
-*/

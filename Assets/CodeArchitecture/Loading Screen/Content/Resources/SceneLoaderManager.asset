@@ -17,22 +17,22 @@ MonoBehaviour:
     - SceneName: Splash
       DisplayName: Splash
       Description: 
-      SkipType: 2
-      LoadingType: 0
+      SkipType: 3
+      LoadingType: 1
       FakeLoadingTime: 8
       Backgrounds: []
     - SceneName: MenuScene
       DisplayName: MenuScene
       Description: 
       SkipType: 3
-      LoadingType: 0
+      LoadingType: 1
       FakeLoadingTime: 8
       Backgrounds: []
     - SceneName: GamePlay
       DisplayName: GamePlay
       Description: 
       SkipType: 3
-      LoadingType: 0
+      LoadingType: 1
       FakeLoadingTime: 10
       Backgrounds: []
   TipList:
