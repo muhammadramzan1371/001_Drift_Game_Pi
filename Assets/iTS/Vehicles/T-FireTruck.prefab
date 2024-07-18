@@ -580,7 +580,7 @@ MonoBehaviour:
   playerTag: Player
   playerLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 8
   playerDetectedSoundAudioSource: {fileID: 0}
   playerDetectedSoundClips: []
   playerDetectedAnimations: []

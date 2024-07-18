@@ -8,11 +8,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Ads Data/RectBannerHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CarJumpChecker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LookAtTargetSetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Player Interactive-Ads Mediation/Pi-Scripts/PlayerInteractive_Admob.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Profile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CoinBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test/Rotate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/Entertocutscene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Standard Assets/CNControls/Scripts/Controllers/Touchpad_new.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -82,6 +82,15 @@
       <workItem from="1715668382703" duration="585000" />
       <workItem from="1715672583445" duration="8526000" />
       <workItem from="1715682666407" duration="11228000" />
+      <workItem from="1715752767345" duration="4634000" />
+      <workItem from="1716374780388" duration="1985000" />
+      <workItem from="1716470116817" duration="1441000" />
+      <workItem from="1716558954513" duration="1143000" />
+      <workItem from="1716997703064" duration="3174000" />
+      <workItem from="1717137828686" duration="2568000" />
+      <workItem from="1717504470151" duration="1056000" />
+      <workItem from="1717596606036" duration="4869000" />
+      <workItem from="1718274490298" duration="1246000" />
     </task>
     <servers />
   </component>
@@ -93,5 +102,25 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/CodeArchitecture/Scripts/Managers/PlayerSelection.cs</url>
+          <line>31</line>
+          <properties documentPath="D:\All Projects\Playre Interactive Projects\001_Drift_Game_Pi\Assets\_Game_Data\Game Assets\Thirdparty Assets\CodeArchitecture\Scripts\Managers\PlayerSelection.cs" initialLine="31" isMultiMethodBreakpoint="true">
+            <option name="multiMethodBreakpoint" value="true" />
+            <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

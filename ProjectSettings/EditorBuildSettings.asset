@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Splase.unity
+    path: Assets/_Game_Data/Scenes/Splase.unity
     guid: ec244b9d71af18f4ca2451fcaf260e9e
   - enabled: 1
-    path: Assets/Scenes/MenuScene.unity
+    path: Assets/_Game_Data/Scenes/MenuScene.unity
     guid: b8391ff82b3a0f049a7146d25a0b253b
   - enabled: 1
-    path: Assets/Scenes/GamePlay.unity
+    path: Assets/_Game_Data/Scenes/GamePlay.unity
     guid: 0eaa751742613884ab9d8a497c4e5e48
   m_configObjects: {}
