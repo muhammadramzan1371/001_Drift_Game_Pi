@@ -18,7 +18,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		Rigidbody m_Rigidbody;
 		Animator m_Animator;
-		bool m_IsGrounded;
+		public bool m_IsGrounded;
 		float m_OrigGroundCheckDistance;
 		const float k_Half = 0.5f;
 		float m_TurnAmount;
@@ -124,6 +124,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_Animator.SetBool("OnGround", m_IsGrounded);
 			if (!m_IsGrounded)
 			{
+				m_Animator.Play("Big Jump");
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
 			}
 
