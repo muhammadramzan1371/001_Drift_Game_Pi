@@ -34,7 +34,7 @@ public class ThirdPersonCharacter : MonoBehaviour
 
 	private Animator m_Animator;
 
-	private bool m_IsGrounded;
+	public bool m_IsGrounded;
 
 	private float m_OrigGroundCheckDistance;
 
@@ -248,9 +248,10 @@ public class ThirdPersonCharacter : MonoBehaviour
 		}
 	}
 
+	public RaycastHit hitInfo;
 	private void CheckGroundStatus()
 	{
-		if (Physics.Raycast(base.transform.position + Vector3.up * 0.1f, Vector3.down, out RaycastHit hitInfo, m_GroundCheckDistance))
+		if (Physics.Raycast(base.transform.position + Vector3.up * 0.1f, Vector3.down, out hitInfo, m_GroundCheckDistance))
 		{
 			m_GroundNormal = hitInfo.normal;
 			m_IsGrounded = true;

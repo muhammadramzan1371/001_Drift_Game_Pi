@@ -42,12 +42,14 @@ public class ThirdPersonUserControl : MonoBehaviour
             if (GameControl.manager.controlMode == ControlMode.simple)
             {
                 m_Jump = Input.GetButtonDown("Jump");
+               // GetComponent<Animator>().Play("Big Jump");
             }
             else if (GameControl.manager.controlMode == ControlMode.touch)
             {
                 if (GameControl.jump)
                 {
                     m_Jump = true;
+                    GetComponent<Animator>().Play("Big Jump");
                     GameControl.jump = false;
                 }
             }

@@ -2,50 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6615de0-4504-45da-b871-90c4c4877f45" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_00.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_00.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_01.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_02.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_02.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_03.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_03.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_04.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_04.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_05.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_05.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_06.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_06.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.001_Drift_Game_Pi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.001_Drift_Game_Pi/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Shader/Standard.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Shader/Standard.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Shader/StandardDoubleSide.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Shader/StandardDoubleSide.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Drift game Interative/FBX/Final bases.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Drift game Interative/FBX/Final bases.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Drift game Interative/FBX/STRRE LIGHT.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Drift game Interative/FBX/STRRE LIGHT.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Drift game Interative/FBX/hotel 1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Drift game Interative/FBX/hotel 1.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Drift game Interative/FBX/umbreala.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Drift game Interative/FBX/umbreala.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Drift game Interative/Materials/Tex_0024.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Drift game Interative/Materials/Tex_0024.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/Camp assest.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/Camp assest.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/H.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/H.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/camp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/camp.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/centerain2.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/centerain2.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/gril wall.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/gril wall.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/jet 2.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/FBX/jet 2.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Green.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Orange.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Yellow.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/blue.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/red.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/RealisticCarControllerV3/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/RealisticCarControllerV3/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController 1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController 1.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/CAR 4/Materials/LIGHT.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/CAR 4/Materials/LIGHT.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/car 1/phong4 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/car 1/phong4 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/car 1/phong4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/car 1/phong4.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/car 2/Materials/glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/car 2/Materials/glass.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/car 3/Materials/Tex_0039.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/car 3/Materials/Tex_0039.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/car 5/Materials/Tex_0038000.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/car 5/Materials/Tex_0038000.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/RealisticCarControllerV3/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/RealisticCarControllerV3/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/ThirdPersonCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/ThirdPersonCharacter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/character/T-Pose.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/character/T-Pose.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/garage/Materials/ws..mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/garage/Materials/ws..mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/tyers/tyer 24/Materials/tyer  24.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/tyers/tyer 24/Materials/tyer  24.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/GamePlay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +105,7 @@
       <workItem from="1717504470151" duration="1056000" />
       <workItem from="1717596606036" duration="4869000" />
       <workItem from="1718274490298" duration="1246000" />
+      <workItem from="1721385360516" duration="1074000" />
     </task>
     <servers />
   </component>
