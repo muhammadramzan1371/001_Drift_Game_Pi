@@ -6,6 +6,7 @@ public class PrefsManager : MonoBehaviour
 	public const string level = "LEVEL";
     static string GameMode = "GameMode";
 	public const string selectedPlayer = "SELECTEDPlayer";
+	public const string Crackter = "Crackter";
     public const string selectedPlayerDirt = "SELECTEDPlayerDirt";
     public const string coinsEarned = "COINSEARNED";
     public const string ShowAds = "ShowAds";
@@ -21,6 +22,7 @@ public class PrefsManager : MonoBehaviour
     public const string PrivacyPolicy = "policy";
     public const string FirstTimeGame = "FirstTimeGame";
     public const string UnlockLastjeep = "UnlockLastjeep";
+    public const string UnlockLastChrackter = "UnlockLastChrackter";
     public const string ComeForSelection = "ComeForSelection";
     public const string ComeForModeSelection = "ComeForModeSelection";
     public const string CurrentLevel = "CURRENT_LEVEL";
@@ -151,7 +153,17 @@ public class PrefsManager : MonoBehaviour
         PlayerPrefs.SetInt("player" + playerNumber, PlayerVal);
         SetLastJeepUnlock(playerNumber);
     }
+    public static int GetCracterState(int playerNumber)
+    {
+        return PlayerPrefs.GetInt("player" + playerNumber, 0);
+    }
 
+    public static void SetCrackterState(int playerNumber, int PlayerVal)
+    {
+        PlayerPrefs.SetInt("player" + playerNumber, PlayerVal);
+        SetLastJeepUnlock(playerNumber);
+        //SetLastcharcterUnlock(playerNumber);
+    }
 
 
 
@@ -166,7 +178,15 @@ public class PrefsManager : MonoBehaviour
     {
         PlayerPrefs.SetInt(UnlockLastjeep, PlayerVal);
     }
+    public static int GetLastCharcterUnlock()
+    {
+        return PlayerPrefs.GetInt(UnlockLastChrackter, 0);
+    }
 
+    public static void SetLastcharcterUnlock(int PlayerVal)
+    {
+        PlayerPrefs.SetInt(UnlockLastChrackter, PlayerVal);
+    }
 
 
     public static int GetFirstTimeGame()
@@ -332,6 +352,30 @@ public class PrefsManager : MonoBehaviour
 		PlayerPrefs.SetInt (selectedPlayer, selectedPlayerVal);	
 	}
 
+    
+    public static int GetSelectedCracterValue ()
+    {
+        return PlayerPrefs.GetInt (Crackter, 0);
+        //return 4;
+    }
+
+    public static void SetSelectedCracterValue (int selectedPlayerVal)
+    {
+        PlayerPrefs.SetInt (Crackter, selectedPlayerVal);	
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	public static int GetCoinsValue ()
 	{
 		return PlayerPrefs.GetInt (coinsEarned, 0);

@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class TpsTriger : MonoBehaviour
 {
+   public float cameraDistance;
+   public Vector3 targetOffset;
+   
    public void OnTriggerEnter(Collider other)
    {
       //this forbike
@@ -51,7 +54,7 @@ public class TpsTriger : MonoBehaviour
       //    GameControl.manager.getInBike.SetActive(false);
        //  GameManager.Instance.mapPath =  null;
          GameManager.Instance.CurrentCar = null;
-         Debug.Log("Car HandleTrigger");
+        Logger.ShowLog("Car HandleTrigger");
       }
       //this forcar
       if (other.gameObject.tag == "Carhandle")
@@ -59,7 +62,7 @@ public class TpsTriger : MonoBehaviour
          GameControl.manager.getInVehicle.SetActive(false);
          GameManager.Instance.CurrentCar = null;
       //   GameManager.Instance.mapPath =  null;
-         Debug.Log("Car Handle");
+        Logger.ShowLog("Car Handle");
       }
    }
 }

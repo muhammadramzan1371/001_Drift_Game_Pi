@@ -19,6 +19,7 @@ public class RCC_Chassis : MonoBehaviour {
 	private float chassisHorizontalLean = 4.0f;		// Chassis Horizontal Lean Sensitivity.
 	private float horizontalLean = 3f;
 	private float verticalLean = 3f;
+	public GameObject ColliderParent;
 
 	void Start () {
 
@@ -32,11 +33,10 @@ public class RCC_Chassis : MonoBehaviour {
 
 	}
 
-	void OnEnable(){
-
+	void OnEnable()
+	{
 		if (!RCC_Settings.Instance.dontUseChassisJoint)
 			StartCoroutine ("ReEnable");
-
 	}
 
 	IEnumerator ReEnable(){
@@ -52,10 +52,11 @@ public class RCC_Chassis : MonoBehaviour {
 
 	}
 
-	void ChassisJoint(){
+	void ChassisJoint()
+	{
 
-		GameObject colliders = new GameObject("Colliders");
-		colliders.transform.SetParent(GetComponentInParent<RCC_CarControllerV3> ().transform, false);
+		ColliderParent = new GameObject("Colliders");
+		ColliderParent.transform.SetParent(GetComponentInParent<RCC_CarControllerV3> ().transform, false);
 
 		GameObject chassisJoint;
 
@@ -75,7 +76,7 @@ public class RCC_Chassis : MonoBehaviour {
 				}
 
 				GameObject newGO = (GameObject)Instantiate(t.gameObject, t.transform.position, t.transform.rotation);
-				newGO.transform.SetParent(colliders.transform, true);
+				newGO.transform.SetParent(ColliderParent.transform, true);
 				newGO.transform.localScale = t.lossyScale;
 
 				Component[] components = newGO.GetComponents(typeof(Component));
@@ -114,7 +115,7 @@ public class RCC_Chassis : MonoBehaviour {
 
 	void LegacyChassis (){
 
-		verticalLean = Mathf.Clamp(Mathf.Lerp (verticalLean, mainRigid.angularVelocity.x * chassisVerticalLean, Time.fixedDeltaTime * 5f), -3f, 3f);
+		verticalLean = Mathf.Clamp(Mathf.Lerp (verticalLean, mainRigid.angularVelocity.x  *chassisVerticalLean, Time.fixedDeltaTime * 5f), -3f, 3f);
 		horizontalLean = Mathf.Clamp(Mathf.Lerp (horizontalLean, (transform.InverseTransformDirection(mainRigid.angularVelocity).y * (transform.InverseTransformDirection(mainRigid.velocity).z >= 0 ? 1 : -1)) * chassisHorizontalLean, Time.fixedDeltaTime * 5f), -3f, 3f);
 
 		if(float.IsNaN(verticalLean) || float.IsNaN(horizontalLean) || float.IsInfinity(verticalLean) || float.IsInfinity(horizontalLean) || Mathf.Approximately(verticalLean, 0f) || Mathf.Approximately(horizontalLean, 0f))

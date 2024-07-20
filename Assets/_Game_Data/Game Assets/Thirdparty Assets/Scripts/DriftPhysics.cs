@@ -38,6 +38,15 @@ public class DriftPhysics : MonoBehaviour
 	private Vector3 currentVel;
 	private Vector3 currentVelAngle;
 	public float MaxSpeed = 0;
+	
+	private void Awake()
+	{
+		if (driftCanvasManager == null)
+		{
+			driftCanvasManager = LevelManager.instace.driftCanvasManagerNow;
+		}
+		Awakewhenicall();
+	}
 	public void Awakewhenicall()
 	{
 		driftCanvasManager.gameObject.SetActive(true);
@@ -67,7 +76,7 @@ public class DriftPhysics : MonoBehaviour
 		{
 			speedDelayDrift += Time.deltaTime*  accspeedDelayDrift * (float)sensDrift;
 			speedDelayDrift = Mathf.Clamp(speedDelayDrift, (0f - maxspeedDelayDrift) * 0.48f, maxspeedDelayDrift * 1.1f);
-			delayDrift += speedDelayDrift * Time.deltaTime *45f;
+			delayDrift += speedDelayDrift * Time.deltaTime *50f;
 			driftCanvasManager.UpdateWheel(delayDrift);
 			isDriftScoring = false;
 			if (delayDrift <= 0f)
@@ -87,7 +96,7 @@ public class DriftPhysics : MonoBehaviour
 			if (isDriftScoring && !isWrongWay)
 			{
 				
-				driftPoint += Time.deltaTime * (float)driftFactor  *50;
+				driftPoint += Time.deltaTime * (float)driftFactor  *100;
 				driftCanvasManager.UpdatePoint(driftPoint);
 				DevidedNumber = (int)(driftPoint / TargetValuesDevided[driftFactor]);
 				switch (driftFactor)

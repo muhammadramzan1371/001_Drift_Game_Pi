@@ -311,7 +311,8 @@ namespace ITS.AI
                 _steeringPathNavigation.CurrentLane.maxSpeed, Convert.ToSingle(random.NextDouble())).KphToMPS();
             return currentMaxSpeed;
         }
-        
+
+
         private void UpdateAIModules()
         {
             foreach (var module in _aiModules)
@@ -565,6 +566,7 @@ namespace ITS.AI
             DispatchEvent(Events.Events.EventNames.UnReserveAll);
             SegDistance = 0f;
         }
+
         private void UnReserveAllReservedPoints()
         {
             while (ReservedPoints.Count > 0)

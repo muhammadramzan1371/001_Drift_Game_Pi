@@ -7,6 +7,7 @@
 //----------------------------------------------
 
 
+using System;
 using UnityEngine;
 using System.Linq;
 using System.Collections;
@@ -146,23 +147,29 @@ public class RCC_WheelCollider : MonoBehaviour {
 			audioSource.transform.position = transform.position;
 		}
 
-		if (!RCC_Settings.Instance.dontUseAnyParticleEffects) {
-			for (int i = 0; i < RCC_GroundMaterials.Instance.frictions.Length; i++) {
-
-				GameObject ps = (GameObject)Instantiate (RCC_GroundMaterials.Instance.frictions [i].groundParticles, transform.position, transform.rotation) as GameObject;
-				emission = ps.GetComponent<ParticleSystem> ().emission;
-				emission.enabled = false;
-				ps.transform.SetParent (transform, false);
-				ps.transform.localPosition = Vector3.zero;
-				ps.transform.localRotation = Quaternion.identity;
-				allWheelParticles.Add (ps.GetComponent<ParticleSystem> ());
-
-			}
-		}
+		
 
 		wheelModel.transform.RotateAround(wheelModel.transform.position, transform.forward, -camberAngle );		
 	}
 
+
+	 public void GenrateWheelParticals()
+	 {
+		 if (!RCC_Settings.Instance.dontUseAnyParticleEffects) {
+			 for (int i = 0; i < RCC_GroundMaterials.Instance.frictions.Length; i++) {
+
+				 GameObject ps = (GameObject)Instantiate (RCC_GroundMaterials.Instance.frictions [i].groundParticles, transform.position, transform.rotation) as GameObject;
+				 emission = ps.GetComponent<ParticleSystem> ().emission;
+				 emission.enabled = false;
+				 ps.transform.SetParent (transform, false);
+				 ps.transform.localPosition = Vector3.zero;
+				 ps.transform.localRotation = Quaternion.identity;
+				 allWheelParticles.Add (ps.GetComponent<ParticleSystem> ());
+
+			 }
+		 }
+	 }
+	 
 	void Start(){
 
 		allWheelColliders = carController.allWheelColliders.ToList();

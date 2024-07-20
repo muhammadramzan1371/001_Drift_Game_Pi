@@ -9,17 +9,18 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject[] Levels;
     public GameObject[] Players;
+    public GameObject[] Character;
     public int[] Reward;
     public LevelProperties CurrentLevelProperties;
-    public GameObject SelectedPlayer,FreeMode;
+    public GameObject SelectedPlayer,Chracter,FreeMode;
     public static LevelManager instace;
     public int CurrentLevel, coinsCounter;
     public HUDNavigationCanvas canvashud;
     public RCC_Camera vehicleCamera;
     public PlayerCamera_New Tpscamera;
     public OpenWorldManager OpenWorldManager;
-    public GameObject TpsPlayer;
-    
+   // public GameObject TpsPlayer;
+    public DriftCanvasManager driftCanvasManagerNow;
     
     [Header("WheatherArea")]
     
@@ -40,6 +41,7 @@ public class LevelManager : MonoBehaviour
             if (PrefsManager.GetLevelMode() == 0)
             {
                 SelectedPlayer = Players[PrefsManager.GetSelectedPlayerValue()];
+                Chracter = Character[PrefsManager.GetSelectedCracterValue()];
                 CurrentLevel = PrefsManager.GetCurrentLevel() - 1;
                 CurrentLevelProperties = Levels[CurrentLevel].GetComponent<LevelProperties>();
                 SelectedPlayer.transform.position = CurrentLevelProperties.PlayerPosition.position;
@@ -52,9 +54,11 @@ public class LevelManager : MonoBehaviour
             Time.timeScale = 1; 
             FreeMode.SetActive(true);
             SelectedPlayer = Players[PrefsManager.GetSelectedPlayerValue()];
+            Chracter = Character[PrefsManager.GetSelectedCracterValue()];
             SetTransform(OpenWorldManager.TpsPosition, OpenWorldManager.CarPostiom);
         }
         SelectedPlayer.SetActive(true);
+        Chracter.SetActive(true);
         SelectedPlayer.GetComponent<Rigidbody>().velocity = Vector3.zero;
         SelectedPlayer.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         SelectedPlayer.GetComponent<Rigidbody>().isKinematic = false;
@@ -63,8 +67,8 @@ public class LevelManager : MonoBehaviour
     }
     public void SetTransform(Transform playerposition, Transform defulcar)
     {
-        TpsPlayer.transform.position = playerposition.position;
-        TpsPlayer.transform.rotation = playerposition.rotation;
+        Chracter.transform.position = playerposition.position;
+        Chracter.transform.rotation = playerposition.rotation;
 
         Tpscamera.transform.position = playerposition.position;
         Tpscamera.transform.rotation = playerposition.rotation;

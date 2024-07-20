@@ -9,6 +9,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Threading.Tasks;
+using PlayerInteractive_Mediation;
 
 [AddComponentMenu("BoneCracker Games/Realistic Car Controller/UI/Dashboard Button")]
 public class RCC_UIDashboardButton : MonoBehaviour {
@@ -171,7 +173,7 @@ public class RCC_UIDashboardButton : MonoBehaviour {
 		
 	}
 	
-	public void Check(){
+	public async void Check(){
 		
 		carControllers = GameObject.FindObjectsOfType<RCC_CarControllerV3>();
 
@@ -227,6 +229,7 @@ public class RCC_UIDashboardButton : MonoBehaviour {
 					GetComponent<Image>().color = new Color(1, 1, 1, 1);
 				else if(!carControllers[i].AIController && carControllers[i].canControl)
 					GetComponent<Image>().color = new Color(0f, 1f, .13f, 1);
+				
 			}
 
 			break;
@@ -247,7 +250,7 @@ public class RCC_UIDashboardButton : MonoBehaviour {
 		}
 		
 	}
-
+	
 	public void ChangeGear(){
 
 		if(gearDirection == (int)gearSlider.value)

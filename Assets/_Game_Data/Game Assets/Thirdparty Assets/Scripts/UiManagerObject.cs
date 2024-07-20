@@ -28,6 +28,7 @@ public class UiManagerObject : MonoBehaviour
     public GameObject blankimage;
     public Image NosFiller;
     public GameObject NosButton;
+    public Button Driftbutton;
     void Awake()
     {
 
@@ -63,7 +64,8 @@ public class UiManagerObject : MonoBehaviour
         {
           //  panels.RateUsPanel.SetActive(false);
         }
-        
+
+       
     }
     public void OnRateusPanel()
     {
@@ -98,6 +100,32 @@ public class UiManagerObject : MonoBehaviour
         
     }
 
+    public bool AdShow = false;
+
+    public async void PressButton()
+    {
+        if (AdShow)
+        {
+            if (FindObjectOfType<Pi_AdsCall>())
+            {
+                FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
+                PrefsManager.SetInterInt(1);
+            }
+            Driftbutton.onClick.Invoke();
+            await Task.Delay(2000);
+            if (FindObjectOfType<Pi_AdsCall>())
+            {
+                if (PrefsManager.GetInterInt() != 5)
+                {
+                    FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+                }
+            }
+        }
+        else
+        {
+            Driftbutton.onClick.Invoke(); 
+        }
+    }
 
     public void FillFuelbar(float fillAmount) {
         fuelBar.fillAmount = fillAmount;
@@ -132,7 +160,7 @@ public class UiManagerObject : MonoBehaviour
    public void HideGamePlay()
    {
        LevelManager.instace.canvashud.gameObject.SetActive(false);
-       Debug.Log("Here");
+      Logger.ShowLog("Here");
        panels. CarControle.SetActive(false);
        panels.TpsControle.SetActive(false);
      
@@ -265,23 +293,23 @@ public class UiManagerObject : MonoBehaviour
 
             if (PrefsManager.GetLevelMode() == 0)
             {
-                Debug.Log("FirstMode"+PrefsManager.GetCurrentLevel()+" "+PrefsManager.GetLevelLocking());
+               Logger.ShowLog("FirstMode"+PrefsManager.GetCurrentLevel()+" "+PrefsManager.GetLevelLocking());
                 if (PrefsManager.GetCurrentLevel() >= PrefsManager.GetLevelLocking())
                 {
                     PrefsManager.SetLevelLocking(PrefsManager.GetLevelLocking() + 1);
 
                 }
-                Debug.Log("FirstMode"+PrefsManager.GetCurrentLevel()+" "+PrefsManager.GetLevelLocking());
+               Logger.ShowLog("FirstMode"+PrefsManager.GetCurrentLevel()+" "+PrefsManager.GetLevelLocking());
             }
             else if (PrefsManager.GetLevelMode() == 1)
             {
-                Debug.Log("SnowMode"+PrefsManager.GetCurrentLevel()+" "+PrefsManager.GetSnowLevelLocking());
+               Logger.ShowLog("SnowMode"+PrefsManager.GetCurrentLevel()+" "+PrefsManager.GetSnowLevelLocking());
                 if ((PrefsManager.GetCurrentLevel()) >= PrefsManager.GetSnowLevelLocking())
                 {
                     PrefsManager.SetSnowLevelLocking(PrefsManager.GetSnowLevelLocking() + 1);
 
                 }
-                Debug.Log("SnowMode"+PrefsManager.GetCurrentLevel()+" "+PrefsManager.GetSnowLevelLocking());
+               Logger.ShowLog("SnowMode"+PrefsManager.GetCurrentLevel()+" "+PrefsManager.GetSnowLevelLocking());
             }
           //  GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, PrefsManager.GetGameMode(), PrefsManager.GetCurrentLevel());
             //  Data.SendCompleteEvent(PrefsManager.GetCurrentLevel());

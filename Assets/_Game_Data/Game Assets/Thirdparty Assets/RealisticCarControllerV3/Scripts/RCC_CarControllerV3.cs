@@ -553,21 +553,39 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 		
 	}
 	
-	public void KillOrStartEngine (){
-		
-		if(engineRunning && !engineStarting){
-			engineRunning = false;
-			fuelInput = 0f;
-		}else if(!engineStarting){
-			StartCoroutine("StartEngine");
-		}
-		
+	public void KillOrStartEngine ()
+	{
+		if(engineRunning)
+			KillEngine ();
+		else
+			StartEngine();
 	}
 	
-	public IEnumerator StartEngine (){
+	public void StartEngine ()
+	{
+		StartCoroutine (StartEngineDelayed());
+	}
 
+	public void StartEngine (bool instantStart)
+	{
+		if (instantStart) 
+		{
+			fuelInput = 1f;
+			engineRunning = true;
+		}
+		else 
+		{
+			StartCoroutine (StartEngineDelayed());
+		}
+
+	}
+	
+	
+	
+	public IEnumerator StartEngineDelayed ()
+	{
 		engineRunning = false;
-		engineStarting = true;
+		//	engineStarting = true;
 		engineStartSound = RCC_CreateAudioSource.NewAudioSource(gameObject, "Engine Start AudioSource", 5, 10, 1, engineStartClip, false, true, true);
 		if(engineStartSound.isPlaying)
 			engineStartSound.Play();
@@ -576,7 +594,13 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 		fuelInput = 1f;
 		yield return new WaitForSeconds(1f);
 		engineStarting = false;
-
+	}
+	
+	public void KillEngine ()
+	{
+		Debug.Log("killed engine "+transform.name);
+		fuelInput = 0f;
+		engineRunning = false;
 	}
 	private DriftPhysics carPhysics;
 	void DriftVariables()
@@ -762,6 +786,7 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 		Vector3 currentPosition = transform.position;
 		currentPosition.y += 5f; 
 		transform.position = currentPosition;
+		transform.rotation = Quaternion.identity;
 	}
 	void Inputs(){
 		

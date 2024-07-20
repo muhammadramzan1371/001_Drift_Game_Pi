@@ -188,6 +188,6 @@ public class TSSimpleCar_Wheel : MonoBehaviour {
 		if (simpleCarScript.superSimplePhysics){
 			CorrespondingCollider.enabled = false;
 			this.enabled = false;return;}
-//		myBody.AddForceAtPosition(_antiRollBarForce * myParentTransform.up,myParentTransform.position);
+		//myBody.AddForceAtPosition(_antiRollBarForce * myParentTransform.up,myParentTransform.position);
 	}
 }

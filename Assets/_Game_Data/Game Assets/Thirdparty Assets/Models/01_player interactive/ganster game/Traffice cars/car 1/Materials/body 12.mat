@@ -97,8 +97,8 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PearlUVScale: 1
-    - _RefIntensity: 1.171
-    - _RefVisibility: 1.498
+    - _RefIntensity: 0.252
+    - _RefVisibility: 2
     - _ShininessIntensity: 0
     - _ShininessScale: 1
     - _SmoothnessTextureChannel: 0
@@ -108,7 +108,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DecalColor: {r: 0, g: 0.24207896, b: 0.3018868, a: 1}
+    - _DecalColor: {r: 0.5244074, g: 0, b: 0.6132076, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _PearlescentColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

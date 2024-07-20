@@ -28,31 +28,31 @@ public class Data : MonoBehaviour {
 	public static void CoinsAddition(int coins)
 	{
 		//GameObject.Find ("Canvas").GetComponent<ShowAds>().EnableRewarded();
-		Debug.Log (coins + " Coins Added");
+		Logger.ShowLog (coins + " Coins Added");
 	}
 	public static void GoldAddition(int coins)
 	{
-		Debug.Log (coins + " Gold Added");
+		Logger.ShowLog (coins + " Gold Added");
 	}
 	public static void UnlockAllPurchased ()
 	{
 		
 		RemoveAdsPurchased ();
-		Debug.Log ("Unlock All Purchased");
+		Logger.ShowLog ("Unlock All Purchased");
 	}
 	public static void RemoveAdsPurchased ()
 	{
 		PlayerPrefs.SetInt ("removeads", 1);
 		PlayerPrefs.Save ();
 		
-		Debug.Log ("Remove Ads Purchased");
+		Logger.ShowLog ("Remove Ads Purchased");
         OnRemoveAds();
     }
     public static void UnlockAllMissiionsPurchased()
     {
         //LevelSelectionScript1.instance.UnlockAllLevels();
 
-        Debug.Log("Unlock All Levels");
+        Logger.ShowLog("Unlock All Levels");
         PrefsManager.SetLevelLocking(20);
         PlayerPrefs.SetFloat("UnlockAllLevels", 1f);
         OnUnlockAllMission.Invoke();
@@ -81,7 +81,7 @@ public class Data : MonoBehaviour {
         UnlockAllVehiclesPurchased();
        // PrefsManager.SetCoinsValue(PrefsManager.GetCoinsValue() + 50000);
         PlayerPrefs.SetFloat("unlockEconomyPackage", 1);
-        Debug.Log("Reward economy pakage  ");
+        Logger.ShowLog("Reward economy pakage  ");
         OnUnlockPlayersCheck?.Invoke();
     }
 
@@ -89,7 +89,7 @@ public class Data : MonoBehaviour {
 
     public static void RewardedAdWatched()
     {
-        Debug.Log("Reward Received");
+        Logger.ShowLog("Reward Received");
         if (AdType == 0)
         {
             PrefsManager.SetCoinsValue(PrefsManager.GetCoinsValue() + 500);

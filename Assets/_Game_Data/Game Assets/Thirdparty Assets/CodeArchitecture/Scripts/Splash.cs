@@ -24,8 +24,7 @@ public class Splash : MonoBehaviour
     {
         StartCoroutine("changeScene");
         Invoke("loadappOpenAd",6);
-        Application.targetFrameRate = 60;
-        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.sleepTimeout = Screen.currentResolution.refreshRate;
     }
     IEnumerator changeScene()
     {

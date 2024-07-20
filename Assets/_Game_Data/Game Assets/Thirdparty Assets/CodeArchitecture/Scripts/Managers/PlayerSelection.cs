@@ -19,7 +19,7 @@ public class PlayerSelection : MonoBehaviour
     public int[] Prices;
     int selectedPlayerValue = 0;
     public GameObject[] selectedDogArray;
-    public GameObject nextBtn, backBtn, dogSelectionCanvas, menuCanvas, 
+    public GameObject nextBtn, backBtn, ChrackterSlection, menuCanvas,CarSlection, 
         levelSelectionCanvas, lockSprite, LOADING, Play, notCash, successPannel, unlockPlayerButton,TestDriveButton
       ,MainNextBack;
     public Text  PriceText;
@@ -128,6 +128,9 @@ public Image CarIconImage;
                 backBtn.SetActive(true);
             }
         selectedPlayerValue = ActivePlayervalue;
+        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.CarPos.transform.position;
+        CharcterSlectionManger.CurrentPlayer.transform.rotation =  CharcterSlectionManger.CarPos.transform.rotation;
+        CharcterSlectionManger._CameraRotate.SetCarMianPos();
     }
 
     public void TestDrive()
@@ -170,7 +173,7 @@ public Image CarIconImage;
     {
         levelSelectionCanvas.SetActive(true);
         menuCanvas.SetActive(false);
-        Debug.Log("Enable Here");
+       Logger.ShowLog("Enable Here");
         LOADING.SetActive(true);
         PrefsManager.SetGameMode("challange");
         PrefsManager.SetCurrentLevel(1);
@@ -185,22 +188,68 @@ public Image CarIconImage;
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         
         fakeLoading.SetActive(true);
-        dogSelectionCanvas.SetActive(true);
+        ChrackterSlection.SetActive(true);
         menuCanvas.SetActive(false);
+        CharcterSlectionManger.Caller.ShowPlayerNow(PrefsManager.GetLastCharcterUnlock());
+        MainNextBack.SetActive(true);
+        CharcterSlectionManger.Caller.selectedPlayerValue = PrefsManager.GetLastCharcterUnlock();
+        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.StartPos.transform.position;
+        CharcterSlectionManger.CurrentPlayer.transform.rotation =  CharcterSlectionManger.StartPos.transform.rotation;
+        for (int i = 0; i < CharcterSlectionManger.Chracterbutton.Length; i++)
+        {
+            if (PrefsManager.GetPlayerState(i) == 1)
+            {
+                CharcterSlectionManger.Chracterbutton[i].transform.GetChild(1).GetComponent<Image>().gameObject.SetActive(false);
+            }
+        }
+        CharcterSlectionManger._CameraRotate.SetChracterPos();
+       // CarIconImage.sprite = CarSprites[selectedPlayerValue];
+    }
+
+    public CharcterSlectionManger CharcterSlectionManger;
+    public void RedirectToCarSelection()
+    {
+        //  AdmobAdsManager.Instance.LoadInterstitialAd();
+        SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
+        fakeLoading.SetActive(true);
+        ChrackterSlection.SetActive(false);
+        CarSlection.SetActive(true);
         ShowPlayerNow(PrefsManager.GetLastJeepUnlock());
         MainNextBack.SetActive(true);
         selectedPlayerValue = PrefsManager.GetLastJeepUnlock();
         CarIconImage.sprite = CarSprites[selectedPlayerValue];
+        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.CarPos.transform.position;
+        CharcterSlectionManger.CurrentPlayer.transform.rotation =  CharcterSlectionManger.CarPos.transform.rotation;
+        CharcterSlectionManger.CurrentPlayer.GetComponent<Animator>().Play("Idle 0");
+        CharcterSlectionManger._CameraRotate.SetCarMianPos();
     }
-    
+    public void BackToCrhracterCanvas()
+    {
+        //  AdmobAdsManager.Instance.LoadInterstitialAd();
+        SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
+        fakeLoading.SetActive(true);
+        ChrackterSlection.SetActive(true);
+        CarSlection.SetActive(false);
+        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.StartPos.transform.position;
+        CharcterSlectionManger.CurrentPlayer.transform.rotation = CharcterSlectionManger.StartPos.transform.rotation;
+        for (int i = 0; i < selectedDogArray.Length; i++)
+        {
+            selectedDogArray[i].SetActive(false);
+        }
+        Logger.ShowLog("Enable Here");
+        CharcterSlectionManger._CameraRotate.SetChracterPos();
+    }
     public void BackToMainCanvas()
     {
       //  AdmobAdsManager.Instance.LoadInterstitialAd();
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         fakeLoading.SetActive(true);
-        dogSelectionCanvas.SetActive(false);
+        ChrackterSlection.SetActive(false);
         menuCanvas.SetActive(true);
-        Debug.Log("Enable Here");
+       Logger.ShowLog("Enable Here");
+       CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.StartPos.transform.position;
+       CharcterSlectionManger.CurrentPlayer.transform.rotation =  CharcterSlectionManger.StartPos.transform.rotation;
+       CharcterSlectionManger._CameraRotate.SetChracterPos();
     }
 
     public void BackFromLevelScreen()
@@ -208,10 +257,11 @@ public Image CarIconImage;
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         fakeLoading.SetActive(true);
         levelSelectionCanvas.SetActive(false);
-        dogSelectionCanvas.SetActive(true);
+        CarSlection.SetActive(true);
         ShowPlayerNow(PrefsManager.GetSelectedPlayerValue());
         MainNextBack.SetActive(true);
         selectedPlayerValue = PrefsManager.GetSelectedPlayerValue();
+        CharcterSlectionManger._CameraRotate.SetChracterPos();
     }
 
     public void SetLevelValue(int lValue)

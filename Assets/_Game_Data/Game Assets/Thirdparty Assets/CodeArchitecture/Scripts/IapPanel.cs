@@ -19,7 +19,7 @@ public class IapPanel : MonoBehaviour
     public void GiverewaredNow()
     {
         Data.RewardedAdWatched();
-        Debug.Log("RewardGiven");
+        Logger.ShowLog("RewardGiven");
     }
     public void LoadInter()
     {

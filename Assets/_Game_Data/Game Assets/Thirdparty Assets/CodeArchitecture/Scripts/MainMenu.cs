@@ -418,7 +418,7 @@ public class MainMenu : MonoBehaviour
         if (modselect == 1)
         {
            
-            PlayerSelection.instance.dogSelectionCanvas.SetActive(true);
+            PlayerSelection.instance.ChrackterSlection.SetActive(true);
             PlayerSelection.instance.menuCanvas.SetActive(false);
             PlayerSelection.instance.SelectDogPlay();
         }

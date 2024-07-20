@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     {
         hud.PlayerCamera = TpsCamera.GetComponent<Camera>();
         hud.PlayerController = TPSPlayer.transform; 
+        TPSPlayer = LevelManager.instace?.Chracter;
     }
 
     public async void GetInVehicle()
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
 
         CurrentCar.GetComponent<VehicleProperties>().enabled = true;
         CurrentCar.GetComponent<DriftPhysics>().enabled = true;
-        CurrentCar.GetComponent<DriftPhysics>().Awakewhenicall();
+       // CurrentCar.GetComponent<DriftPhysics>().Awakewhenicall();
         CurrentCar.GetComponent<VehicleProperties>().VehicleReadyForDrive(); // = true;
         TPSPlayer.SetActive(false);
         TpsCamera.gameObject.SetActive(false);
@@ -108,7 +109,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         UiManagerObject.instance.blankimage.SetActive(true);
-        Debug.Log("Here");
+        Logger.ShowLog("Here");
         UiManagerObject.instance.panels.CarControle.SetActive(false);
         UiManagerObject.instance.panels.TpsControle.SetActive(true);
         Invoke("offimage",0.5f);
@@ -130,7 +131,10 @@ public class GameManager : MonoBehaviour
        
      
     }
-
+    public void StartEngein()
+    {
+        CurrentCar.GetComponent<RCC_CarControllerV3>().KillOrStartEngine();
+    }
     /*#region MyRegion
 
     public async void sitonbike()

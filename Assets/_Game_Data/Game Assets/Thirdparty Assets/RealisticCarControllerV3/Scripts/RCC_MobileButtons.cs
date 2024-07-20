@@ -163,7 +163,7 @@ public class RCC_MobileButtons : MonoBehaviour {
 						Nos = false;
 						carControllers[i].boostInput = 1f;
 						carControllers[i].gasInput = 0;
-						Debug.Log("Nos Refilled");
+						Logger.ShowLog("Nos Refilled");
 						for (int j = 0; j < carControllers.Length; j++)
 						{
 							if (carControllers[j].canControl && !carControllers[j].AIController)
@@ -188,7 +188,7 @@ public class RCC_MobileButtons : MonoBehaviour {
 				else
 				{
 					carControllers[i].boostInput =1f;
-					//	Debug.Log("0");
+					//	Logger.ShowLog("0");
 				}
 
 			}

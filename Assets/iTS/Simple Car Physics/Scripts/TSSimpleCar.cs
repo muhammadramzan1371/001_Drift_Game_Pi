@@ -954,21 +954,21 @@ public class TSSimpleCar : MonoBehaviour
     {
         for (int i = 0; i < crashedSmokes.Length; i++)
         {
-            crashedSmokes[i].enableEmission = true;
-            crashedSmokes[i].Play(true);
+//            crashedSmokes[i].enableEmission = true;
+           // crashedSmokes[i].Play(true);
         }
     }
 
     void OnCollisionEnter(Collision col)
     {
 
-        if (carCanCrash && col.relativeVelocity.magnitude > minSpdForCrash)
+        /*if (carCanCrash && col.relativeVelocity.magnitude > minSpdForCrash)
         {
-            crashed = true;
+          //  crashed = true;
             if (trafficAI != null)
                 trafficAI.crashed = true;
-            ActivatecrashedSmoke();
-        }
+           // ActivatecrashedSmoke();
+        }*/
     }
 
 

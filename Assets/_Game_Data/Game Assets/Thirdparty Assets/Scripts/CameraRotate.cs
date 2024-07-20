@@ -23,6 +23,7 @@ public class CameraRotate : MonoBehaviour
 
     public int yMaxLimit = 80;
     public CanvasGroup _Canvas;
+    public CanvasGroup _Canvas_Chrackter;
     public float EndLook=60, startLook=50;
  //   public int zoomSpeed = 40;
 
@@ -52,11 +53,11 @@ public class CameraRotate : MonoBehaviour
 
     private float idleSmooth;
 
-    public static CameraRotate instance;
+   // public static CameraRotate instance;
 
     private void Start()
     {
-        instance = this;
+       // instance = this;
 
         Init();
     }
@@ -81,16 +82,26 @@ public class CameraRotate : MonoBehaviour
 		currentRotation = base.transform.rotation;
 		desiredRotation = base.transform.rotation;
 		position = targetObject.position - (rotation*  Vector3.forward * currentDistance + targetOffset);
-        SetMianPos();
+		//SetChracterPos();
 	}
 
-    public void SetMianPos()
+    public void SetCarMianPos()
     {
 	    isDragging = true;
-	    StartCoroutine(SetPos(-210f, 6.68f, 4f));
+	    StartCoroutine(SetPos(-210f, 9f, 4f));
 	    isrimSelect = false;
         maxDistance = 5.5f;
         minDistance = 5.5f;
+        targetOffset.y = 0.5f;
+    }
+    public void SetChracterPos()
+    {
+	    isDragging = true;
+	    StartCoroutine(SetPos(-209f, 9f, 4f));
+	    isrimSelect = false;
+	    maxDistance = 4f;
+	    minDistance = 4f;
+	    targetOffset.y = 0;
     }
     public void SetPlatePaintPos()
     {
@@ -212,6 +223,11 @@ public class CameraRotate : MonoBehaviour
 				    _Canvas.alpha -= 0.05f;
 				    isDragging = true;
 			    }
+			    if (_Canvas_Chrackter && _Canvas_Chrackter.alpha > 0)
+			    {
+				    _Canvas_Chrackter.alpha -= 0.05f;
+				    isDragging = true;
+			    }
 		    }
 	    }
 	    else
@@ -226,6 +242,11 @@ public class CameraRotate : MonoBehaviour
 			    if (_Canvas && _Canvas.alpha < 1)
 			    {
 				    _Canvas.alpha += 0.05f;
+				    isDragging = false;
+			    }
+			    if (_Canvas_Chrackter && _Canvas_Chrackter.alpha < 1)
+			    {
+				    _Canvas_Chrackter.alpha += 0.05f;
 				    isDragging = false;
 			    }
 		    }

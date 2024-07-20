@@ -131,7 +131,7 @@ public class DriftCanvasManager : MonoBehaviour
 		lastCoinsCount = 0f;
 		lastCoins = PrefsManager.GetCoinsValue();
 		COINS = PrefsManager.GetCoinsValue();
-		int num = Mathf.FloorToInt((float)point * 0.1f);
+		int num = Mathf.FloorToInt((float)point * 1.5f);
 		COINS += num;
 		totalCoins.text = Utils.FormatSpaceNumber(Mathf.FloorToInt(lastCoins)) + " <color=yellow><size=24>+" + num + "</size></color>";
 		StepDrawCoins = 1;

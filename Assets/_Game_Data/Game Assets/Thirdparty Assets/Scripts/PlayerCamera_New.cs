@@ -65,6 +65,16 @@ public class PlayerCamera_New : MonoBehaviour
         var angles = transform.eulerAngles;
         x = angles.y;
         y = angles.x;
+
+
+
+
+
+        target = LevelManager.instace?.Chracter.transform;
+        cameraDistance = target.GetComponent<TpsTriger>().cameraDistance;
+        targetOffset.y= target.GetComponent<TpsTriger>().targetOffset.y ;
+
+
     }
 
 
