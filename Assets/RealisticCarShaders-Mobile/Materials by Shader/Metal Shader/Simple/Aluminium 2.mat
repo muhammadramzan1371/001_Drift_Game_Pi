@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 525b2e5faa9bc7b4e9034ce37074f823, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4b16c9f55e505884fa64bc5f801c7758, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RenderedTexture:
@@ -55,7 +55,7 @@ Material:
     - _MetalScale: 0
     - _MetalicPower: 0
     - _MetalicScale: 1.21
-    - _RefIntensity: 0.99
+    - _RefIntensity: 0.38
     - _RefVisibility: 2
     - _Reflect: 0.24038462
     - _ShadowIntensity: 0.48076925

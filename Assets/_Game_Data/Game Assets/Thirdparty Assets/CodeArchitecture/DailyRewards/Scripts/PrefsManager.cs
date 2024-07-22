@@ -155,14 +155,14 @@ public class PrefsManager : MonoBehaviour
     }
     public static int GetCracterState(int playerNumber)
     {
-        return PlayerPrefs.GetInt("player" + playerNumber, 0);
+        return PlayerPrefs.GetInt("Chracter" + playerNumber, 0);
     }
 
     public static void SetCrackterState(int playerNumber, int PlayerVal)
     {
-        PlayerPrefs.SetInt("player" + playerNumber, PlayerVal);
-        SetLastJeepUnlock(playerNumber);
-        //SetLastcharcterUnlock(playerNumber);
+        PlayerPrefs.SetInt("Chracter" + playerNumber, PlayerVal);
+       // SetLastJeepUnlock(playerNumber); 
+        SetLastcharcterUnlock(playerNumber);
     }
 
 

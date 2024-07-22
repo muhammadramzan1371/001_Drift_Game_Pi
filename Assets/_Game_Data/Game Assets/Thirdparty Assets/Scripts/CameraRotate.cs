@@ -90,8 +90,8 @@ public class CameraRotate : MonoBehaviour
 	    isDragging = true;
 	    StartCoroutine(SetPos(-210f, 9f, 4f));
 	    isrimSelect = false;
-        maxDistance = 5.5f;
-        minDistance = 5.5f;
+        maxDistance = 6f;
+        minDistance = 6f;
         targetOffset.y = 0.5f;
     }
     public void SetChracterPos()

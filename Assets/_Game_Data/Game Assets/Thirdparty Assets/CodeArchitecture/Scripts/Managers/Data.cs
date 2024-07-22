@@ -141,7 +141,8 @@ public class Data : MonoBehaviour {
         else if (AdType == 7)
         {
          
-
+	        CharcterSlectionManger.Caller.TestChracter();
+	        GameAnalytics.NewAdEvent(GAAdAction.RewardReceived,GAAdType.RewardedVideo,"Admob","Get_TestChracter");
         }
         if (AdType == 8)
         {

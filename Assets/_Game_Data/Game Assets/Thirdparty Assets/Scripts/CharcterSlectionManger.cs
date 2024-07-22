@@ -176,7 +176,24 @@ public class CharcterSlectionManger : MonoBehaviour
             noCoinsPanel.SetActive(true);
         }
     }
-
+    public void TestChracter()
+    {
+        
+     //   lockSprite.SetActive(false);
+        PriceText.transform.parent.gameObject.SetActive(false);
+        Play.SetActive(true);
+        unlockPlayerButton.SetActive(false);
+        TestDriveButton.SetActive(false);
+        PrefsManager.SetSelectedCracterValue(selectedPlayerValue);
+        PlayerSelection.instance.RedirectToCarSelection();
+    }
+    
+    public void SelectDogPlay()
+    {
+        SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
+        PlayerSelection.instance.fakeLoading.SetActive(true);
+        PlayerSelection.instance.CarSlection.SetActive(true);
+    }
     void HideNoCoinsPanel()
     {
         Sucecfully.SetActive(false);

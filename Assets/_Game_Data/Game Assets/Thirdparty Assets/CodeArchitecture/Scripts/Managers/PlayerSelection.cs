@@ -202,6 +202,7 @@ public Image CarIconImage;
                 CharcterSlectionManger.Chracterbutton[i].transform.GetChild(1).GetComponent<Image>().gameObject.SetActive(false);
             }
         }
+        CurrentPlayer.SetActive(true);
         CharcterSlectionManger._CameraRotate.SetChracterPos();
        // CarIconImage.sprite = CarSprites[selectedPlayerValue];
     }
