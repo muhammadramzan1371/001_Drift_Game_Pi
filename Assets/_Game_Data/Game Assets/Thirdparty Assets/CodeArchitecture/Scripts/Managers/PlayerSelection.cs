@@ -17,14 +17,14 @@ public class PlayerSelection : MonoBehaviour
     public Specification[] SpecificationValue;
     public GameObject[] sp_bar;
     public int[] Prices;
-    int selectedPlayerValue = 0;
+    public int selectedPlayerValue = 0;
     public GameObject[] selectedDogArray;
     public GameObject nextBtn, backBtn, ChrackterSlection, menuCanvas,CarSlection, 
         levelSelectionCanvas, lockSprite, LOADING, Play, notCash, successPannel, unlockPlayerButton,TestDriveButton
       ,MainNextBack;
     public Text  PriceText;
     bool isReadyForPurchase;
-    int ActivePlayervalue = 1;
+    public int ActivePlayervalue = 1;
     int coinValue;
     public static PlayerSelection instance;
     
@@ -39,7 +39,7 @@ public CanvasGroup GrageUi;
 public GameObject MainCamera;
 
 
-public Sprite[] CarSprites;
+public Image[] CarSprites;
 
 public Image CarIconImage;
     void Start()
@@ -57,7 +57,11 @@ public Image CarIconImage;
             selectedPlayerValue++;
             
             ShowPlayerNow(selectedPlayerValue);
-            CarIconImage.sprite = CarSprites[selectedPlayerValue];
+            for (int i = 0; i < CarSprites.Length; i++)
+            {
+                CarSprites[i].gameObject.SetActive(false);
+                CarSprites[selectedPlayerValue].gameObject.SetActive(true);
+            }
         }
 
     }
@@ -69,7 +73,11 @@ public Image CarIconImage;
         {
             selectedPlayerValue--;
             ShowPlayerNow(selectedPlayerValue);
-            CarIconImage.sprite = CarSprites[selectedPlayerValue];
+            for (int i = 0; i < CarSprites.Length; i++)
+            {
+                CarSprites[i].gameObject.SetActive(false);
+                CarSprites[selectedPlayerValue].gameObject.SetActive(true);
+            }
         }
 
     }
@@ -202,7 +210,7 @@ public Image CarIconImage;
                 CharcterSlectionManger.Chracterbutton[i].transform.GetChild(1).GetComponent<Image>().gameObject.SetActive(false);
             }
         }
-        CurrentPlayer.SetActive(true);
+        CharcterSlectionManger.Caller.CurrentPlayer.SetActive(true);
         CharcterSlectionManger._CameraRotate.SetChracterPos();
        // CarIconImage.sprite = CarSprites[selectedPlayerValue];
     }
@@ -218,7 +226,11 @@ public Image CarIconImage;
         ShowPlayerNow(PrefsManager.GetLastJeepUnlock());
         MainNextBack.SetActive(true);
         selectedPlayerValue = PrefsManager.GetLastJeepUnlock();
-        CarIconImage.sprite = CarSprites[selectedPlayerValue];
+        for (int i = 0; i < CarSprites.Length; i++)
+        {
+           CarSprites[i].gameObject.SetActive(false);
+           CarSprites[selectedPlayerValue].gameObject.SetActive(true);      
+        }
         CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.CarPos.transform.position;
         CharcterSlectionManger.CurrentPlayer.transform.rotation =  CharcterSlectionManger.CarPos.transform.rotation;
         CharcterSlectionManger.CurrentPlayer.GetComponent<Animator>().Play("Idle 0");
