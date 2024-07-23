@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3235901088745099330}
   m_Layer: 3
   m_Name: BODY1
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 2922034429762484414}
   m_Layer: 3
   m_Name: WheelColliders
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2105,7 +2105,7 @@ GameObject:
   - component: {fileID: 8567146139563347207}
   m_Layer: 3
   m_Name: FORNT_LIGHT
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2281,7 +2281,7 @@ GameObject:
   - component: {fileID: 6575940611941797870}
   m_Layer: 3
   m_Name: WheelRR2
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2389,7 +2389,7 @@ GameObject:
   - component: {fileID: 6575940611941797868}
   m_Layer: 3
   m_Name: WheelFL1
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2497,7 +2497,7 @@ GameObject:
   - component: {fileID: 6575940611941797866}
   m_Layer: 3
   m_Name: WheelFR4
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2558,7 +2558,7 @@ GameObject:
   - component: {fileID: 6575940611927691818}
   m_Layer: 3
   m_Name: CoG
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2589,7 +2589,7 @@ GameObject:
   - component: {fileID: 6575940611941797864}
   m_Layer: 3
   m_Name: WheelRL3
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2696,7 +2696,7 @@ GameObject:
   - component: {fileID: 6575940611927691828}
   m_Layer: 3
   m_Name: car
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2728,7 +2728,7 @@ GameObject:
   - component: {fileID: 1326712309678617670}
   m_Layer: 3
   m_Name: Box01
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2772,7 +2772,7 @@ GameObject:
   - component: {fileID: 6575940611927691832}
   m_Layer: 3
   m_Name: Center
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3792,7 +3792,7 @@ GameObject:
   - component: {fileID: 6575940612677519747}
   m_Layer: 3
   m_Name: TPSPosition
-  m_TagString: Player
+  m_TagString: TrafficCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

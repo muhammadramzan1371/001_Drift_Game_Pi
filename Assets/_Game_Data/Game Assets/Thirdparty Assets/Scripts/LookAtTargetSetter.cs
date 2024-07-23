@@ -1,11 +1,19 @@
+using System;
 using UnityEngine;
 using UnityEngine.Animations;
 
 public class LookAtTargetSetter : MonoBehaviour
 {
     public LookAtConstraint lookAtConstraint; // Reference to the LookAtConstraint component
+    private CameraMovement _cameraMovement;
 
-    void Awake()
+
+    private void Awake()
+    {
+        _cameraMovement = GetComponent<CameraMovement>();
+    }
+
+    public void AddSourceGameObject()
     {
         // Get the LookAtConstraint component if not assigned
         if (lookAtConstraint == null)
@@ -14,7 +22,6 @@ public class LookAtTargetSetter : MonoBehaviour
         }
 
         // Set the target for the LookAtConstraint
-        SetTarget(LevelManager.instace.SelectedPlayer);
     }
 
     public void SetTarget(GameObject newTarget)

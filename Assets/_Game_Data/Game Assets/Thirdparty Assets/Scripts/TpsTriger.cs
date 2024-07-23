@@ -7,7 +7,7 @@ public class TpsTriger : MonoBehaviour
 {
    public float cameraDistance;
    public Vector3 targetOffset;
-   
+   public Transform Hight;
    public void OnTriggerEnter(Collider other)
    {
       //this forbike
@@ -22,7 +22,7 @@ public class TpsTriger : MonoBehaviour
       if (other.gameObject.tag == "Carhandle")
       {
          GameControl.manager.getInVehicle.SetActive(true);
-        // GameControl.manager.getInBike.SetActive(false);
+         GameControl.manager.IdButton.SetActive(false);
          GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
         // GameManager.Instance.  mapPath =  GameManager.Instance. CurrentCar.GetComponent<VehicleProperties>().MapPath;
       }
@@ -41,7 +41,7 @@ public class TpsTriger : MonoBehaviour
       if (other.gameObject.tag == "Carhandle")
       {
          GameControl.manager.getInVehicle.SetActive(true);
-     //    GameControl.manager.getInBike.SetActive(false);
+         GameControl.manager.IdButton.SetActive(false);
          GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
         // GameManager.Instance.  mapPath =  GameManager.Instance. CurrentCar.GetComponent<VehicleProperties>().MapPath;
       }
@@ -60,7 +60,8 @@ public class TpsTriger : MonoBehaviour
       if (other.gameObject.tag == "Carhandle")
       {
          GameControl.manager.getInVehicle.SetActive(false);
-         GameManager.Instance.CurrentCar = null;
+         GameControl.manager.IdButton.SetActive(true);
+         //GameManager.Instance.CurrentCar = null;
       //   GameManager.Instance.mapPath =  null;
         Logger.ShowLog("Car Handle");
       }

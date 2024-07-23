@@ -13,17 +13,42 @@
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PhotoCapture.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PhotoCapture.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealisticCarShaders-Mobile/Scenes/SportCar_Scene_Materials/Body_Materials/Pearl_Flakes-Carbon/Flakes Body 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RealisticCarShaders-Mobile/Scenes/SportCar_Scene_Materials/Body_Materials/Pearl_Flakes-Carbon/Flakes Body 2.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Beautify/uesd Sky/materials/Nights.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Beautify/uesd Sky/materials/Nights.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/CodeArchitecture/Scripts/Managers/PlayerSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/CodeArchitecture/Scripts/Managers/PlayerSelection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Free HDR Skyboxes Pack/Texture/Sky-3.hdr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Free HDR Skyboxes Pack/Texture/Sky-3.hdr.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Instant Screenshot/ScreenshotTaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Instant Screenshot/ScreenshotTaker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Green.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/CARS/CAR1/Materials/Rang-Rover 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/CARS/CAR1/Materials/Rang-Rover 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/CARS/CAR1/Rang-Rover 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/CARS/CAR1/Rang-Rover 1.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/CARS/Materials/car-4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/CARS/Materials/car-4.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Orange.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Yellow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/blue.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/red.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Scenes/up.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Scenes/up.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Scenes/up.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Scenes/up.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/22.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/22.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/City_Road_Sidewalk 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/City_Road_Sidewalk 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/Road_Intersection-1 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/Road_Intersection-1 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/Untitled-16.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/Untitled-16.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/buliding-texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/buliding-texture.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/do.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/do.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/ent-building-pack.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/New drift Game/Texture/Materials/ent-building-pack.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Prefabs/Prefab/AsphaltSlip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Prefabs/Prefab/AsphaltSlip.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/GameControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/GameControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/LookAtTargetSetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/LookAtTargetSetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/TpsTriger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/TpsTriger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/UiManagerObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/UiManagerObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/VehicleProperties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/VehicleProperties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/CARS/CAR 3/Materials/3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/CARS/CAR 3/Materials/3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/character/TpsPlayerOk 1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/character/TpsPlayerOk 1.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/character/TpsPlayerOk.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/character/TpsPlayerOk.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/GamePlay.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/MenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/MenuScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/Splase.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/Splase.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/iTS/Vehicles/T-Car.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/iTS/Vehicles/T-Car.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +56,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c130875f7b394250a2d3617f6b5a735b13ca00/6b/f3fbd499/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Player Interactive-Ads Mediation/Pi-Scripts/PlayerInteractive_Admob.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/Entertocutscene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Standard Assets/CNControls/Scripts/Controllers/Touchpad_new.cs" root0="FORCE_HIGHLIGHTING" />
@@ -118,6 +144,8 @@
       <workItem from="1721479754727" duration="2688000" />
       <workItem from="1721628467934" duration="7375000" />
       <workItem from="1721653416925" duration="213000" />
+      <workItem from="1721669088674" duration="16961000" />
+      <workItem from="1721718678087" duration="7171000" />
     </task>
     <servers />
   </component>

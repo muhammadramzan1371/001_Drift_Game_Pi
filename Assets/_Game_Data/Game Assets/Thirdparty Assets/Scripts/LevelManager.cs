@@ -94,14 +94,14 @@ public class LevelManager : MonoBehaviour
     {
         snowParticleSystem.Play();
         RenderSettings.skybox = nightSkybox;
-        directionalLightGO.GetComponent<Light>().intensity = 0.4f;
+        directionalLightGO.GetComponent<Light>().intensity = 0f;
         snowParticleSystem.gameObject.SetActive(true);
     }
     
     public void Night()
     {
         RenderSettings.skybox = daySkybox;
-        directionalLightGO.GetComponent<Light>().intensity = 0.9f;
+        directionalLightGO.GetComponent<Light>().intensity = 1.2f;
             
         snowParticleSystem.Stop();
         snowParticleSystem.gameObject.SetActive(false);

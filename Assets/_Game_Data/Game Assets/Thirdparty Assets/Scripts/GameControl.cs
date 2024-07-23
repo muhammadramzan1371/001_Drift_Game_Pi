@@ -10,7 +10,7 @@ public class GameControl: MonoBehaviour
 {
 
     public static GameControl manager;
-    public GameObject getInVehicle;
+    public GameObject getInVehicle,IdButton;
     public static float accelFwd,accelBack;
     public static float steerAmount;
     
@@ -38,7 +38,7 @@ public class GameControl: MonoBehaviour
     {
         manager = this;
 #if  UNITY_EDITOR
-        controlMode = ControlMode.simple;
+        controlMode = ControlMode.touch;
 #else
          controlMode = ControlMode.touch;
 #endif

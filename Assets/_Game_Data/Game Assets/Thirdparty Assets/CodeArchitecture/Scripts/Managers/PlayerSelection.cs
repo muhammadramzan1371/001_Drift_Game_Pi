@@ -213,6 +213,7 @@ public Image CarIconImage;
         CharcterSlectionManger.Caller.CurrentPlayer.SetActive(true);
         CharcterSlectionManger._CameraRotate.SetChracterPos();
        // CarIconImage.sprite = CarSprites[selectedPlayerValue];
+       Invoke("OnScripte",1.5f);
     }
 
     public CharcterSlectionManger CharcterSlectionManger;
@@ -263,8 +264,19 @@ public Image CarIconImage;
        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.StartPos.transform.position;
        CharcterSlectionManger.CurrentPlayer.transform.rotation =  CharcterSlectionManger.StartPos.transform.rotation;
        CharcterSlectionManger._CameraRotate.SetChracterPos();
+       Invoke("OffScripte",1.5f);
     }
 
+    private void OffScripte()
+    {
+        MainCamera.GetComponent<Animator>().enabled = true;
+        MainCamera.GetComponent<CameraRotate>().enabled = false;
+    }
+    private void OnScripte()
+    {
+        MainCamera.GetComponent<Animator>().enabled = true;
+        MainCamera.GetComponent<CameraRotate>().enabled = true;
+    }
     public void BackFromLevelScreen()
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);

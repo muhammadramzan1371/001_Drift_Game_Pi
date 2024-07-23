@@ -240,6 +240,7 @@ public class VehicleProperties : MonoBehaviour
                 StartCoroutine(CheckisGrounded());
             }
         }
+        UiManagerObject.instance.PressButton();
         if (FindObjectOfType<Pi_AdsCall>())
         {
             FindObjectOfType<Pi_AdsCall>().showInterstitialAD();

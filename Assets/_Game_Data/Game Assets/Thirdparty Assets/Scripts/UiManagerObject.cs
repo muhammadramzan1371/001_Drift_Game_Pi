@@ -20,7 +20,7 @@ public class UiManagerObject : MonoBehaviour
     }
     public Panels panels;
     // Start is called before the first frame update
-    public GameObject ObjectivePannel, Pause, Fail, Complete, Loading,OutOfFuel,error;
+    public GameObject ObjectivePannel, Pause, Fail, Complete, Loading,OutOfFuel,error,fadeimage;
     public Text ObjectiveText,NosCountText;
     public static UiManagerObject instance;
     public int TotalLevels;
