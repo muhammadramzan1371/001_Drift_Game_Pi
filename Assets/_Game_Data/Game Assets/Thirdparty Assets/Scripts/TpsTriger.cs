@@ -10,60 +10,40 @@ public class TpsTriger : MonoBehaviour
    public Transform Hight;
    public void OnTriggerEnter(Collider other)
    {
-      //this forbike
-      if (other.gameObject.tag == "HandleTrigger")
-      {
-        // GameControl.manager.getInBike.SetActive(true);
-         GameControl.manager.getInVehicle.SetActive(false);
-      //   GameManager.Instance.CurrentCar = other.GetComponentInParent<BikeControl>().gameObject;
-        // GameManager.Instance.  mapPath = GameManager.Instance. CurrentCar.GetComponent<BikeControl>().mapPath;
-      }
       //this forcar
       if (other.gameObject.tag == "Carhandle")
       {
-         GameControl.manager.getInVehicle.SetActive(true);
-         GameControl.manager.IdButton.SetActive(false);
-         GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
-        // GameManager.Instance.  mapPath =  GameManager.Instance. CurrentCar.GetComponent<VehicleProperties>().MapPath;
+         if (GetComponent<ThirdPersonUserControl>().enabled)
+         {
+            GameControl.manager.getInVehicle.SetActive(true);
+            GameControl.manager.IdButton.SetActive(false);
+            GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
+         }
       }
    }
 
    private void OnTriggerStay(Collider other)
    {
-      if (other.gameObject.tag == "HandleTrigger")
-      {
-      //   GameControl.manager.getInBike.SetActive(true);
-         GameControl.manager.getInVehicle.SetActive(false);
-      //   GameManager.Instance.CurrentCar = other.GetComponentInParent<BikeControl>().gameObject;
-       //  GameManager.Instance.  mapPath =  GameManager.Instance. CurrentCar.GetComponent<BikeControl>().mapPath;
-      }
       //this forcar
       if (other.gameObject.tag == "Carhandle")
       {
-         GameControl.manager.getInVehicle.SetActive(true);
-         GameControl.manager.IdButton.SetActive(false);
-         GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
-        // GameManager.Instance.  mapPath =  GameManager.Instance. CurrentCar.GetComponent<VehicleProperties>().MapPath;
+         if (GetComponent<ThirdPersonUserControl>().enabled)
+         {
+            GameControl.manager.getInVehicle.SetActive(true);
+            GameControl.manager.IdButton.SetActive(false);
+            GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
+         }
       }
    }
 
    private void OnTriggerExit(Collider other)
    {
-      if (other.gameObject.tag == "HandleTrigger")
-      {
-      //    GameControl.manager.getInBike.SetActive(false);
-       //  GameManager.Instance.mapPath =  null;
-         GameManager.Instance.CurrentCar = null;
-        Logger.ShowLog("Car HandleTrigger");
-      }
       //this forcar
       if (other.gameObject.tag == "Carhandle")
       {
          GameControl.manager.getInVehicle.SetActive(false);
          GameControl.manager.IdButton.SetActive(true);
-         //GameManager.Instance.CurrentCar = null;
-      //   GameManager.Instance.mapPath =  null;
-        Logger.ShowLog("Car Handle");
+         Logger.ShowLog("Car Handle");
       }
    }
 }

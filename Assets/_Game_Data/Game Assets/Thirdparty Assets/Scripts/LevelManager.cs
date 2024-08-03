@@ -59,6 +59,8 @@ public class LevelManager : MonoBehaviour
         }
         SelectedPlayer.SetActive(true);
         Chracter.SetActive(true);
+        Chracter.GetComponent<Rigidbody>().isKinematic = false;
+        Chracter.GetComponent<ThirdPersonUserControl>().enabled = true;
         SelectedPlayer.GetComponent<Rigidbody>().velocity = Vector3.zero;
         SelectedPlayer.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         SelectedPlayer.GetComponent<Rigidbody>().isKinematic = false;

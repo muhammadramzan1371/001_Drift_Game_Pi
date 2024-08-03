@@ -1,4 +1,4 @@
-﻿// Copyright 2019 Google LLC
+// Copyright 2019 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,7 +20,9 @@ namespace Google.Play.Core.Internal
     public static class PlayCoreConstants
     {
         public const string PlayCorePackagePrefix = "com.google.android.play.core.";
+        public const string GmsCorePackagePrefix = "com.google.android.gms.";
         public const string AssetPackPackagePrefix = PlayCorePackagePrefix + "assetpacks.";
+        public const string IntegrityPackagePrefix = PlayCorePackagePrefix + "integrity.";
         public const int InternalErrorCode = -100;
     }
 }

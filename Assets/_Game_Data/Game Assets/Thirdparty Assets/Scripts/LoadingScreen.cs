@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -58,4 +59,13 @@ public class LoadingScreen : MonoBehaviour
             }
         }
     }
+
+    public void OnDisable() 
+    {
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            FindObjectOfType<Pi_AdsCall>().hideBigBanner();
+        }
+    }
+    
 }

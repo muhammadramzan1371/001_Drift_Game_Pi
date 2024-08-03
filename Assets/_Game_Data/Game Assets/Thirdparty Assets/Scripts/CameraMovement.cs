@@ -19,6 +19,7 @@ public class CameraMovement : MonoBehaviour
   
     public void UpdateCamera()
     {
+        TpsCamera.target.GetComponent<Rigidbody>().isKinematic = true;
         TpsCamera.enabled = false; 
         GetComponent<CameraTransition>().targetTransform = TpsCamera.target.GetComponent<TpsTriger>().Hight;
         GetComponent<CameraTransition>().Pos();
@@ -32,6 +33,7 @@ public class CameraMovement : MonoBehaviour
     {
         GetComponent<CameraTransition>().duration = 3.5f;
         TpsPlayer[slc_.TpsPlayervalue].SetActive(true);
+        TpsPlayer[slc_.TpsPlayervalue].GetComponent<Rigidbody>().isKinematic = false;
         TpsCamera.target = TpsPlayer[slc_.TpsPlayervalue].transform;
         GameManager.Instance.TPSPlayer= TpsPlayer[slc_.TpsPlayervalue];
         GetComponent<LookAtTargetSetter>().SetTarget(TpsPlayer[slc_.TpsPlayervalue]);

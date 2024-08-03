@@ -2943,16 +2943,16 @@ MonoBehaviour:
   velocityAngle: 0
   ABS: 1
   TCS: 1
-  ESP: 0
+  ESP: 1
   steeringHelper: 1
   tractionHelper: 0
   ABSThreshold: 0.25
   TCSThreshold: 0.25
   TCSStrength: 0.5
   ESPThreshold: 0.25
-  ESPStrength: 0.25
-  steerHelperLinearVelStrength: 0.873
-  steerHelperAngularVelStrength: 0.914
+  ESPStrength: 0.5
+  steerHelperLinearVelStrength: 0.1
+  steerHelperAngularVelStrength: 0.1
   tractionHelperStrength: 0.1
   ABSAct: 0
   TCSAct: 0

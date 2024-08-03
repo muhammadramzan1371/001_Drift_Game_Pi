@@ -3,27 +3,31 @@ using GoogleMobileAds.Api;
 using GoogleMobileAds.Common;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Firebase.Extensions;
 using GameAnalyticsSDK;
 using UnityEngine;
 using UnityEngine.Advertisements;
+
 namespace PlayerInteractive_Mediation
 {
     public class PlayerInteractive_Admob : Pi_AdsCall
     {
-        [Space(20)]
-        public string admobAppID;
+
+        public static PlayerInteractive_Admob Instance;
+       
+
+        [Space(20)] public string admobAppID;
         public string banner1;
         public string banner2;
         public string interstitialID;
         public string rewardedVideo;
         public string bigBannerID;
         public string rewardInterstitial;
-        [Space(20)]
-        public string UnityId;
+        [Space(20)] public string UnityId;
         public string Unity_Interstitial_ID = "Interstitial_Android";
         public string Unity_RewardedVideo = "Rewarded_Android";
-        [Space(20)]
-        public AdPosition banner1_Position;
+        [Space(20)] public AdPosition banner1_Position;
         public AdPosition banner2_Position;
 
         public static bool isSmallBannerLoadedFirst = false;
@@ -31,57 +35,63 @@ namespace PlayerInteractive_Mediation
         public static bool isMediumBannerLoaded = false;
         bool isAdmobInitialized = false;
 
-
+        public string ADSSwitch;
+        public bool ServerAds = true;
+        public string AdFrequencyTime="AdFrequencyTime";
+        public float AdFrequency=20f;
+        public float CurrentTime = 0;
+        
         #region Small Banner ADs Variable
-        [HideInInspector]
-        public BannerView SmallBanner_L_Medium_Ecpm;
-        [HideInInspector]
-        public BannerView SmallBanner_R_Medium_Ecpm;
+
+        [HideInInspector] public BannerView SmallBanner_L_Medium_Ecpm;
+        [HideInInspector] public BannerView SmallBanner_R_Medium_Ecpm;
 
         public static bool Logs;
 
         #endregion
 
         #region Intersitial ADs Variable
-        [HideInInspector]
-        public InterstitialAd Interstitial_High_Ecpm;
+
+        [HideInInspector] public InterstitialAd Interstitial_High_Ecpm;
 
         public delegate void InterstitialUnity();
+
         public static event InterstitialUnity Int_Unity;
 
         public static bool Interstitial_HighEcpm = true, UnityAds = false;
+
         #endregion
 
         #region RewardVideo ADs Variable
+
         private static RewardUserDelegate NotifyReward;
 
-        [HideInInspector]
-        public RewardedAd rewardBasedVideo;
+        [HideInInspector] public RewardedAd rewardBasedVideo;
 
         public delegate void RewardVideoUnity();
+
         public static event RewardVideoUnity RewardVideo_Unity;
         public static bool RewardVideo_High_Ecpm = true, UnityRewarded = false;
+
         #endregion
 
         #region Medium Banner ADs Variable
 
-        [HideInInspector]
-        public BannerView MediumBannerMediumEcpm;
+        [HideInInspector] public BannerView MediumBannerMediumEcpm;
 
         #endregion
 
         #region Rewared Interstitial ADs Variable
 
-        [HideInInspector]
-        public RewardedInterstitialAd rewardedInterstitialAd;
-        [HideInInspector]
-        public bool rewardedInterstitialHighECPMLoaded;
+        [HideInInspector] public RewardedInterstitialAd rewardedInterstitialAd;
+        [HideInInspector] public bool rewardedInterstitialHighECPMLoaded;
 
         #endregion
 
 
         private void Awake()
         {
+            Instance = this;
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
             DontDestroyOnLoad(this.gameObject);
             Logs = disbaleLogMode;
@@ -110,23 +120,29 @@ namespace PlayerInteractive_Mediation
 #endif
             }
         }
+
         private void Start()
         {
             InitAdmob();
             InitializeAds();
+            InitializeFirebase();
         }
+
         public void InitializeAds()
         {
-            //Advertisement.Initialize(UnityId, testingMode, this);
+            // Advertisement.Initialize(UnityId, testingMode, this);
         }
+
         public void OnInitializationComplete()
         {
             PlayerInteractive_Logger.Pi_LogEvent("PI_unity_advertisement_initialized_done");
         }
-        public void OnInitializationFailed( string message)
+
+        public void OnInitializationFailed(string message)
         {
             Debug.Log($"PI_unity_advertisement_initialization_failed: {ToString()} - {message}");
         }
+
         private void InitAdmob()
         {
             PlayerInteractive_Logger.Pi_LogSender(Pi_AdmobEvents.Pi_Initializing);
@@ -150,9 +166,10 @@ namespace PlayerInteractive_Mediation
                 }
             });
 #if UNITY_IOS
-        MobileAds.SetiOSAppPauseOnBackground(true);    
+        MobileAds.SetiOSAppPauseOnBackground(true);
 #endif
         }
+
         void MediationAdapterConsent(string AdapterClassname)
         {
             if (AdapterClassname.Contains("ExampleClass"))
@@ -164,6 +181,7 @@ namespace PlayerInteractive_Mediation
                 loadRewardInt();
                 loadRewardVideoAD();
             }
+
             if (AdapterClassname.Contains("MobileAds"))
             {
                 isAdmobInitialized = true;
@@ -177,17 +195,22 @@ namespace PlayerInteractive_Mediation
 
 
         #region BannerCodeBlock
+
         public override bool checkSmallFirstBannerAD()
         {
             return isSmallBannerLoadedFirst;
         }
+
         public override void loadBanner1()
         {
-            if (!PreferenceManager.GetAdsStatus() || checkSmallFirstBannerAD() || smallBanner_Status == AdsLoadingStatus.Loading)
+            if (!PreferenceManager.GetAdsStatus() || checkSmallFirstBannerAD() ||
+                smallBanner_Status == AdsLoadingStatus.Loading)
             {
                 return;
             }
-            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork | Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
+
+            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork |
+                Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
             {
                 this.SmallBanner_L_Medium_Ecpm = new BannerView(banner1, AdSize.Banner, banner1_Position);
                 PlayerInteractive_Logging.Log("PI_FirstSmallBanner_M_Ecpm");
@@ -197,6 +220,10 @@ namespace PlayerInteractive_Mediation
                 this.SmallBanner_L_Medium_Ecpm.Hide();
             }
         }
+        private void Update()
+        {
+            CurrentTime += Time.deltaTime;
+        }
         public override void hideBanner1()
         {
             if (this.SmallBanner_L_Medium_Ecpm != null)
@@ -205,17 +232,19 @@ namespace PlayerInteractive_Mediation
                 PlayerInteractive_Logging.Log("PI_Admob:smallBanner:Hide_M_Ecpm");
             }
         }
+
         public void ShowBanner()
         {
             showBanner1();
         }
+
         public override void showBanner1()
         {
             hideBanner1();
 
             try
             {
-                if (!PreferenceManager.GetAdsStatus() || !isAdmobInitialized)
+                if (!PreferenceManager.GetAdsStatus() || !isAdmobInitialized || !ServerAds)
                 {
 
                     return;
@@ -246,12 +275,13 @@ namespace PlayerInteractive_Mediation
                 PlayerInteractive_Logging.Log("PI_Small Banner Error: " + error);
             }
         }
+
         private void BindSmallBannerFirstMediumEcpm()
         {
             this.SmallBanner_L_Medium_Ecpm.OnBannerAdLoaded += () =>
             {
                 PlayerInteractive_Logging.Log("PI_Banner view loaded an ad with response : "
-                    + this.SmallBanner_L_Medium_Ecpm.GetResponseInfo());
+                                              + this.SmallBanner_L_Medium_Ecpm.GetResponseInfo());
 
                 MobileAdsEventExecutor.ExecuteInUpdate(() =>
                 {
@@ -274,6 +304,7 @@ namespace PlayerInteractive_Mediation
             };
 
         }
+
         /// <summary>
         /// 2nd BannerCode
         /// </summary>
@@ -283,7 +314,7 @@ namespace PlayerInteractive_Mediation
             this.SmallBanner_R_Medium_Ecpm.OnBannerAdLoaded += () =>
             {
                 PlayerInteractive_Logging.Log("PI_Banner view loaded an ad with response : "
-                    + this.SmallBanner_R_Medium_Ecpm.GetResponseInfo());
+                                              + this.SmallBanner_R_Medium_Ecpm.GetResponseInfo());
 
 
                 MobileAdsEventExecutor.ExecuteInUpdate(() =>
@@ -315,17 +346,22 @@ namespace PlayerInteractive_Mediation
             };
 
         }
+
         public override bool checkSmallSecondBannedAD()
         {
             return isSmallBannerLoadedSecond;
         }
+
         public override void loadBanner2()
         {
-            if (!PreferenceManager.GetAdsStatus() || checkSmallSecondBannedAD() || small2ndBanner_Status == AdsLoadingStatus.Loading)
+            if (!PreferenceManager.GetAdsStatus() || checkSmallSecondBannedAD() ||
+                small2ndBanner_Status == AdsLoadingStatus.Loading)
             {
                 return;
             }
-            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork | Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
+
+            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork |
+                Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
             {
 
                 this.SmallBanner_R_Medium_Ecpm = new BannerView(banner2, AdSize.Banner, banner2_Position);
@@ -339,6 +375,7 @@ namespace PlayerInteractive_Mediation
 
             }
         }
+
         public override void hideBanner2()
         {
             if (this.SmallBanner_R_Medium_Ecpm != null)
@@ -347,12 +384,13 @@ namespace PlayerInteractive_Mediation
                 PlayerInteractive_Logging.Log("PI_Admob:smallBanner:Hide_M_Ecpm");
             }
         }
+
         public override void showBanner2()
         {
             hideBanner2();
             try
             {
-                if (!PreferenceManager.GetAdsStatus() || !isAdmobInitialized)
+                if (!PreferenceManager.GetAdsStatus() || !isAdmobInitialized || !ServerAds)
                 {
                     return;
                 }
@@ -383,6 +421,7 @@ namespace PlayerInteractive_Mediation
         #endregion
 
         #region MediumBannerCodeBlocks
+
         public override bool checkBigBannerAD()
         {
             return isMediumBannerLoaded;
@@ -394,9 +433,15 @@ namespace PlayerInteractive_Mediation
             {
                 return;
             }
-            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork | Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
-            {
 
+            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork |
+                Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
+            {
+                if (MediumBannerMediumEcpm != null)
+                {
+                    MediumBannerMediumEcpm.Destroy();
+                    MediumBannerMediumEcpm = null;
+                }
                 PlayerInteractive_Logger.Pi_LogSender(Pi_AdmobEvents.Pi_MediumBanner_Load_MediumEcpm);
                 this.MediumBannerMediumEcpm = new BannerView(bigBannerID, AdSize.MediumRectangle, AdPosition.BottomLeft);
                 BindMediumBannerEvents_M_Ecpm();
@@ -407,11 +452,12 @@ namespace PlayerInteractive_Mediation
             }
 
         }
+
         public override void showBigBannerAD(AdPosition pos)
         {
             try
             {
-                if (!PreferenceManager.GetAdsStatus() || !isAdmobInitialized)
+                if (!PreferenceManager.GetAdsStatus() || !isAdmobInitialized || !ServerAds)
                 {
                     return;
                 }
@@ -433,6 +479,7 @@ namespace PlayerInteractive_Mediation
                 PlayerInteractive_Logging.Log("PI_Medium Banner Error: " + e);
             }
         }
+
         public override void hideBigBanner()
         {
 
@@ -454,7 +501,7 @@ namespace PlayerInteractive_Mediation
             this.MediumBannerMediumEcpm.OnBannerAdLoaded += () =>
             {
                 PlayerInteractive_Logging.Log("PI_Banner view loaded an ad with response : "
-                    + this.MediumBannerMediumEcpm.GetResponseInfo());
+                                              + this.MediumBannerMediumEcpm.GetResponseInfo());
 
                 MobileAdsEventExecutor.ExecuteInUpdate(() =>
                 {
@@ -503,9 +550,7 @@ namespace PlayerInteractive_Mediation
 
                 MobileAdsEventExecutor.ExecuteInUpdate(() =>
                 {
-
                     PlayerInteractive_Logger.Pi_LogSender(Pi_AdmobEvents.Pi_MediumBanner_Displayed_MediumEcpm);
-
                 });
             };
 
@@ -513,10 +558,7 @@ namespace PlayerInteractive_Mediation
             {
                 PlayerInteractive_Logging.Log("PI_Banner view full screen content closed.");
 
-                MobileAdsEventExecutor.ExecuteInUpdate(() =>
-                {
-
-                });
+                MobileAdsEventExecutor.ExecuteInUpdate(() => { });
             };
         }
 
@@ -524,6 +566,7 @@ namespace PlayerInteractive_Mediation
         #endregion
 
         #region IntersititialCodeBlock
+
         public override bool checkInterstitialAD()
         {
             if (this.Interstitial_High_Ecpm != null)
@@ -541,11 +584,21 @@ namespace PlayerInteractive_Mediation
 
         public override void showInterstitialAD()
         {
-            if (!PreferenceManager.GetAdsStatus() || !isAdmobInitialized)
+            if (!PreferenceManager.GetAdsStatus() || !isAdmobInitialized || !ServerAds)
             {
                 return;
             }
 
+            
+            if (CurrentTime < AdFrequency && AdFrequency !=0)
+            {
+                Debug.Log("Frequency Ad Return");
+                return;
+            }
+            CurrentTime = 0;
+            
+            
+            
             if (Interstitial_HighEcpm)
             {
                 if (this.Interstitial_High_Ecpm != null)
@@ -554,9 +607,9 @@ namespace PlayerInteractive_Mediation
                     {
                         if (Pi_appOpenHandler.Instance)
                             Pi_appOpenHandler.Instance.AdShowing = true;
-
-                        PlayerInteractive_Logger.Pi_LogSender(Pi_AdmobEvents.Pi_Interstitial_WillDisplay_High_Ecpm);
                         GameAnalytics.NewAdEvent(GAAdAction.Show,GAAdType.Interstitial,"Admob","Admob_Interstitial");
+                        PlayerInteractive_Logger.Pi_LogSender(Pi_AdmobEvents.Pi_Interstitial_WillDisplay_High_Ecpm);
+
                         this.Interstitial_High_Ecpm.Show();
 
                     }
@@ -566,21 +619,24 @@ namespace PlayerInteractive_Mediation
             {
                 if (Pi_appOpenHandler.Instance)
                     Pi_appOpenHandler.Instance.AdShowing = true;
-
-                PlayerInteractive_Logger.Pi_LogEvent("PI_unity_interstitial_loaded");
                 GameAnalytics.NewAdEvent(GAAdAction.Show,GAAdType.Interstitial,"Unity","Unity_Interstitial");
-             //   Advertisement.Show(Unity_Interstitial_ID, this);
+                PlayerInteractive_Logger.Pi_LogEvent("PI_unity_interstitial_loaded");
+
+                //  Advertisement.Show(Unity_Interstitial_ID, this);
             }
         }
+
         public override void loadInterstitialAD()
         {
 
-            if (!isAdmobInitialized || checkInterstitialAD() /*|| interstitial_Status == AdsLoadingStatus.Loading*/ || !PreferenceManager.GetAdsStatus())
+            if (!isAdmobInitialized || checkInterstitialAD() || interstitial_Status == AdsLoadingStatus.Loading || !PreferenceManager.GetAdsStatus())
             {
 
                 return;
             }
-            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork | Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
+
+            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork |
+                Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
             {
                 if (Interstitial_HighEcpm)
                 {
@@ -594,17 +650,19 @@ namespace PlayerInteractive_Mediation
                         if (error != null)
                         {
                             PlayerInteractive_Logger.Pi_LogEvent("PI_Interstitial ad failed to load an ad with error : " + error);
-
+                            interstitial_Status = AdsLoadingStatus.NoInventory;
                             return;
                         }
 
                         if (ad == null)
                         {
                             PlayerInteractive_Logger.Pi_LogEvent("PI_Unexpected error: Interstitial load event fired with null ad and null error.");
+                            interstitial_Status = AdsLoadingStatus.NoInventory;
                             return;
                         }
 
-                        PlayerInteractive_Logger.Pi_LogEvent("PI_Interstitial ad loaded with response : " + ad.GetResponseInfo());
+                        PlayerInteractive_Logger.Pi_LogEvent("PI_Interstitial ad loaded with response : " +
+                                                             ad.GetResponseInfo());
                         this.Interstitial_High_Ecpm = ad;
 
                         BindIntersititialHighEcpmEvents();
@@ -613,7 +671,7 @@ namespace PlayerInteractive_Mediation
                 else if (UnityAds)
                 {
                     PlayerInteractive_Logger.Pi_LogEvent("PI_Load_Unity_Int");
-                  //  Advertisement.Load(Unity_Interstitial_ID, this);
+                    // Advertisement.Load(Unity_Interstitial_ID, this);
                 }
             }
         }
@@ -621,6 +679,7 @@ namespace PlayerInteractive_Mediation
         #endregion
 
         #region IntersititialEventCallBacks
+
         //HighEcpmEvents
         private void BindIntersititialHighEcpmEvents()
         {
@@ -686,7 +745,8 @@ namespace PlayerInteractive_Mediation
             };
             this.Interstitial_High_Ecpm.OnAdFullScreenContentFailed += (AdError error) =>
             {
-                PlayerInteractive_Logger.Pi_LogEvent("PI_Interstitial ad failed to open full screen content with error : "
+                PlayerInteractive_Logger.Pi_LogEvent(
+                    "PI_Interstitial ad failed to open full screen content with error : "
                     + error);
 
                 MobileAdsEventExecutor.ExecuteInUpdate(() =>
@@ -708,13 +768,16 @@ namespace PlayerInteractive_Mediation
         #endregion
 
         #region RewardedVideoCodeBlock
+
         public override void loadRewardVideoAD()
         {
             if (!isAdmobInitialized || checkRewardAD() || rewardADs_Status == AdsLoadingStatus.Loading)
             {
                 return;
             }
-            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork | Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
+
+            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork |
+                Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
             {
                 if (RewardVideo_High_Ecpm)
                 {
@@ -733,13 +796,15 @@ namespace PlayerInteractive_Mediation
                             {
                                 RewardVideo_Unity();
                             }
+
                             PlayerInteractive_Logging.Log("PI_Rewarded ad failed to load an ad with error : " + error);
                             return;
                         }
 
                         if (ad == null)
                         {
-                            PlayerInteractive_Logging.Log("PI_Unexpected error: Rewarded load event fired with null ad and null error.");
+                            PlayerInteractive_Logging.Log(
+                                "PI_Unexpected error: Rewarded load event fired with null ad and null error.");
                             return;
                         }
 
@@ -750,10 +815,11 @@ namespace PlayerInteractive_Mediation
                 }
                 else if (UnityRewarded)
                 {
-                    //Advertisement.Load(Unity_RewardedVideo);
+                    ///  Advertisement.Load(Unity_RewardedVideo);
                 }
             }
         }
+
         public override bool checkRewardAD()
         {
             if (this.rewardBasedVideo != null)
@@ -761,6 +827,7 @@ namespace PlayerInteractive_Mediation
             else
                 return false;
         }
+
         public override void showRewardVideo(RewardUserDelegate _delegate)
         {
             if (RewardVideo_High_Ecpm)
@@ -784,10 +851,9 @@ namespace PlayerInteractive_Mediation
 
                     this.rewardBasedVideo.Show((Reward reward) =>
                     {
-
                         PlayerInteractive_Logging.Log(String.Format("PI_Rewarded ad granted a reward: {0} {1}",
-                                                reward.Amount,
-                                                reward.Type));
+                            reward.Amount,
+                            reward.Type));
                     });
                 }
                 else if (UnityRewarded)
@@ -799,7 +865,7 @@ namespace PlayerInteractive_Mediation
                     Debug.Log("PI_Unity Rewarded Second Statment pass ");
                     NotifyReward = _delegate;
 
-                    //Advertisement.Show(Unity_RewardedVideo, this);
+                    //  Advertisement.Show(Unity_RewardedVideo, this);
                 }
             }
             else if (UnityRewarded)
@@ -809,20 +875,18 @@ namespace PlayerInteractive_Mediation
 
                 NotifyReward = _delegate;
 
-              //  Advertisement.Show(Unity_RewardedVideo, this);
+                //  Advertisement.Show(Unity_RewardedVideo, this);
             }
         }
 
         #endregion
 
         #region RewardedVideoEvents
+
         //***** Rewarded Events *****//
         private void BindRewardedEvents_H_Ecpm()
         {
-            rewardBasedVideo.OnAdPaid += (AdValue adValue) =>
-            {
-
-            };
+            rewardBasedVideo.OnAdPaid += (AdValue adValue) => { };
 
             rewardBasedVideo.OnAdImpressionRecorded += () =>
             {
@@ -841,10 +905,7 @@ namespace PlayerInteractive_Mediation
                 });
             };
 
-            rewardBasedVideo.OnAdClicked += () =>
-            {
-                PlayerInteractive_Logging.Log("PI_Rewarded ad was clicked.");
-            };
+            rewardBasedVideo.OnAdClicked += () => { PlayerInteractive_Logging.Log("PI_Rewarded ad was clicked."); };
 
             rewardBasedVideo.OnAdFullScreenContentOpened += () =>
             {
@@ -884,7 +945,8 @@ namespace PlayerInteractive_Mediation
 
             rewardBasedVideo.OnAdFullScreenContentFailed += (AdError error) =>
             {
-                PlayerInteractive_Logging.Log("PI_Rewarded ad failed to open full screen content with error : " + error);
+                PlayerInteractive_Logging.Log("PI_Rewarded ad failed to open full screen content with error : " +
+                                              error);
 
                 MobileAdsEventExecutor.ExecuteInUpdate(() =>
                 {
@@ -909,6 +971,7 @@ namespace PlayerInteractive_Mediation
         #endregion
 
         #region RewardedInterstial
+
         public override void loadRewardInt()
         {
             if (!isAdmobInitialized || checkRewardIntAD() || rewardInterstitial_Status == AdsLoadingStatus.Loading)
@@ -916,30 +979,35 @@ namespace PlayerInteractive_Mediation
                 return;
             }
 
-            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork || Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
+            if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork ||
+                Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
             {
                 PlayerInteractive_Logger.Pi_LogSender(Pi_AdmobEvents.Pi_LoadRewardedInterstitialAd_H_ECPM);
                 var request = new AdRequest();
                 rewardInterstitial_Status = AdsLoadingStatus.Loading;
 
-                RewardedInterstitialAd.Load(rewardInterstitial, request, (RewardedInterstitialAd ad, LoadAdError error) =>
-                {
-                    if (error != null)
+                RewardedInterstitialAd.Load(rewardInterstitial, request,
+                    (RewardedInterstitialAd ad, LoadAdError error) =>
                     {
-                        PlayerInteractive_Logging.Log("PI_Rewarded interstitial ad failed to load an ad with error : " + error);
-                        return;
-                    }
+                        if (error != null)
+                        {
+                            PlayerInteractive_Logging.Log(
+                                "PI_Rewarded interstitial ad failed to load an ad with error : " + error);
+                            return;
+                        }
 
-                    if (ad == null)
-                    {
-                        PlayerInteractive_Logging.Log("PI_Unexpected error: Rewarded interstitial load event fired with null ad and null error.");
-                        return;
-                    }
+                        if (ad == null)
+                        {
+                            PlayerInteractive_Logging.Log(
+                                "PI_Unexpected error: Rewarded interstitial load event fired with null ad and null error.");
+                            return;
+                        }
 
-                    PlayerInteractive_Logging.Log("PI_Rewarded interstitial ad loaded with response : " + ad.GetResponseInfo());
-                    rewardedInterstitialAd = ad;
-                    RegisterEventHandlers(ad);
-                });
+                        PlayerInteractive_Logging.Log("PI_Rewarded interstitial ad loaded with response : " +
+                                                      ad.GetResponseInfo());
+                        rewardedInterstitialAd = ad;
+                        RegisterEventHandlers(ad);
+                    });
             }
         }
 
@@ -988,18 +1056,12 @@ namespace PlayerInteractive_Mediation
         {
             rewardedInterstitialHighECPMLoaded = true;
 
-            ad.OnAdPaid += (AdValue adValue) =>
-            {
-
-            };
+            ad.OnAdPaid += (AdValue adValue) => { };
             ad.OnAdImpressionRecorded += () =>
             {
                 PlayerInteractive_Logging.Log("PI_Rewarded interstitial ad recorded an impression.");
             };
-            ad.OnAdClicked += () =>
-            {
-                PlayerInteractive_Logging.Log("PI_Rewarded interstitial ad was clicked.");
-            };
+            ad.OnAdClicked += () => { PlayerInteractive_Logging.Log("PI_Rewarded interstitial ad was clicked."); };
             ad.OnAdFullScreenContentOpened += () =>
             {
                 PlayerInteractive_Logging.Log("PI_Rewarded interstitial ad has presented.");
@@ -1042,6 +1104,7 @@ namespace PlayerInteractive_Mediation
         #endregion
 
         #region UnityCallBack
+
         public void OnUnityAdsAdLoaded(string adUnitId)
         {
             if (adUnitId == Unity_Interstitial_ID)
@@ -1079,7 +1142,7 @@ namespace PlayerInteractive_Mediation
             // Optionally execute code if the Ad Unit fails to load, such as attempting to try again.
         }
 
-        public void OnUnityAdsShowFailure(string adUnitId,  string message)
+        public void OnUnityAdsShowFailure(string adUnitId, string message)
         {
             Debug.Log($"PI_Error showing Ad Unit {adUnitId}: {ToString()} - {message}");
             if (adUnitId == Unity_Interstitial_ID)
@@ -1101,8 +1164,14 @@ namespace PlayerInteractive_Mediation
             // Optionally execute code if the Ad Unit fails to show, such as loading another ad.
         }
 
-        public void OnUnityAdsShowStart(string adUnitId) { }
-        public void OnUnityAdsShowClick(string adUnitId) { }
+        public void OnUnityAdsShowStart(string adUnitId)
+        {
+        }
+
+        public void OnUnityAdsShowClick(string adUnitId)
+        {
+        }
+
         public void OnUnityAdsShowComplete(string adUnitId)
         {
 
@@ -1128,7 +1197,119 @@ namespace PlayerInteractive_Mediation
                     NotifyReward();
                 }
                 // Load another ad:
-                //Advertisement.Load(Unity_RewardedVideo, this);
+                //  Advertisement.Load(Unity_RewardedVideo, this);
+            }
+        }
+
+        #endregion
+
+
+
+        #region fireBaseCode
+
+        public static bool isFirebaseInitialized = false;
+
+        void InitializeFirebase()
+        {
+            // [START set_defaults]
+            System.Collections.Generic.Dictionary<string, object> defaults =
+                new System.Collections.Generic.Dictionary<string, object>();
+
+            // These are the values that are used if we haven't fetched data from the
+            // server
+            // yet, or if we ask for values that the server doesn't have:
+
+
+            Firebase.RemoteConfig.FirebaseRemoteConfig.DefaultInstance.SetDefaultsAsync(defaults)
+                .ContinueWithOnMainThread(task =>
+                {
+                    // [END set_defaults]
+                    PlayerInteractive_Logging.Log("RemoteConfig configured and ready!");
+                    isFirebaseInitialized = true;
+                    FetchDataAsync();
+                });
+        }
+
+        public void DisplayData()
+        {
+            PlayerInteractive_Logging.Log("Current Data:");
+            
+            ServerAds = Firebase.RemoteConfig.FirebaseRemoteConfig.DefaultInstance.GetValue(ADSSwitch).BooleanValue;
+            
+            
+            {
+                if (testingMode == true)
+                {
+                    ServerAds = true;
+                    AdFrequency = 0;
+                }
+                else
+                {
+                    ServerAds = Firebase.RemoteConfig.FirebaseRemoteConfig.DefaultInstance.GetValue(ADSSwitch).BooleanValue;
+                    AdFrequency = Firebase.RemoteConfig.FirebaseRemoteConfig.DefaultInstance.GetValue(AdFrequencyTime).LongValue;
+                }
+            }
+           
+
+            InitAdmob();
+        }
+
+        public Task FetchDataAsync()
+        {
+            PlayerInteractive_Logging.Log("Fetching data...");
+            System.Threading.Tasks.Task fetchTask =
+                Firebase.RemoteConfig.FirebaseRemoteConfig.DefaultInstance.FetchAsync(
+                    TimeSpan.Zero);
+            return fetchTask.ContinueWithOnMainThread(FetchComplete);
+        }
+
+        void FetchComplete(Task fetchTask)
+        {
+            if (fetchTask.IsCanceled)
+            {
+                PlayerInteractive_Logging.Log("Fetch canceled.");
+            }
+            else if (fetchTask.IsFaulted)
+            {
+                PlayerInteractive_Logging.Log("Fetch encountered an error.");
+            }
+            else if (fetchTask.IsCompleted)
+            {
+                PlayerInteractive_Logging.Log("Fetch completed successfully!");
+            }
+
+            var info = Firebase.RemoteConfig.FirebaseRemoteConfig.DefaultInstance.Info;
+            switch (info.LastFetchStatus)
+            {
+                case Firebase.RemoteConfig.LastFetchStatus.Success:
+                    Firebase.RemoteConfig.FirebaseRemoteConfig.DefaultInstance.ActivateAsync()
+                        .ContinueWithOnMainThread(task =>
+                        {
+                            PlayerInteractive_Logging.Log(String.Format("Remote data loaded and ready (last fetch time {0}).", info.FetchTime));
+                            DisplayData();
+                        });
+
+                    break;
+                case Firebase.RemoteConfig.LastFetchStatus.Failure:
+                    InitAdmob();
+                    switch (info.LastFetchFailureReason)
+                    {
+
+                        case Firebase.RemoteConfig.FetchFailureReason.Error:
+                            PlayerInteractive_Logging.Log("Fetch failed for unknown reason");
+
+                            break;
+                        case Firebase.RemoteConfig.FetchFailureReason.Throttled:
+                            PlayerInteractive_Logging.Log("Fetch throttled until " + info.ThrottledEndTime);
+                            break;
+                    }
+
+                    break;
+                case Firebase.RemoteConfig.LastFetchStatus.Pending:
+                    PlayerInteractive_Logging.Log("Latest Fetch call still pending.");
+                    InitAdmob();
+                    break;
+
             }
         }
 
