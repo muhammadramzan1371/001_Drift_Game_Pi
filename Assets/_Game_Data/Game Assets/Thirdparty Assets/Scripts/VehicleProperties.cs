@@ -25,11 +25,12 @@ public enum  CarNames
 public class VehicleProperties : MonoBehaviour
 {
     public Transform TpsPosition;
-    public GameObject ConeEffect;
+    public GameObject ConeEffect,vedio;
     public Rigidbody Rb;
     public RCC_CarControllerV3 controller;
     
     public bool Highbrake = false;
+    public bool IsOnVedio = false;
     
     [Header("SettIngWheel")]
     
@@ -61,6 +62,8 @@ public class VehicleProperties : MonoBehaviour
             {
                 controller = GetComponent<RCC_CarControllerV3>();
             }
+
+            vedio = ConeEffect.transform.GetChild(0).gameObject;
         }
 
     public GameObject AllAudioSource;
@@ -86,7 +89,7 @@ public class VehicleProperties : MonoBehaviour
             Rb.isKinematic = false;
             Rb.useGravity = true;
         }
-       controller.KillOrStartEngine();
+        controller.KillOrStartEngine();
         transform.name = "PlayerCar";
         GetComponent<RCC_CameraConfig>().enabled = true;
         if (GetComponent<TSSimpleCar>())
@@ -124,37 +127,43 @@ public class VehicleProperties : MonoBehaviour
         
         
         
-        
+        UiManagerObject.instance.PressButton();
         if ( GetComponent<CarShadow>())
         {
             GetComponent<CarShadow>().enabled = true;
         }
- 
 
-        await Task.Delay(2000);
+        if (IsOnInterSitail)
+        {
+            if (FindObjectOfType<Pi_AdsCall>())
+            {
+                FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
+                PrefsManager.SetInterInt(1);
+            }
+            await Task.Delay(2000);
+            if (FindObjectOfType<Pi_AdsCall>())
+            {
+                if (PrefsManager.GetInterInt() != 5)
+                {
+                    FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+                }
+            }
+        }
+        
         if (AllAudioSource!=null)
         {
             AllAudioSource.SetActive(true);
         }
-        if (FindObjectOfType<Pi_AdsCall>())
-        {
-            FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
-            PrefsManager.SetInterInt(1);
-        }
-        UiManagerObject.instance.PressButton();
-        await Task.Delay(2000);
-        if (FindObjectOfType<Pi_AdsCall>())
-        {
-            if (PrefsManager.GetInterInt() != 5)
-            {
-                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
-            }
-        }
-
-        UiManagerObject.instance.AdShow = true;
     }
     //public bool IsRewarded=false;
     public bool TrafficVehicle=false;
+    public bool IsOnInterSitail=false;
+    
+    
+    
+    
+    
+    
 
     public async void GetOutVehicle()
     {
@@ -183,7 +192,8 @@ public class VehicleProperties : MonoBehaviour
         
         
         GetComponent<RCC_CameraConfig>().enabled = false;
-        
+        GetComponent<Rigidbody>().velocity = Vector3.zero; 
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         
         
         if (GetComponent<CarShadow>())
@@ -241,19 +251,6 @@ public class VehicleProperties : MonoBehaviour
             }
         }
         UiManagerObject.instance.PressButton();
-        if (FindObjectOfType<Pi_AdsCall>())
-        {
-            FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
-            PrefsManager.SetInterInt(1);
-        }
-        await Task.Delay(2000);
-        if (FindObjectOfType<Pi_AdsCall>())
-        {
-            if (PrefsManager.GetInterInt() != 5)
-            {
-                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
-            }
-        }
     }
 
     public IEnumerator CheckisGrounded()

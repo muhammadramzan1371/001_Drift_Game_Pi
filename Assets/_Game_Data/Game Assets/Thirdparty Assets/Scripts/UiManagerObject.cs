@@ -100,31 +100,10 @@ public class UiManagerObject : MonoBehaviour
         
     }
 
-    public bool AdShow = false;
 
-    public async void PressButton()
+    public  void PressButton()
     {
-        if (AdShow)
-        {
-            if (FindObjectOfType<Pi_AdsCall>())
-            {
-                FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
-                PrefsManager.SetInterInt(1);
-            }
-            Driftbutton.onClick.Invoke();
-            await Task.Delay(2000);
-            if (FindObjectOfType<Pi_AdsCall>())
-            {
-                if (PrefsManager.GetInterInt() != 5)
-                {
-                    FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
-                }
-            }
-        }
-        else
-        {
-            Driftbutton.onClick.Invoke(); 
-        }
+        Driftbutton.onClick.Invoke();
     }
 
     public void FillFuelbar(float fillAmount) {
@@ -213,8 +192,8 @@ public class UiManagerObject : MonoBehaviour
             PrefsManager.SetInterInt(1);
         }
         Pause.SetActive(true);
-        HideGamePlay();
         SetTimeScale(0);
+        HideGamePlay();
         await Task.Delay(2000);
         if (FindObjectOfType<Pi_AdsCall>())
         {
@@ -223,18 +202,16 @@ public class UiManagerObject : MonoBehaviour
                 FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
             }
         }
-      
         GameManager.Instance.CurrentCar.GetComponent<Rigidbody>().velocity = Vector3.zero;
         GameManager.Instance.CurrentCar.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-       
     }
 
     public void Resume()
     {
+        SetTimeScale(1);
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         Pause.SetActive(false);
         ShowGamePlay();
-        SetTimeScale(1);
         if (FindObjectOfType<Pi_AdsCall>())
         {
             if (PrefsManager.GetInterInt() != 5)
@@ -246,8 +223,8 @@ public class UiManagerObject : MonoBehaviour
 
     public void Restart()
     {
-        SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         SetTimeScale(1);
+        SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         Loading.SetActive(true);
         Loading.GetComponentInChildren<bl_SceneLoader>().LoadLevel("GamePlay");
         if (PrefsManager.GetInterInt()!=5)
@@ -259,8 +236,8 @@ public class UiManagerObject : MonoBehaviour
 
     public void Home()
     {
-        SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         SetTimeScale(1);
+        SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         Loading.SetActive(true);
         Loading.GetComponentInChildren<bl_SceneLoader>().LoadLevel("MenuScene");
         if (PrefsManager.GetInterInt()!=5)
@@ -281,6 +258,7 @@ public class UiManagerObject : MonoBehaviour
             PrefsManager.SetInterInt(1);
         }
         AdBrakepanel.SetActive(false);
+        SetTimeScale(1);
     }
 
     public void LevelCompleteNow()
@@ -370,7 +348,6 @@ public class UiManagerObject : MonoBehaviour
     }
     public void SetTimeScale(float timescale)
     {
-
         Time.timeScale = timescale;
     }
 

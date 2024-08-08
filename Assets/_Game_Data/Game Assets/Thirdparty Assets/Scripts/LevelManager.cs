@@ -65,6 +65,8 @@ public class LevelManager : MonoBehaviour
         SelectedPlayer.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         SelectedPlayer.GetComponent<Rigidbody>().isKinematic = false;
         SelectedPlayer.GetComponent<VehicleProperties>().ConeEffect.SetActive(false);
+        SelectedPlayer.GetComponent<VehicleProperties>().ConeEffect.transform.GetChild(0).gameObject.SetActive(false);
+        SelectedPlayer.GetComponent<VehicleProperties>().IsOnVedio=false;
         SelectedPlayer.GetComponent<CarShadow>().enabled = true;
     }
     public void SetTransform(Transform playerposition, Transform defulcar)

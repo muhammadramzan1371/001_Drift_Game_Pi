@@ -21,7 +21,6 @@ public class RCC_MobileButtons : MonoBehaviour {
 	public RCC_UIController leftButton;
 	public RCC_UIController rightButton;
 	public RCC_UISteeringWheelController steeringWheel;
-	public RCC_UIController Getouthandbrake;
 	public RCC_UIController handbrakeButton;
 	public RCC_UIController NOSButton;
 	public GameObject gearButton;
@@ -140,7 +139,6 @@ public class RCC_MobileButtons : MonoBehaviour {
 			gyroInput = 0f;
 		
 		handbrakeInput = GetInput(handbrakeButton);
-		handbrakeInput = GetInput(Getouthandbrake);
 		NOSInput = Mathf.Clamp(GetInput(NOSButton) * 2.5f, 1f, 2.5f);
 
 		for (int i = 0; i < carControllers.Length; i++) 

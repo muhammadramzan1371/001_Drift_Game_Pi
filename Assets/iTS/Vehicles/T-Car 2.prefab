@@ -115,6 +115,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3000988179965309229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950353990873335970}
+  m_Layer: 3
+  m_Name: TPSPosition (1)
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &950353990873335970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000988179965309229}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6335183031566384306}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3757844969625606377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3821,12 +3851,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TpsPosition: {fileID: 6335183031566384306}
   ConeEffect: {fileID: 6335183031566384305}
+  vedio: {fileID: 0}
   Rb: {fileID: 0}
   controller: {fileID: 0}
   Highbrake: 0
+  IsOnVedio: 0
   isSetWheelsModel: 0
   AllAudioSource: {fileID: 0}
   TrafficVehicle: 1
+  IsOnInterSitail: 1
   Grounded: 0
   groundCheckDistance: 1.1
   LayerMask:
@@ -3990,7 +4023,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.76, y: 0.518, z: 0.855}
   m_LocalScale: {x: 1.1904761, y: 1.1904761, z: 1.1904761}
-  m_Children: []
+  m_Children:
+  - {fileID: 950353990873335970}
   m_Father: {fileID: 6335183031223854907}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Firebase.Extensions;
 using GameAnalyticsSDK;
+using ToastPlugin;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
@@ -877,6 +878,10 @@ namespace PlayerInteractive_Mediation
 
                 //  Advertisement.Show(Unity_RewardedVideo, this);
             }
+            else
+            {
+                ToastHelper.ShowToast(" Ad Not Available ");
+            }
         }
 
         #endregion
@@ -1025,6 +1030,10 @@ namespace PlayerInteractive_Mediation
 
                     this.rewardedInterstitialAd.Show(userEarnedRewardCallback);
                 }
+            }
+            else
+            {
+                ToastHelper.ShowToast(" Ad Not Available ");
             }
         }
 

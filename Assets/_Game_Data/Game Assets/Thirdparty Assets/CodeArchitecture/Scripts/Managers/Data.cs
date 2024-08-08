@@ -107,7 +107,8 @@ public class Data : MonoBehaviour {
         if (AdType == 2) { 
 		// MainMenuScript.instance.AddCashOnRewardedVideo();
 		PrefsManager.SetCoinsValue(PrefsManager.GetCoinsValue()+1000);
-		GameAnalytics.NewAdEvent(GAAdAction.RewardReceived,GAAdType.RewardedVideo,"Admob","Get_1000_Coins");
+		
+		
 		}
 	
             if (AdType == 3)
@@ -151,8 +152,8 @@ public class Data : MonoBehaviour {
         
         else if (AdType == 9)
         {
-
-           // LevelManger.instance.UpdateHits();
+	        GameAnalytics.NewAdEvent(GAAdAction.RewardReceived, GAAdType.RewardedVideo, "Admob", "Get_Character");
+	        FindObjectOfType<SlectionManger>().Offpanel();
         }
         else if (AdType == 10)
         {
@@ -168,7 +169,8 @@ public class Data : MonoBehaviour {
         }
         else if (AdType == 15)
         {
-          //  FindObjectOfType<TimeController>().TimeRewardFreeMode();
+          GameManager.Instance.GetInVehicle();
+          GameAnalytics.NewAdEvent(GAAdAction.RewardReceived,GAAdType.RewardedVideo,"Admob","Get_Vedio_Car");
         }
         else if (AdType == 16)
         {

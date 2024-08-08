@@ -745,6 +745,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2598988169405594230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3400675976244036180}
+  m_Layer: 3
+  m_Name: TPSPosition (1)
+  m_TagString: TrafficCar
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3400675976244036180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598988169405594230}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6300224631962652976}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2770535366792361256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,6 +1350,7 @@ GameObject:
   - component: {fileID: 5519093364384732388}
   - component: {fileID: 5519093364384732390}
   - component: {fileID: 5519093364384732391}
+  - component: {fileID: 7200542811545730286}
   m_Layer: 3
   m_Name: body
   m_TagString: Player
@@ -1390,53 +1421,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5519093364640029280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5519093364640029283}
-  - component: {fileID: 5519093364640029285}
-  - component: {fileID: 5519093364640029282}
-  m_Layer: 3
-  m_Name: body (1)
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5519093364640029283
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5519093364640029280}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.032120857, z: -0.095205866}
-  m_LocalScale: {x: 1.3112198, y: 1.3112198, z: 1.3112198}
-  m_Children: []
-  m_Father: {fileID: 6300224631701843772}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5519093364640029285
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5519093364640029280}
-  m_Mesh: {fileID: -8545447256379345787, guid: a5afd6beedb5c6c44a382a3360632899, type: 3}
---- !u!64 &5519093364640029282
+--- !u!64 &7200542811545730286
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5519093364640029280}
+  m_GameObject: {fileID: 5519093364384732389}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -3015,12 +3006,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TpsPosition: {fileID: 6300224631962652976}
   ConeEffect: {fileID: 6300224631962652979}
+  vedio: {fileID: 0}
   Rb: {fileID: 0}
   controller: {fileID: 0}
   Highbrake: 0
+  IsOnVedio: 0
   isSetWheelsModel: 0
   AllAudioSource: {fileID: 0}
   TrafficVehicle: 1
+  IsOnInterSitail: 1
   Grounded: 0
   groundCheckDistance: 1.1
   LayerMask:
@@ -3198,7 +3192,6 @@ Transform:
   m_LocalScale: {x: 0.81999993, y: 0.8199999, z: 0.8199999}
   m_Children:
   - {fileID: 5519093364384732388}
-  - {fileID: 5519093364640029283}
   m_Father: {fileID: 6300224632046192809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3258,7 +3251,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.643, y: 0.527, z: 1.26}
   m_LocalScale: {x: 1.1904761, y: 1.1904761, z: 1.1904761}
-  m_Children: []
+  m_Children:
+  - {fileID: 3400675976244036180}
   m_Father: {fileID: 6300224631235824313}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

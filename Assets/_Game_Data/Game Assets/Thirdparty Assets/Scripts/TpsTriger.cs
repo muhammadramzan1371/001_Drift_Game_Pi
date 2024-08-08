@@ -15,9 +15,19 @@ public class TpsTriger : MonoBehaviour
       {
          if (GetComponent<ThirdPersonUserControl>().enabled)
          {
-            GameControl.manager.getInVehicle.SetActive(true);
+           
             GameControl.manager.IdButton.SetActive(false);
             GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
+            if ( GameManager.Instance.CurrentCar.GetComponentInParent<VehicleProperties>().IsOnVedio)
+            {
+               GameControl.manager.getInVehicleOnvedo.SetActive(true);
+               GameControl.manager.getInVehicle.SetActive(false);
+            }
+            else
+            {
+               GameControl.manager.getInVehicle.SetActive(true);
+               GameControl.manager.getInVehicleOnvedo.SetActive(false);
+            }
          }
       }
    }
@@ -29,9 +39,18 @@ public class TpsTriger : MonoBehaviour
       {
          if (GetComponent<ThirdPersonUserControl>().enabled)
          {
-            GameControl.manager.getInVehicle.SetActive(true);
             GameControl.manager.IdButton.SetActive(false);
             GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
+            if ( GameManager.Instance.CurrentCar.GetComponentInParent<VehicleProperties>().IsOnVedio)
+            {
+               GameControl.manager.getInVehicleOnvedo.SetActive(true);
+               GameControl.manager.getInVehicle.SetActive(false);
+            }
+            else
+            {
+               GameControl.manager.getInVehicle.SetActive(true);
+               GameControl.manager.getInVehicleOnvedo.SetActive(false);
+            }
          }
       }
    }
@@ -41,8 +60,15 @@ public class TpsTriger : MonoBehaviour
       //this forcar
       if (other.gameObject.tag == "Carhandle")
       {
-         GameControl.manager.getInVehicle.SetActive(false);
          GameControl.manager.IdButton.SetActive(true);
+         if ( GameManager.Instance.CurrentCar.GetComponentInParent<VehicleProperties>().IsOnVedio)
+         {
+            GameControl.manager.getInVehicleOnvedo.SetActive(false);
+         }
+         else
+         {
+            GameControl.manager.getInVehicle.SetActive(false);
+         }
          Logger.ShowLog("Car Handle");
       }
    }

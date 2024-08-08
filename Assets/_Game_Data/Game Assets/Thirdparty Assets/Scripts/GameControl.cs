@@ -11,6 +11,7 @@ public class GameControl: MonoBehaviour
 
     public static GameControl manager;
     public GameObject getInVehicle,IdButton;
+    public GameObject getInVehicleOnvedo;
     public static float accelFwd,accelBack;
     public static float steerAmount;
     
