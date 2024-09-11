@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using NiobiumStudios;
 using PlayerInteractive_Mediation;
@@ -15,7 +17,7 @@ public class MainMenu : MonoBehaviour
     private bool isStart=false;
 
     // Use this for initialization
-    void Start ()
+    async void Start ()
 	{
        
 
@@ -38,7 +40,15 @@ public class MainMenu : MonoBehaviour
         SetControlls(currentNumber);
 
         ShowPrivacyDialog();
+       // await Task.Delay(1000);
+       // PlayerSelection.instance.SetstartPont();
         //UnlockModes();
+    }
+
+    private async void Awake()
+    {
+        await Task.Delay(500);
+        PlayerSelection.instance.SetstartPont();
     }
 
     /// <summary>

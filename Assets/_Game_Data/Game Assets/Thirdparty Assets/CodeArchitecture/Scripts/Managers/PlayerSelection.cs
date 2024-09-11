@@ -181,7 +181,7 @@ public Image CarIconImage;
     {
         levelSelectionCanvas.SetActive(true);
         menuCanvas.SetActive(false);
-       Logger.ShowLog("Enable Here");
+        Logger.ShowLog("Enable Here");
         LOADING.SetActive(true);
         PrefsManager.SetGameMode("challange");
         PrefsManager.SetCurrentLevel(1);
@@ -194,6 +194,10 @@ public Image CarIconImage;
     {
         //  AdmobAdsManager.Instance.LoadInterstitialAd();
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
+        for (int i = 0; i < selectedDogArray.Length; i++)
+        {
+            selectedDogArray[i].SetActive(false);
+        }
         
         fakeLoading.SetActive(true);
         ChrackterSlection.SetActive(true);
@@ -217,6 +221,27 @@ public Image CarIconImage;
     }
 
     public CharcterSlectionManger CharcterSlectionManger;
+
+
+
+
+    public void SetstartPont()
+    {
+        ShowPlayerNow(PrefsManager.GetLastJeepUnlock());
+        selectedPlayerValue = PrefsManager.GetLastJeepUnlock();
+        for (int i = 0; i < CarSprites.Length; i++)
+        {
+            CarSprites[i].gameObject.SetActive(false);
+            CarSprites[selectedPlayerValue].gameObject.SetActive(true);      
+        }
+        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.CarPos.transform.position;
+        CharcterSlectionManger.CurrentPlayer.transform.rotation =  CharcterSlectionManger.CarPos.transform.rotation;
+        CharcterSlectionManger.CurrentPlayer.GetComponent<Animator>().Play("Idle 0");
+        CharcterSlectionManger._CameraRotate.SetCarMianPos();
+    }
+    
+    
+    
     public void RedirectToCarSelection()
     {
         //  AdmobAdsManager.Instance.LoadInterstitialAd();
@@ -265,6 +290,7 @@ public Image CarIconImage;
        CharcterSlectionManger.CurrentPlayer.transform.rotation =  CharcterSlectionManger.StartPos.transform.rotation;
        CharcterSlectionManger._CameraRotate.SetChracterPos();
        Invoke("OffScripte",1.5f);
+       SetstartPont();
     }
 
     private void OffScripte()

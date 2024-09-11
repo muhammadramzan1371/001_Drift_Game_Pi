@@ -4,6 +4,7 @@ using GoogleMobileAds.Common;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BuildInfoUtility;
 using Firebase.Extensions;
 using GameAnalyticsSDK;
 using ToastPlugin;
@@ -41,6 +42,9 @@ namespace PlayerInteractive_Mediation
         public string AdFrequencyTime="AdFrequencyTime";
         public float AdFrequency=20f;
         public float CurrentTime = 0;
+        public GameObject UpdatePanel;
+        public string UpdateVersionCode= "UpdateVersionCode";
+         public float RemoteVersionCode=0;
         
         #region Small Banner ADs Variable
 
@@ -849,7 +853,7 @@ namespace PlayerInteractive_Mediation
                         Pi_appOpenHandler.Instance.AdShowing = true;
 
                     PlayerInteractive_Logger.Pi_LogSender(Pi_AdmobEvents.Pi_RewardedVideo_WillDisplay_High_Ecpm);
-
+                    GameAnalytics.NewAdEvent(GAAdAction.Show, GAAdType.RewardedVideo, "Admob", "Admob_Rewarded");
                     this.rewardBasedVideo.Show((Reward reward) =>
                     {
                         PlayerInteractive_Logging.Log(String.Format("PI_Rewarded ad granted a reward: {0} {1}",
@@ -1027,7 +1031,7 @@ namespace PlayerInteractive_Mediation
                 {
                     if (Pi_appOpenHandler.Instance)
                         Pi_appOpenHandler.Instance.AdShowing = true;
-
+                    GameAnalytics.NewAdEvent(GAAdAction.Show, GAAdType.RewardedVideo, "Admob", "Admob_Rewarded_inter");
                     this.rewardedInterstitialAd.Show(userEarnedRewardCallback);
                 }
             }
@@ -1258,7 +1262,16 @@ namespace PlayerInteractive_Mediation
                     AdFrequency = Firebase.RemoteConfig.FirebaseRemoteConfig.DefaultInstance.GetValue(AdFrequencyTime).LongValue;
                 }
             }
-           
+            RemoteVersionCode = Firebase.RemoteConfig.FirebaseRemoteConfig.DefaultInstance.GetValue(UpdateVersionCode).LongValue;
+            //Logger.ShowLog("Special offer Time is "+SpecialOfferTime);
+            if (BuidRuntimeInfo.Instance != null)
+            {
+                if (RemoteVersionCode > BuidRuntimeInfo.Instance.BuildId)
+                {
+                    UpdatePanel.SetActive(true);
+                    Time.timeScale = 0;
+                }
+            }
 
             InitAdmob();
         }

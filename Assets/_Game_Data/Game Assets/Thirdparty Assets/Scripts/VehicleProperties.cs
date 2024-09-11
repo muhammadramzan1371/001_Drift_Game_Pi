@@ -25,7 +25,7 @@ public enum  CarNames
 public class VehicleProperties : MonoBehaviour
 {
     public Transform TpsPosition;
-    public GameObject ConeEffect,vedio;
+    public GameObject ConeEffect,Lights;
     public Rigidbody Rb;
     public RCC_CarControllerV3 controller;
     
@@ -63,7 +63,11 @@ public class VehicleProperties : MonoBehaviour
                 controller = GetComponent<RCC_CarControllerV3>();
             }
 
-            vedio = ConeEffect.transform.GetChild(0).gameObject;
+            if (Lights!=null)
+            {
+                Lights.SetActive(false);
+            } 
+
         }
 
     public GameObject AllAudioSource;
@@ -81,6 +85,12 @@ public class VehicleProperties : MonoBehaviour
         {
             controller.chassis.GetComponent<RCC_Chassis>().enabled = true;
         }
+
+        if (Lights!=null)
+        {
+            Lights.SetActive(true);
+        } 
+        
         controller.enabled = true;
         Rb.drag=0.05f;
         if (Rb)
@@ -182,7 +192,10 @@ public class VehicleProperties : MonoBehaviour
         controller.RearRightWheelCollider.enabled = false;
         
         
-        
+        if (Lights!=null)
+        {
+            Lights.SetActive(false);
+        } 
         
         
         controller.FrontLeftWheelCollider.transform.GetChild(0).gameObject.SetActive(false);

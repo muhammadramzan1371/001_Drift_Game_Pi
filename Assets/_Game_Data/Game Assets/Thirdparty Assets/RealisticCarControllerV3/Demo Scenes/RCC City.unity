@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 99fb1b8998a83ac40aab660bc1f8dcb2, type: 3}
   m_Sun: {fileID: 1645703548}
-  m_IndirectSpecularColor: {r: 0.21203396, g: 0.26337, b: 0.34552687, a: 1}
+  m_IndirectSpecularColor: {r: 0.21203387, g: 0.2633696, b: 0.34552675, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -18234,6 +18234,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0722a9e01046ddd4289c83d741ad6252, type: 3}
+--- !u!114 &414934525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11495930, guid: 0722a9e01046ddd4289c83d741ad6252, type: 3}
+  m_PrefabInstance: {fileID: 414934524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25271813931d814680ab7c84ef90710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &419604109
 GameObject:
   m_ObjectHideFlags: 0
@@ -19824,11 +19835,6 @@ Transform:
   m_Father: {fileID: 1779719507}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: -180, z: 0}
---- !u!4 &606019908 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 487532, guid: 0722a9e01046ddd4289c83d741ad6252, type: 3}
-  m_PrefabInstance: {fileID: 414934524}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &608484189
 GameObject:
   m_ObjectHideFlags: 0
@@ -20631,7 +20637,7 @@ PrefabInstance:
     - target: {fileID: 11400656, guid: 9f32ea4a11500b344ae05427bdc21e05, type: 3}
       propertyPath: playerCar
       value: 
-      objectReference: {fileID: 606019908}
+      objectReference: {fileID: 414934525}
     - target: {fileID: 11402240, guid: 9f32ea4a11500b344ae05427bdc21e05, type: 3}
       propertyPath: sunTransform
       value: 

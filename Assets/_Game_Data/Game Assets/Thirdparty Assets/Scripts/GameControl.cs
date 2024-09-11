@@ -39,7 +39,7 @@ public class GameControl: MonoBehaviour
     {
         manager = this;
 #if  UNITY_EDITOR
-        controlMode = ControlMode.touch;
+        controlMode = ControlMode.simple;
 #else
          controlMode = ControlMode.touch;
 #endif
