@@ -2346,9 +2346,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5896767610144822533}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.023, z: 0.021}
-  m_LocalScale: {x: 6.3702297, y: 1.13421, z: 6.3625755}
+  m_LocalRotation: {x: -0.0000037666807, y: 0, z: -0.00000003619053, w: 1}
+  m_LocalPosition: {x: -0, y: 0.095, z: 0}
+  m_LocalScale: {x: 7.0146203, y: 1.13421, z: 5.587003}
   m_Children: []
   m_Father: {fileID: 6335183031223854907}
   m_RootOrder: 8
@@ -3817,8 +3817,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automatic: 0
-  distance: 6
-  height: 2.4
+  distance: 5.2
+  height: 2.1
   TpsPichAngle: 7
 --- !u!114 &8494385233879973320
 MonoBehaviour:
@@ -3851,7 +3851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TpsPosition: {fileID: 6335183031566384306}
   ConeEffect: {fileID: 6335183031566384305}
-  vedio: {fileID: 0}
+  Lights: {fileID: 0}
   Rb: {fileID: 0}
   controller: {fileID: 0}
   Highbrake: 0

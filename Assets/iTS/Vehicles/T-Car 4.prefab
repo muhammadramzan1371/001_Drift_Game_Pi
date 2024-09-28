@@ -270,7 +270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112109977236627163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.586, y: 0.399, z: -2.538}
+  m_LocalPosition: {x: -0.65, y: 0.435, z: -2.483}
   m_LocalScale: {x: 0.8400001, y: 0.8399999, z: 0.8399999}
   m_Children: []
   m_Father: {fileID: 3079989644214739049}
@@ -289,7 +289,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 2
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1428,7 +1428,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5519093364384732389}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7d9f8cb938aa5b543b32349b88d95971, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -1459,7 +1459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5674064892621414131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0.034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 596171004392124759}
@@ -2972,8 +2972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automatic: 0
-  distance: 6.1
-  height: 2.4
+  distance: 5.25
+  height: 2.2
   TpsPichAngle: 7
 --- !u!114 &8459991935605100618
 MonoBehaviour:
@@ -3006,7 +3006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TpsPosition: {fileID: 6300224631962652976}
   ConeEffect: {fileID: 6300224631962652979}
-  vedio: {fileID: 0}
+  Lights: {fileID: 0}
   Rb: {fileID: 0}
   controller: {fileID: 0}
   Highbrake: 0
@@ -3879,7 +3879,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8309409107202439761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.616, y: 0.399, z: -2.5379999}
+  m_LocalPosition: {x: 0.65, y: 0.43499994, z: -2.4829998}
   m_LocalScale: {x: 0.8400001, y: 0.8399999, z: 0.8399999}
   m_Children: []
   m_Father: {fileID: 3079989644214739049}
@@ -3898,7 +3898,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 2
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

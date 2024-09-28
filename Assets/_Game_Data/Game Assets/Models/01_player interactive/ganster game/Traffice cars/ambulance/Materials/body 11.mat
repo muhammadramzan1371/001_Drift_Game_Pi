@@ -82,7 +82,7 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _DecalReflection: 1
+    - _DecalReflection: 0.572
     - _DecalTransparency: 1
     - _DecalUVScale: 1
     - _DetailNormalMapScale: 1
@@ -97,7 +97,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PearlUVScale: 1
-    - _RefIntensity: 1.42
+    - _RefIntensity: 0.8
     - _RefVisibility: 2
     - _ShininessIntensity: 0
     - _ShininessScale: 5.4
@@ -108,7 +108,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DecalColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
+    - _DecalColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _PearlescentColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

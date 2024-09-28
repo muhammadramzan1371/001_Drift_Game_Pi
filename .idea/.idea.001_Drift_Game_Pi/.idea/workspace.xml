@@ -13,29 +13,151 @@
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player Interactive-Ads Mediation/Pi-Scripts/PlayerInteractive_Admob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player Interactive-Ads Mediation/Pi-Scripts/PlayerInteractive_Admob.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeArchitecture/Scripts/Managers/PlayerSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeArchitecture/Scripts/Managers/PlayerSelection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController 1.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Animator/ThirdPersonAnimatorController 1.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Animations/CameraShake.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Animations/CameraShake.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Animations/efhejgksg.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Animations/efhejgksg.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/CodeArchitecture/Scripts/Logger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/CodeArchitecture/Scripts/Logger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/CodeArchitecture/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/CodeArchitecture/Scripts/MainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/CodeArchitecture/Scripts/Managers/PlayerSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/CodeArchitecture/Scripts/Managers/PlayerSelection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Green.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Orange.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/Yellow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/blue.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Material/red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/RealisticCarControllerV3/Demo Scenes/RCC City.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/RealisticCarControllerV3/Demo Scenes/RCC City.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/RealisticCarControllerV3/Scripts/RCC_Light.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/RealisticCarControllerV3/Scripts/RCC_Light.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/GameControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/GameControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/VehicleProperties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/VehicleProperties.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Ui Art/video icon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Ui Art/video icon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/CAR 4/CAR 4.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/player interactive/drift cars/CAR 4/CAR 4.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/CubeMap/tyeGrage.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/CubeMap/tyeGrage.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/CubeMap.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/CubeMap/garage1.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/CubeMap/garage1.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Orange.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Yellow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/blue.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/red.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/ambulance/Materials/body 11.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/ambulance/Materials/body 11.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/ambulance/ambilance.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/ambulance/ambilance.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/car 1/Materials/body 12.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/car 1/Materials/body 12.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/car 1/Materials/frient meior.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/car 1/Materials/frient meior.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/car 2/Materials/body 13.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/car 2/Materials/body 13.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/car 4/Materials/body 14.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/car 4/Materials/body 14.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/car 4/body-texture.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/01_player interactive/ganster game/Traffice cars/car 4/body-texture.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/New drift Game/Texture/Materials/Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/New drift Game/Texture/Materials/Water.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/Wheels/Models/wheel_09/Materials/wheel_09_metal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/Wheels/Models/wheel_09/Materials/wheel_09_metal.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR/CAR 2/Materials/8.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR/CAR 2/Materials/8.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/Materials/number.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/Materials/number.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/number.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/number.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/numbers plate.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/numbers plate.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/drift cars/car 5/Materials/glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/drift cars/car 5/Materials/glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/drift cars/character/Materials/face.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/drift cars/character/Materials/face.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/drift cars/character/Materials/shirt.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/drift cars/character/Materials/shirt.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/tyers/tyer 4/Materials/tyer 4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/tyers/tyer 4/Materials/tyer 4.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/tyers/tyer 9/Materials/tyer 10.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/tyers/tyer 9/Materials/tyer 10.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/tyers/tyer 9/Materials/tyer 9.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/tyers/tyer 9/Materials/tyer 9.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/BrakeEmissionController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/BrakeEmissionController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CamRotate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CamRotate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CameraCulling.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CameraCulling.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CameraMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CameraMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CameraRotate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CameraRotate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CameraTransition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CameraTransition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CarComponents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CarComponents.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CarShadow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CarShadow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/ChangeCarTrafficToPlayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/ChangeCarTrafficToPlayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/ChangeTag.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/ChangeTag.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CharcterSlectionManger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CharcterSlectionManger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CoinBar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/CoinBar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/DoorControler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/DoorControler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/DriftPhysics.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/DriftPhysics.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/Entertocutscene.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/Entertocutscene.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/Forwater.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/Forwater.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/GameControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/GameControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/GameManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/GameManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/GizmoObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/GizmoObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/Introtomanu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/Introtomanu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LevelCompleteScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LevelCompleteScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LevelManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LevelManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LevelProperties.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LevelProperties.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LevelSelection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LevelSelection.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LoadingScreen.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LoadingScreen.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LookAtTargetSetter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/LookAtTargetSetter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MirrorReflectionNew.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MirrorReflectionNew.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MoneyCounterAdd.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MoneyCounterAdd.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/Money_gem_plus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/Money_gem_plus.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MonoScript.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MonoScript/Assembly-CSharp.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MonoScript/Assembly-CSharp/AutoDesactive.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MonoScript/Assembly-CSharp/AutoDesactive.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MonoScript/Assembly-CSharp/DriftCanvasManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MonoScript/Assembly-CSharp/DriftCanvasManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MoveImageOnTilt.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/MoveImageOnTilt.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/OpenWorldManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/OpenWorldManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/PlayerCamera_New.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/PlayerCamera_New.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/Profile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/Profile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/RCCButtons_Newe.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/RCCButtons_Newe.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/RectBannerHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/RectBannerHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/ShowBanner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/ShowBanner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/SlectionManger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/SlectionManger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/StoreScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/StoreScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/ThirdPersonCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/ThirdPersonCharacter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/TimeController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/TimeController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/TpsTriger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/TpsTriger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/TriggerManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/TriggerManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/UiManagerObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/UiManagerObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/VehicleProperties.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/VehicleProperties.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/filled.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/filled.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/fpsDisplay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/fpsDisplay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/hornbtn.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Scripts/hornbtn.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/GamePlay.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/MenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/MenuScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/Splase.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/Splase.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Scripts/RCC_Light.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Scripts/RCC_Light.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Standard Assets/Environment/TerrainAssets/BillboardTextures/GrassFrond01AlbedoAlpha.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Standard Assets/Environment/TerrainAssets/BillboardTextures/GrassFrond01AlbedoAlpha.psd.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/iTS/Vehicles/T-Car 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/iTS/Vehicles/T-Car 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/iTS/Vehicles/T-Car 4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/iTS/Vehicles/T-Car 4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/iTS/Vehicles/T-Car.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/iTS/Vehicles/T-Car.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/iTS/Vehicles/T-Van.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/iTS/Vehicles/T-Van.prefab.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +169,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c130875f7b394250a2d3617f6b5a735b13ca00/85/bf89b4c6/Light.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c130875f7b394250a2d3617f6b5a735b13ca00/9c/81fe89e9/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Player Interactive-Ads Mediation/Pi-Scripts/PlayerInteractive_Admob.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Scripts/Entertocutscene.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Thirdparty Assets/Standard Assets/CNControls/Scripts/Controllers/Touchpad_new.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -146,6 +266,9 @@
       <workItem from="1724965146478" duration="2382000" />
       <workItem from="1724999474765" duration="3245000" />
       <workItem from="1725125256907" duration="2520000" />
+      <workItem from="1727253540963" duration="309000" />
+      <workItem from="1727346899093" duration="2714000" />
+      <workItem from="1727510749642" duration="2517000" />
     </task>
     <servers />
   </component>
