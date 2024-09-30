@@ -22,7 +22,6 @@ public class PlayerSelection : MonoBehaviour
 
     public GameObject nextBtn,
         backBtn,
-        ChrackterSlection,
         menuCanvas,
         CarSlection,
         levelSelectionCanvas,
@@ -40,7 +39,8 @@ public class PlayerSelection : MonoBehaviour
     public int ActivePlayervalue = 1;
     int coinValue;
     public static PlayerSelection instance;
-
+    public Transform CarPos;
+    public CameraRotate _CameraRotate;
 
     [Header("CarSoldCutSSceane")] public GameObject Timeline;
     public PlayableDirector Director;
@@ -68,6 +68,7 @@ public class PlayerSelection : MonoBehaviour
                 CarSprites[i].gameObject.SetActive(false);
                 CarSprites[selectedPlayerValue].gameObject.SetActive(true);
             }
+            ActivePlayervalue = selectedPlayerValue;
         }
     }
 
@@ -83,11 +84,13 @@ public class PlayerSelection : MonoBehaviour
                 CarSprites[i].gameObject.SetActive(false);
                 CarSprites[selectedPlayerValue].gameObject.SetActive(true);
             }
+            ActivePlayervalue = selectedPlayerValue;
         }
     }
 
 
     GameObject CurrentPlayer = null;
+    
 
     public void ShowPlayerNow(int val)
     {
@@ -114,7 +117,6 @@ public class PlayerSelection : MonoBehaviour
         {
             selectedDogArray[i].SetActive(false);
         }
-
         PrefsManager.SetSelectedPlayerValue(val);
         CurrentPlayer = selectedDogArray[val];
         CurrentPlayer.SetActive(true);
@@ -139,9 +141,9 @@ public class PlayerSelection : MonoBehaviour
             backBtn.SetActive(true);
         }
         selectedPlayerValue = ActivePlayervalue;
-        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.CarPos.transform.position;
-        CharcterSlectionManger.CurrentPlayer.transform.rotation = CharcterSlectionManger.CarPos.transform.rotation;
-        CharcterSlectionManger._CameraRotate.SetCarMianPos();
+        CurrentPlayer.transform.position = CarPos.transform.position;
+        CurrentPlayer.transform.rotation = CarPos.transform.rotation;
+        _CameraRotate.SetCarMianPos();
     }
 
     public void TestDrive()
@@ -158,13 +160,11 @@ public class PlayerSelection : MonoBehaviour
     public void Ps_PlayEvent()
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
-        //AdmobAdsManager.Instance.ShowInt(GoToLevelSelect, false);
         GoToLevelSelect();
     }
 
     public void GoToLevelSelect()
     {
-        // CurrentEnv.SetActive(false);
         for (int i = 0; i < selectedDogArray.Length; i++)
         {
             selectedDogArray[i].SetActive(false);
@@ -192,37 +192,6 @@ public class PlayerSelection : MonoBehaviour
     }
 
     public GameObject fakeLoading;
-
-    public void RedirectToDogSelection()
-    {
-        SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
-        for (int i = 0; i < selectedDogArray.Length; i++)
-        {
-            selectedDogArray[i].SetActive(false);
-        }
-        fakeLoading.SetActive(true);
-        ChrackterSlection.SetActive(true);
-        menuCanvas.SetActive(false);
-        CharcterSlectionManger.Caller.ShowPlayerNow(PrefsManager.GetLastCharcterUnlock());
-        MainNextBack.SetActive(true);
-        CharcterSlectionManger.Caller.selectedPlayerValue = PrefsManager.GetLastCharcterUnlock();
-        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.StartPos.transform.position;
-        CharcterSlectionManger.CurrentPlayer.transform.rotation = CharcterSlectionManger.StartPos.transform.rotation;
-        for (int i = 0; i < CharcterSlectionManger.Chracterbutton.Length; i++)
-        {
-            if (PrefsManager.GetPlayerState(i) == 1)
-            {
-                CharcterSlectionManger.Chracterbutton[i].transform.GetChild(1).GetComponent<Image>().gameObject
-                    .SetActive(false);
-            }
-        }
-        CharcterSlectionManger.Caller.CurrentPlayer.SetActive(true);
-        CharcterSlectionManger._CameraRotate.SetChracterPos();
-        // CarIconImage.sprite = CarSprites[selectedPlayerValue];
-        Invoke("OnScripte", 1.5f);
-    }
-
-    public CharcterSlectionManger CharcterSlectionManger;
     
     public void SetstartPont()
     {
@@ -233,10 +202,10 @@ public class PlayerSelection : MonoBehaviour
             CarSprites[i].gameObject.SetActive(false);
             CarSprites[selectedPlayerValue].gameObject.SetActive(true);
         }
-        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.CarPos.transform.position;
-        CharcterSlectionManger.CurrentPlayer.transform.rotation = CharcterSlectionManger.CarPos.transform.rotation;
-        CharcterSlectionManger.CurrentPlayer.GetComponent<Animator>().Play("Idle 0");
-        CharcterSlectionManger._CameraRotate.SetCarMianPos();
+        CurrentPlayer.transform.position = CarPos.transform.position;
+        CurrentPlayer.transform.rotation = CarPos.transform.rotation;
+        _CameraRotate.SetCarMianPos();
+        OffCamScript();
     }
 
 
@@ -245,7 +214,7 @@ public class PlayerSelection : MonoBehaviour
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         fakeLoading.SetActive(true);
-        ChrackterSlection.SetActive(false);
+        menuCanvas.SetActive(false);
         CarSlection.SetActive(true);
         ShowPlayerNow(PrefsManager.GetLastJeepUnlock());
         MainNextBack.SetActive(true);
@@ -255,51 +224,42 @@ public class PlayerSelection : MonoBehaviour
             CarSprites[i].gameObject.SetActive(false);
             CarSprites[selectedPlayerValue].gameObject.SetActive(true);
         }
-        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.CarPos.transform.position;
-        CharcterSlectionManger.CurrentPlayer.transform.rotation = CharcterSlectionManger.CarPos.transform.rotation;
-        CharcterSlectionManger.CurrentPlayer.GetComponent<Animator>().Play("Idle 0");
-        CharcterSlectionManger._CameraRotate.SetCarMianPos();
+        CurrentPlayer.transform.position = CarPos.transform.position;
+        CurrentPlayer.transform.rotation = CarPos.transform.rotation;
+        OnCamScript();
+        _CameraRotate.SetCarMianPos();
     }
 
-    public void BackToCrhracterCanvas()
-    {
-        SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
-        fakeLoading.SetActive(true);
-        ChrackterSlection.SetActive(true);
-        CarSlection.SetActive(false);
-        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.StartPos.transform.position;
-        CharcterSlectionManger.CurrentPlayer.transform.rotation = CharcterSlectionManger.StartPos.transform.rotation;
-        for (int i = 0; i < selectedDogArray.Length; i++)
-        {
-            selectedDogArray[i].SetActive(false);
-        }
-        Logger.ShowLog("Enable Here");
-        CharcterSlectionManger._CameraRotate.SetChracterPos();
-    }
-
+    
     public void BackToMainCanvas()
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         fakeLoading.SetActive(true);
-        ChrackterSlection.SetActive(false);
         menuCanvas.SetActive(true);
         Logger.ShowLog("Enable Here");
-        CharcterSlectionManger.CurrentPlayer.transform.position = CharcterSlectionManger.StartPos.transform.position;
-        CharcterSlectionManger.CurrentPlayer.transform.rotation = CharcterSlectionManger.StartPos.transform.rotation;
-        CharcterSlectionManger._CameraRotate.SetChracterPos();
-        Invoke("OffScripte", 1.5f);
+        Invoke("OffAnimator", 1.5f);
         SetstartPont();
     }
 
-    private void OffScripte()
+    private void OffAnimator()
     {
-        //MainCamera.GetComponent<Animator>().enabled = true;
+        MainCamera.GetComponent<Animator>().enabled = false;
+        
+    }
+
+    private void OnAnimator()
+    {
+        MainCamera.GetComponent<Animator>().enabled = true;
+    }
+    
+    
+    private void OffCamScript()
+    {
         MainCamera.GetComponent<CameraRotate>().enabled = false;
     }
 
-    private void OnScripte()
+    private void OnCamScript()
     {
-        //MainCamera.GetComponent<Animator>().enabled = true;
         MainCamera.GetComponent<CameraRotate>().enabled = true;
     }
 
@@ -312,7 +272,6 @@ public class PlayerSelection : MonoBehaviour
         ShowPlayerNow(PrefsManager.GetSelectedPlayerValue());
         MainNextBack.SetActive(true);
         selectedPlayerValue = PrefsManager.GetSelectedPlayerValue();
-        CharcterSlectionManger._CameraRotate.SetChracterPos();
     }
 
     public void SetLevelValue(int lValue)

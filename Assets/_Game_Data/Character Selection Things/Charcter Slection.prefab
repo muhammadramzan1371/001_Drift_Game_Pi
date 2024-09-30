@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5183553808989172523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5183553808989172521}
+  - component: {fileID: 5183553808989172522}
+  m_Layer: 0
+  m_Name: Charcter Slection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!4 &5183553808989172521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183553808989172523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 81.797714, y: 22.685154, z: 1405.4174}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5183553808989172522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183553808989172523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece73d9cdad2fd346bf4f481721039d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sp_bar:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  SpecificationValue:
+  - Values: 50000000320000005a000000
+  - Values: 460000003c0000005a000000
+  - Values: 500000004b00000044000000
+  gameObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Chracterbutton:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  noCoinsPanel: {fileID: 0}
+  Sucecfully: {fileID: 0}
+  gameObjectPrices: 0000000088130000581b000010270000
+  coins: 0
+  PriceText: {fileID: 0}
+  Play: {fileID: 0}
+  unlockPlayerButton: {fileID: 0}
+  TestDriveButton: {fileID: 0}
+  StartPos: {fileID: 0}
+  CarPos: {fileID: 0}
+  ChrakterName:
+  - {fileID: 21300000, guid: f68ddf95eeac2d3488c0900062266800, type: 3}
+  - {fileID: 21300000, guid: 67f3dd584273a804ba3f16f2c49b43c3, type: 3}
+  - {fileID: 21300000, guid: 304ea1af2c1d3e54e9a4a797eaec6ede, type: 3}
+  Profileimages:
+  - {fileID: 21300000, guid: 8c82976cc9dd3614189348a2c5fc667a, type: 3}
+  - {fileID: 21300000, guid: dc75c164eaf01ff43b24b53b764d5c33, type: 3}
+  - {fileID: 21300000, guid: adc0ec592279626499887735c809d9d9, type: 3}
+  namebar: {fileID: 0}
+  ProfileImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  selectedPlayerValue: 0
+  CurrentPlayer: {fileID: 0}
+  _CameraRotate: {fileID: 0}
+  ActivePlayervalue: 0

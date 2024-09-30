@@ -19,7 +19,7 @@ public class CharcterSlectionManger : MonoBehaviour
     public GameObject Play, unlockPlayerButton,TestDriveButton;
 
     public Transform StartPos;
-    public Transform CarPos;
+    
     public Sprite[] ChrakterName;
     public Sprite[] Profileimages;
 
@@ -43,7 +43,6 @@ public class CharcterSlectionManger : MonoBehaviour
          SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
          selectedPlayerValue=Value;
          ShowPlayerNow(selectedPlayerValue);
-         
     } 
     
     
@@ -185,7 +184,6 @@ public class CharcterSlectionManger : MonoBehaviour
         unlockPlayerButton.SetActive(false);
         TestDriveButton.SetActive(false);
         PrefsManager.SetSelectedCracterValue(selectedPlayerValue);
-        PlayerSelection.instance.RedirectToCarSelection();
     }
     
     public void SelectDogPlay()

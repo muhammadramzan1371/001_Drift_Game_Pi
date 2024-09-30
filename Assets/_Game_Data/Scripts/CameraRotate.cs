@@ -1,6 +1,7 @@
 
 // CameraRotate
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class CameraRotate : MonoBehaviour
@@ -23,7 +24,6 @@ public class CameraRotate : MonoBehaviour
 
 	public int yMaxLimit = 80;
 	public CanvasGroup _Canvas;
-	public CanvasGroup _Canvas_Chrackter;
 
 	public float EndLook = 60, startLook = 50;
 	//   public int zoomSpeed = 40;
@@ -58,14 +58,16 @@ public class CameraRotate : MonoBehaviour
 
 	private void Start()
 	{
-		// instance = this;
-
 		Init();
 	}
 
-	private void OnEnable()
+	private async void OnEnable()
 	{
 		Init();
+		await Task.Delay(2000);
+		CameraObject.fieldOfView = 55;
+		IsMainMenu = true;
+		isDragging = false;
 	}
 
 	public void Init()
@@ -90,11 +92,11 @@ public class CameraRotate : MonoBehaviour
 	public void SetCarMianPos()
 	{
 		isDragging = true;
-		StartCoroutine(SetPos(-135f, 5f, 4f));
+		StartCoroutine(SetPos(-139f, 0.3f, 6f));
 		isrimSelect = false;
-		maxDistance = 8f;
-		minDistance = 8f;
-		targetOffset.y = 0.5f;
+		maxDistance = 6f;
+		minDistance = 6f;
+		targetOffset.y = -0.22f;
 	}
 
 	public void SetChracterPos()
@@ -155,12 +157,12 @@ public class CameraRotate : MonoBehaviour
 	}
 
 	public bool isDragging;
-	public bool isrimSelect;
+	public bool isrimSelect,IsMainMenu;
 	public float AutoSpeed = 0.05f;
 
 	private void LateUpdate()
 	{
-		if (isDragging)
+		if (isDragging && !IsMainMenu)
 		{
 			xDeg += CnControls.CnInputManager.GetAxis("Mouse X") * xSpeed * 0.02f;
 			xDeg = ClampAngle(xDeg, -360, 360);
@@ -173,7 +175,7 @@ public class CameraRotate : MonoBehaviour
 			//idleTimer = 0f;
 			idleSmooth = 0f;
 		}
-		else if (!isrimSelect)
+		else if (!isrimSelect && !IsMainMenu)
 		{
 			xDeg += xSpeed * AutoSpeed * Time.deltaTime;
 			yDeg = ClampAngle(yDeg, yMinLimit, yMaxLimit);
@@ -216,53 +218,41 @@ public class CameraRotate : MonoBehaviour
 
 
 
-	void Update()
-	{
-		if (DragCheck)
-		{
-			if (CameraObject)
-			{
-				if (CameraObject.fieldOfView > startLook)
-				{
-					CameraObject.fieldOfView -= 10f * Time.deltaTime;
-				}
-
-				if (_Canvas && _Canvas.alpha > 0)
-				{
-					_Canvas.alpha -= 0.05f;
-					isDragging = true;
-				}
-
-				if (_Canvas_Chrackter && _Canvas_Chrackter.alpha > 0)
-				{
-					_Canvas_Chrackter.alpha -= 0.05f;
-					isDragging = true;
-				}
-			}
-		}
-		else
-		{
-			if (CameraObject)
-			{
-				if (CameraObject.fieldOfView < EndLook)
-				{
-					CameraObject.fieldOfView += 10f * Time.deltaTime;
-				}
-
-				if (_Canvas && _Canvas.alpha < 1)
-				{
-					_Canvas.alpha += 0.05f;
-					isDragging = false;
-				}
-
-				if (_Canvas_Chrackter && _Canvas_Chrackter.alpha < 1)
-				{
-					_Canvas_Chrackter.alpha += 0.05f;
-					isDragging = false;
-				}
-			}
-		}
-	}
+	// void Update()
+	// {
+	// 	if (DragCheck)
+	// 	{
+	// 		if (CameraObject)
+	// 		{
+	// 			if (CameraObject.fieldOfView > startLook)
+	// 			{
+	// 				CameraObject.fieldOfView -= 10f * Time.deltaTime;
+	// 			}
+	//
+	// 			if (_Canvas && _Canvas.alpha > 0)
+	// 			{
+	// 				_Canvas.alpha -= 0.05f;
+	// 				isDragging = true;
+	// 			}
+	// 		}
+	// 	}
+	// 	else
+	// 	{
+	// 		if (CameraObject)
+	// 		{
+	// 			if (CameraObject.fieldOfView < EndLook)
+	// 			{
+	// 				CameraObject.fieldOfView += 10f * Time.deltaTime;
+	// 			}
+	//
+	// 			if (_Canvas && _Canvas.alpha < 1)
+	// 			{
+	// 				_Canvas.alpha += 0.05f;
+	// 				isDragging = false;
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	private bool DragCheck = false;
 
