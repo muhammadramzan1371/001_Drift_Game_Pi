@@ -33,7 +33,17 @@ public class PrefsManager : MonoBehaviour
     static string ProfileFill = "ProfileFill";
     static string NosCounter = "NosCounter";
     static string LoadInt = "LoadInt";
-    // Use this for initialization
+    public const string CurrentCarOnVideo = "CURRENT_CarOnVideo"; 
+    
+    
+    public static void SetCurrentCarOnVideo(int currentPlayer)
+    {
+        PlayerPrefs.SetInt(CurrentCarOnVideo, currentPlayer);
+    }
+    public static int GetCurrentCarOnVideo()
+    {
+        return PlayerPrefs.GetInt(CurrentCarOnVideo, 0);
+    }
     
     
     

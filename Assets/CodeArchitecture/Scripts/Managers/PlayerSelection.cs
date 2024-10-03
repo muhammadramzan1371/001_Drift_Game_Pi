@@ -41,6 +41,7 @@ public class PlayerSelection : MonoBehaviour
     public static PlayerSelection instance;
     public Transform CarPos;
     public CameraRotate _CameraRotate;
+    public Animator CarChangeAnimator;
 
     [Header("CarSoldCutSSceane")] public GameObject Timeline;
     public PlayableDirector Director;
@@ -59,6 +60,7 @@ public class PlayerSelection : MonoBehaviour
     public void OnNextPressed()
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
+        CarChangeEffect();
         if (selectedPlayerValue < selectedDogArray.Length - 1)
         {
             selectedPlayerValue++;
@@ -75,6 +77,7 @@ public class PlayerSelection : MonoBehaviour
     public void OnBackPressed()
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
+        CarChangeEffect();
         if (selectedPlayerValue > 0)
         {
             selectedPlayerValue--;
@@ -86,6 +89,12 @@ public class PlayerSelection : MonoBehaviour
             }
             ActivePlayervalue = selectedPlayerValue;
         }
+    }
+
+    public void CarChangeEffect()
+    {
+        CarChangeAnimator.Play("CarChangeAnim",0,0f);
+        _CameraRotate.ChangeCameraViewForCar();
     }
 
 
@@ -325,6 +334,7 @@ public class PlayerSelection : MonoBehaviour
             PrefsManager.SetLastJeepUnlock(ActivePlayervalue);
             Play.SetActive(true);
             unlockPlayerButton.SetActive(false);
+            lockSprite.SetActive(false);
             TestDriveButton.SetActive(false);
         }
         else

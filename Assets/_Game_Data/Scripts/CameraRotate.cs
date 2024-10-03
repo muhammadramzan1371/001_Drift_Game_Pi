@@ -30,7 +30,7 @@ public class CameraRotate : MonoBehaviour
 
 	//  public float panSpeed = 0.3f;
 
-	public float zoomDampening = 5f;
+	public float zoomDampening = 2f;
 
 	//   public float rotateOnOff = 1f;
 
@@ -61,13 +61,9 @@ public class CameraRotate : MonoBehaviour
 		Init();
 	}
 
-	private async void OnEnable()
+	private void OnEnable()
 	{
 		Init();
-		await Task.Delay(2000);
-		CameraObject.fieldOfView = 55;
-		IsMainMenu = true;
-		isDragging = false;
 	}
 
 	public void Init()
@@ -92,11 +88,11 @@ public class CameraRotate : MonoBehaviour
 	public void SetCarMianPos()
 	{
 		isDragging = true;
-		StartCoroutine(SetPos(-139f, 0.3f, 6f));
+		StartCoroutine(SetPos(247.8f, 6.45f, 5f));
 		isrimSelect = false;
-		maxDistance = 6f;
-		minDistance = 6f;
-		targetOffset.y = -0.22f;
+		maxDistance = 7.8f;
+		minDistance = 7.8f;
+		targetOffset.y = 0.6f;
 	}
 
 	public void SetChracterPos()
@@ -157,12 +153,12 @@ public class CameraRotate : MonoBehaviour
 	}
 
 	public bool isDragging;
-	public bool isrimSelect,IsMainMenu;
+	public bool isrimSelect;
 	public float AutoSpeed = 0.05f;
 
 	private void LateUpdate()
 	{
-		if (isDragging && !IsMainMenu)
+		if (isDragging)
 		{
 			xDeg += CnControls.CnInputManager.GetAxis("Mouse X") * xSpeed * 0.02f;
 			xDeg = ClampAngle(xDeg, -360, 360);
@@ -175,7 +171,7 @@ public class CameraRotate : MonoBehaviour
 			//idleTimer = 0f;
 			idleSmooth = 0f;
 		}
-		else if (!isrimSelect && !IsMainMenu)
+		else if (!isrimSelect)
 		{
 			xDeg += xSpeed * AutoSpeed * Time.deltaTime;
 			yDeg = ClampAngle(yDeg, yMinLimit, yMaxLimit);
@@ -218,41 +214,52 @@ public class CameraRotate : MonoBehaviour
 
 
 
-	// void Update()
-	// {
-	// 	if (DragCheck)
-	// 	{
-	// 		if (CameraObject)
-	// 		{
-	// 			if (CameraObject.fieldOfView > startLook)
-	// 			{
-	// 				CameraObject.fieldOfView -= 10f * Time.deltaTime;
-	// 			}
-	//
-	// 			if (_Canvas && _Canvas.alpha > 0)
-	// 			{
-	// 				_Canvas.alpha -= 0.05f;
-	// 				isDragging = true;
-	// 			}
-	// 		}
-	// 	}
-	// 	else
-	// 	{
-	// 		if (CameraObject)
-	// 		{
-	// 			if (CameraObject.fieldOfView < EndLook)
-	// 			{
-	// 				CameraObject.fieldOfView += 10f * Time.deltaTime;
-	// 			}
-	//
-	// 			if (_Canvas && _Canvas.alpha < 1)
-	// 			{
-	// 				_Canvas.alpha += 0.05f;
-	// 				isDragging = false;
-	// 			}
-	// 		}
-	// 	}
-	// }
+	void Update()
+	{
+		if (DragCheck)
+		{
+			if (CameraObject)
+			{
+				if (CameraObject.fieldOfView > startLook)
+				{
+					CameraObject.fieldOfView -= 10f * Time.deltaTime;
+				}
+	
+				if (_Canvas && _Canvas.alpha > 0)
+				{
+					_Canvas.alpha -= 0.05f;
+					isDragging = true;
+				}
+			}
+		}
+		else
+		{
+			if (CameraObject)
+			{
+				if (CameraObject.fieldOfView < EndLook)
+				{
+					CameraObject.fieldOfView += 10f * Time.deltaTime;
+				}
+	
+				if (_Canvas && _Canvas.alpha < 1)
+				{
+					_Canvas.alpha += 0.05f;
+					isDragging = false;
+				}
+			}
+		}
+	}
+
+
+
+	public void ChangeCameraViewForCar()
+	{
+		CameraObject.fieldOfView = EndLook - 7f;
+		if (CameraObject.fieldOfView < EndLook)
+		{
+			CameraObject.fieldOfView += 5f * Time.deltaTime;
+		}
+	}
 
 	private bool DragCheck = false;
 

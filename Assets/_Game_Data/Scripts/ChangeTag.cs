@@ -12,7 +12,4 @@ public class ChangeTag : MonoBehaviour
     {
         this.gameObject.tag = Tag;
     }
-
-
-   
 }

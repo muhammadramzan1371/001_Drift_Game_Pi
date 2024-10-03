@@ -13,61 +13,145 @@
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeArchitecture/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeArchitecture/Scripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeArchitecture/DailyRewards/Scripts/PrefsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeArchitecture/DailyRewards/Scripts/PrefsManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeArchitecture/Scripts/Managers/PlayerSelection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeArchitecture/Scripts/Managers/PlayerSelection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Drift Game interactive/Materials/Buildings-textures.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Drift Game interactive/Materials/Buildings-textures.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Drift Game interactive/Materials/Concrete granite wall flat seamless texture 2048x2048.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Drift Game interactive/Materials/Concrete granite wall flat seamless texture 2048x2048.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Drift Game interactive/Materials/texture 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Drift Game interactive/Materials/texture 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/Buildings-textures.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/Buildings-textures.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/S_Asphalt_baseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/S_Asphalt_baseColor.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/Untitled-1.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/Untitled-1.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/buliding-texture.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/buliding-texture.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/center.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/center.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/road-texre.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/road-texre.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/texture 1.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/texture 1.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/texture.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Drift Game interactive/Textures/texture.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RealisticCarShaders-Mobile/Scenes/SportCar_Scene_Materials/Body_Materials/Pearl_Flakes-Carbon/Flakes Body 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RealisticCarShaders-Mobile/Scenes/SportCar_Scene_Materials/Body_Materials/Pearl_Flakes-Carbon/Flakes Body 2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RealisticCarShaders-Mobile/Materials by Shader/Glass Shader/Glass_Simple/Glass Simple clear.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RealisticCarShaders-Mobile/Materials by Shader/Glass Shader/Glass_Simple/Glass Simple clear.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameData.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameData/Imported.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameData/Imported/Third_Party.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_GameData/Imported/Third_Party/ParticalEffects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 1/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 1/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 10/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 10/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 10/X.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 10/X.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 10/plus-texture.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 10/plus-texture.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 13/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 13/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 15/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 15/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 16/11 2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 16/11 2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 16/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 16/11.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 16/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 16/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 17/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 17/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 17/Tex_0092 1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 17/Tex_0092 1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 17/Tex_0092.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 17/Tex_0092.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 18/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 18/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 19/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 19/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 19/Materials/land-car-texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 19/Materials/land-car-texture.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 2/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 2/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 2/Materials/Spoiler.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 2/Materials/Spoiler.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 20/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 20/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 20/Materials/car-88 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 20/Materials/car-88 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 21/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 21/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 21/Materials/car 54.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 21/Materials/car 54.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 21/car 54.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 21/car 54.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 21/car 54.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 21/car 54.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 22/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 22/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 22/Materials/sup-car.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 22/Materials/sup-car.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 24/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 24/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 24/tron-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 24/tron-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 3/FBX/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 3/FBX/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 4/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 4/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 4/civi-car.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 4/civi-car.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 6/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 6/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 7/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 7/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 7/car-15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 7/car-15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 8/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 8/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 9/Bm car.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 9/Bm car.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 9/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 9/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 9/bm-texture.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/00_Mohsin_23_Cars/Car 9/bm-texture.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Ombre.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Ombre.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Orange.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Yellow.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/blue.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/Materials/3.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/Materials/3.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 4/Materials/4.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 4/Materials/4.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR1/Materials/Rang-Rover 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR1/Materials/Rang-Rover 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/drift cars/character/TpsPlayerOk.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/drift cars/character/TpsPlayerOk.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Prefabs/Particles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Prefabs/Particles.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Prefabs/Particles.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Prefabs/Particles.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/01 (1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/01 (1).jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/3.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/CAR 3.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/CAR 3.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/Gv.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/Gv.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/Materials/Body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/Materials/Body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/Materials/Body_In_Garage.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 3/Materials/Body_In_Garage.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 4/Materials/Body_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR 4/Materials/Body_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR/CAR 1/Materials/body-texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR/CAR 1/Materials/body-texture.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR/CAR 1/body-texture-enhanced (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR/CAR 1/body-texture-enhanced (1).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR/CAR 1/body-texture-enhanced.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR/CAR 1/body-texture-enhanced.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR/CAR 1/body-texture.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR/CAR 1/body-texture.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR1/Materials/Body_In_garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/CAR1/Materials/Body_In_garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/Materials/Body_In_Garage.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/Materials/Body_In_Garage.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/Materials/car-4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/Materials/car-4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/car 4.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/car 4.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/car-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/car-4.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/carsss/car 3/car-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/CARS/carsss/car 3/car-4.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/tyers/tyer 9/Materials/Wheel_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/tyers/tyer 9/Materials/Wheel_In_Garage.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/tyers/tyer 9/Materials/tyer_In_Garage.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Models/player interactive/tyers/tyer 9/Materials/tyer_In_Garage.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/GamePlay.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/MenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/MenuScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/CameraRotate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/CameraRotate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/CharcterSlectionManger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/CharcterSlectionManger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/filled.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/filled.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/Skybox_2 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/Skybox_2 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191bk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191bk.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191dn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191dn.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191ft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191ft.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191lf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191lf.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191rt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191rt.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191up 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Third_Party/New_SkyBox/Skybox/sky191up 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Standard Assets/Effects/LightFlares/Flares/50mmZoom.flare" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Standard Assets/Effects/LightFlares/Flares/50mmZoom.flare" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Standard Assets/Effects/LightFlares/Textures/Flare50mm.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Standard Assets/Effects/LightFlares/Textures/Flare50mm.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Standard Assets/ParticleSystems/Prefabs/DustStorm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Standard Assets/ParticleSystems/Prefabs/DustStorm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/ChangeTag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/ChangeTag.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/GameControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/GameControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/PlayerCamera_New.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/PlayerCamera_New.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/TpsTriger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/TpsTriger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/UiManagerObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/UiManagerObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/VehicleProperties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/VehicleProperties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/Instant Screenshot.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/Instant Screenshot.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/Instant Screenshot/Documentation - Instant screenshot.pdf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/Instant Screenshot/Documentation - Instant screenshot.pdf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/Instant Screenshot/ScreenshotTaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/Instant Screenshot/ScreenshotTaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/Instant Screenshot/ScreenshotTaker.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/Instant Screenshot/ScreenshotTaker.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/Timeline/6Timeline.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/Timeline/6Timeline.playable" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BG_.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BG_.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/BuidRuntimeInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/BuidRuntimeInfo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/BuildIdView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/BuildIdView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/Editor/BuidRuntimeInfoPreprocess.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/Editor/BuidRuntimeInfoPreprocess.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/Resources/BuildRuntimeInfoSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/Resources/BuildRuntimeInfoSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/UpdateNow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/BuildInfoUtility/UpdateNow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/Error_.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/Error_.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/NO THANKS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/NO THANKS.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/Update_.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/1/Update_.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/SS.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/SS.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/UpdatePannel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/01- Pannel Update/UpdatePannel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/01- Main Menu/Drive_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/01- Main Menu/Drive_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/01- Main Menu/Free Coins_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/01- Main Menu/Free Coins_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/02- Garage/Start_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/02- Garage/Start_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/02- Garage/Test Drive_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/02- Garage/Test Drive_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/03- Modes/Career Mode_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/03- Modes/Career Mode_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/03- Modes/Time Trail_.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/_Art/01- Slice/03- Modes/Time Trail_.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +266,12 @@
       <workItem from="1727346899093" duration="2714000" />
       <workItem from="1727510749642" duration="4670000" />
       <workItem from="1727679931278" duration="6918000" />
-      <workItem from="1727690901053" duration="3241000" />
+      <workItem from="1727690901053" duration="6030000" />
+      <workItem from="1727762766678" duration="187000" />
+      <workItem from="1727781839140" duration="8341000" />
+      <workItem from="1727801283072" duration="3092000" />
+      <workItem from="1727849733595" duration="3720000" />
+      <workItem from="1727941458551" duration="4080000" />
     </task>
     <servers />
   </component>

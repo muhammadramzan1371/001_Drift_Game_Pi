@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using GameAnalyticsSDK;
 using PlayerInteractive_Mediation;
 using SickscoreGames.HUDNavigationSystem;
 using UnityEngine;
@@ -26,16 +27,20 @@ public class GameManager : MonoBehaviour
 
     [Space(5)]
     [Header("Car Stuff")]
-    public Transform VehicleCamera; 
-  //  public Transform bikecamera; 
-    
-
+    public Transform VehicleCamera;
     public Transform TpsCamera; 
     public GameObject CurrentCar;
     public Transform TrafficSpawn;
     public Transform Weather;
-
     public HUDNavigationSystem hud;
+    
+    // [Header("Mobile Stuff")]
+    // [Space(5)]
+    // public GameObject DefaultCar;
+    // public GameObject[] AllCarsOnVedio/*,AllBiCyclesOnVido,AllBikesOnVideo,AllHeliOnVedio*/;
+    // public Transform DefaultCarPosition;
+    
+    
     private void Awake()
     {
         Instance = this;
@@ -45,7 +50,8 @@ public class GameManager : MonoBehaviour
     {
         hud.PlayerCamera = TpsCamera.GetComponent<Camera>();
         hud.PlayerController = TPSPlayer.transform; 
-        TPSPlayer = LevelManager.instace?.Chracter;
+        TPSPlayer = LevelManager.instace?.TpsPlayer;
+       // UiManagerObject.instance.MobileOnBtn.SetActive(true);
     }
 
     public async void GetInVehicle()
@@ -85,18 +91,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
         if (TpsStatus==PlayerStatus.CarDriving)
         {
-            Weather.transform.position = VehicleCamera.transform.position; 
-        //    Weather.transform.rotation = VehicleCamera.transform.rotation; 
+            Weather.transform.position = VehicleCamera.transform.position;
             TrafficSpawn.position = VehicleCamera.position;
             TrafficSpawn.rotation = VehicleCamera.rotation;
         }
         else
         {
             Weather.transform.position = TpsCamera.transform.position;
-          //  Weather.transform.rotation = TpsCamera.transform.rotation; 
             TrafficSpawn.position = TpsCamera.position;
             TrafficSpawn.rotation = TpsCamera.rotation;
         }
@@ -121,127 +124,42 @@ public class GameManager : MonoBehaviour
         CurrentCar.GetComponent<DriftPhysics>().enabled = false;
         TPSPlayer.transform.position =CurrentCar.GetComponent<VehicleProperties>().TpsPosition.position; 
         TPSPlayer.transform.eulerAngles =new Vector3(0,CurrentCar.GetComponent<VehicleProperties>().TpsPosition.rotation.y,0);
-       // LevelManager.Instance.VehicleCameraNew.GetComponent<RCC_Camera>().RemoveTarget();
-      
         OnVehicleInteraction?.Invoke(PlayerStatus.ThirdPerson);
         await Task.Delay(50);
         TpsStatus = PlayerStatus.ThirdPerson;
         hud.PlayerCamera = TpsCamera.GetComponent<Camera>();
         hud.PlayerController = TPSPlayer.transform;
-       
-     
     }
+    
     public void StartEngein()
     {
         CurrentCar.GetComponent<RCC_CarControllerV3>().KillOrStartEngine();
     }
-    /*#region MyRegion
-
-    public async void sitonbike()
-    {
-        Time.timeScale = 1;
-        Invoke("offimage",0.5f);
-        UiManagerObject.instance.blankimage.SetActive(true);
-        OnVehicleInteraction?.Invoke(PlayerStatus.BikeDriving);
-        await Task.Delay(50);
-        TpsStatus = PlayerStatus.BikeDriving;
-        if (CurrentCar==null)
-        {
-            return;
-        }
-        CurrentCar.GetComponent<BikeControl>().enabled = true;
-        UiManagerObject.instance.panels.TpsControle.SetActive(false);
-        UiManagerObject.instance.panels.bikeControle.SetActive(true);
-        CurrentCar.GetComponent<Rigidbody>().isKinematic = false;
-        TpsCamera.gameObject.SetActive(false);
-        TPSPlayer.gameObject.SetActive(false);
-        LevelManager.instace.bikecamera.gameObject.SetActive(true);
-        CurrentCar.GetComponent<BikeControl>().activeControl = true;
-        CurrentCar.GetComponent<BikeControl>().bikeSetting.bikerMan.gameObject.SetActive(true);
-        GameControl.manager.getoutBike.SetActive(true);
-        Siran = false;
-        mutebikesounds();
-        CurrentCar.GetComponent<BikeControl>().bikeLights.brakeLights[0].gameObject.SetActive(true);
-        CurrentCar.GetComponent<BikeControl>().bikeParticles.brakeParticlePrefab.SetActive(true);
-        CurrentCar.GetComponent<BikeControl>().ConeEffect.SetActive(true);
-        CurrentCar.GetComponent<BikeControl>().bikeParticles.brakeParticlePrefab.GetComponentInChildren<ParticleSystem>().Play();
-        CurrentCar.GetComponent<BikeControl>().ConeEffect.SetActive(false);
-        CurrentCar.GetComponent<BikeCheckonGround>().enabled = true;
-        CurrentCar.GetComponent<PoliceLights>().enabled = true;
-        LevelManager.instace.bikecamera.target = CurrentCar.transform;
-        hud.PlayerCamera = bikecamera.GetComponent<Camera>();
-        hud.PlayerController = CurrentCar.transform;
-
-
-
-    }
-
-    public void offimage()
-    {
-        UiManagerObject.instance.blankimage.SetActive(false);
-    }
-    public async void Levaeonbike()
-    {
-        Time.timeScale = 1;
-        UiManagerObject.instance.blankimage.SetActive(true);
-        Invoke("offimage",0.5f);
-        OnVehicleInteraction?.Invoke(PlayerStatus.ThirdPerson);
-        await Task.Delay(50);
-        TpsStatus = PlayerStatus.ThirdPerson;
-        UiManagerObject.instance.panels.TpsControle.SetActive(true);
-        UiManagerObject.instance.panels.bikeControle.SetActive(false);
-        TpsCamera.gameObject.SetActive(true);
-        TPSPlayer.gameObject.SetActive(true);
-        LevelManager.instace.bikecamera.gameObject.SetActive(false);
-        CurrentCar.GetComponent<BikeControl>().activeControl = false;
-        CurrentCar.GetComponent<BikeControl>().bikeSetting.bikerMan.gameObject.SetActive(false);
-        TPSPlayer.transform.position =CurrentCar.GetComponent<BikeControl>().TpsPosition.position; 
-        TPSPlayer.transform.eulerAngles =new Vector3(0,CurrentCar.GetComponent<BikeControl>().TpsPosition.rotation.y,0);
-        CurrentCar.GetComponent<BikeControl>().bikeLights.brakeLights[0].gameObject.SetActive(false);
-        CurrentCar.GetComponent<BikeControl>().ConeEffect.SetActive(true);
-        Siran = true;
-        mutebikesounds();
-        CurrentCar.GetComponent<PoliceLights>().activeLight = false;
-        CurrentCar.GetComponent<PoliceLights>().enabled = false;
-        CurrentCar.GetComponent<BikeCheckonGround>().forgrounded();
-   
-        CurrentCar.GetComponent<BikeControl>().bikeParticles//bikeparticals
-            .brakeParticlePrefab.GetComponentInChildren<ParticleSystem>().Stop();
-       
-        CurrentCar.GetComponent<BikeControl>().enabled = false;
-        hud.PlayerCamera = TpsCamera.GetComponent<Camera>();
-        hud.PlayerController = TPSPlayer.transform;
-       
-    }
-    public void RestBike()
-    {
-        {
-            if (CurrentCar==null)
-            {
-                return;
-            }
-            CurrentCar.transform.position += new Vector3(0, 10f, 0);
-            CurrentCar.transform.eulerAngles += new Vector3(0, transform.eulerAngles.y, 0);
-            GameControl.manager.restTime = 2.0f;
-        }
-    }
-
-    public bool Siran = false;
-    public void mutebikesounds()
-    {
-        if (Siran)
-        {
-            CurrentCar.GetComponent<BikeControl>().bikeSounds.IdleEngine.enabled = false;
-            CurrentCar.GetComponent<BikeControl>().bikeSounds.HighEngine.enabled = false;
-            CurrentCar.GetComponent<BikeControl>().bikeSounds.LowEngine.enabled = false;
-        }
-        else
-        { 
-            CurrentCar.GetComponent<BikeControl>().bikeSounds.IdleEngine.enabled = true;
-            CurrentCar.GetComponent<BikeControl>().bikeSounds.HighEngine.enabled = true;
-            CurrentCar.GetComponent<BikeControl>().bikeSounds.LowEngine.enabled = true;
-        }
-    }
     
-    #endregion*/
+    
+    
+    // public void CarInstantiateNow(int lValue)
+    // {
+    //     PrefsManager.SetCurrentCarOnVideo(lValue);
+    //     /*CarInstantiateDone();
+    //     Showinter();
+    //     Invoke("Loadinter", 2);*/
+    //     Data.AdType = 25;
+    //     if (FindObjectOfType<Pi_AdsCall>())
+    //     {
+    //         FindObjectOfType<Pi_AdsCall>().showRewardVideo(CarInstantiateDone);
+    //     }
+    //     GameAnalytics.NewAdEvent(GAAdAction.RewardReceived, GAAdType.RewardedVideo, "Admob", "Get_Car_OnVideo_By_Mobile");
+    // }
+    // public void CarInstantiateDone()
+    // {
+    //     DefaultCar=Instantiate(AllCarsOnVedio[PrefsManager.GetCurrentCarOnVideo()],DefaultCarPosition.position,DefaultCarPosition.rotation);
+    //     DefaultCar.GetComponent<Rigidbody>().isKinematic = false;
+    //     if ( DefaultCar.GetComponent<VehicleProperties>())
+    //     {
+    //         DefaultCar.GetComponent<VehicleProperties>().NotShowAdForSit = true;
+    //     }
+    //     UiManagerObject.instance.Mob_Off();
+    // }
+    
 }

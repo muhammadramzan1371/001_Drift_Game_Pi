@@ -34,7 +34,7 @@ public class VehicleProperties : MonoBehaviour
     
     [Header("SettIngWheel")]
     
-    public bool isSetWheelsModel=false;
+    public bool isSetWheelsModel,NotShowAdForSit=false;
 
     private void OnDrawGizmos()
     {

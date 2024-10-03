@@ -1,5 +1,4 @@
-﻿/*
-//C# Example
+﻿//C# Example
 using UnityEditor;
 using UnityEngine;
 
@@ -213,5 +212,4 @@ public class Screenshot : EditorWindow
 	}
 
 }
-*/
 

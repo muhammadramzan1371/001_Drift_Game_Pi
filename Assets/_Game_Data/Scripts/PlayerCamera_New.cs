@@ -70,7 +70,7 @@ public class PlayerCamera_New : MonoBehaviour
 
 
 
-        target = LevelManager.instace?.Chracter.transform;
+        target = LevelManager.instace?.TpsPlayer.transform;
         cameraDistance = target.GetComponent<TpsTriger>().cameraDistance;
         targetOffset.y= target.GetComponent<TpsTriger>().targetOffset.y ;
 

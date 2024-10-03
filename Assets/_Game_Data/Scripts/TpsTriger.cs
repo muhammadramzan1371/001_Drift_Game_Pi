@@ -15,8 +15,7 @@ public class TpsTriger : MonoBehaviour
       {
          if (GetComponent<ThirdPersonUserControl>().enabled)
          {
-           
-            GameControl.manager.IdButton.SetActive(false);
+            
             GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
             if ( GameManager.Instance.CurrentCar.GetComponentInParent<VehicleProperties>().IsOnVedio)
             {
@@ -39,7 +38,6 @@ public class TpsTriger : MonoBehaviour
       {
          if (GetComponent<ThirdPersonUserControl>().enabled)
          {
-            GameControl.manager.IdButton.SetActive(false);
             GameManager.Instance.CurrentCar = other.GetComponentInParent<RCC_CarControllerV3>().gameObject;
             if ( GameManager.Instance.CurrentCar.GetComponentInParent<VehicleProperties>().IsOnVedio)
             {
@@ -60,7 +58,6 @@ public class TpsTriger : MonoBehaviour
       //this forcar
       if (other.gameObject.tag == "Carhandle")
       {
-         GameControl.manager.IdButton.SetActive(true);
          if ( GameManager.Instance.CurrentCar.GetComponentInParent<VehicleProperties>().IsOnVedio)
          {
             GameControl.manager.getInVehicleOnvedo.SetActive(false);
