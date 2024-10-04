@@ -31,6 +31,8 @@ public class UiManagerObject : MonoBehaviour
     public Image NosFiller;
     public GameObject NosButton;
     public Button Driftbutton;
+    public GameObject CheckPointEffect, FinalCheckPointEffect;
+    public AudioSource CheckPointCollectSound;
 
 
     // [Space(5)] [Header("Mobile Stuff")] public GameObject Mob_1stScreen;

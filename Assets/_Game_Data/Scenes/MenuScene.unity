@@ -463,11 +463,11 @@ Transform:
   m_Children:
   - {fileID: 656494866}
   - {fileID: 1976372093}
-  - {fileID: 440062307}
-  - {fileID: 154508376}
   - {fileID: 1188386587}
-  - {fileID: 100611150}
+  - {fileID: 154508376}
   - {fileID: 1024564621}
+  - {fileID: 100611150}
+  - {fileID: 440062307}
   - {fileID: 1954426531}
   - {fileID: 808504019}
   - {fileID: 219736787}
@@ -10823,7 +10823,7 @@ GameObject:
   - component: {fileID: 295605935}
   - component: {fileID: 295605934}
   m_Layer: 5
-  m_Name: Car 7
+  m_Name: Car 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10841,7 +10841,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1809283345}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13777,7 +13777,7 @@ GameObject:
   - component: {fileID: 421771273}
   - component: {fileID: 421771272}
   m_Layer: 5
-  m_Name: Car 3
+  m_Name: Car 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13795,11 +13795,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1809283345}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000014305, y: -21.845005}
+  m_AnchoredPosition: {x: 0, y: -21.845005}
   m_SizeDelta: {x: 152.9446, y: 95.108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &421771272
@@ -14283,7 +14283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440062307}
   m_Layer: 3
-  m_Name: Car 3
+  m_Name: Car 7
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14304,7 +14304,7 @@ Transform:
   - {fileID: 137925945}
   - {fileID: 1631025569}
   m_Father: {fileID: 11875861}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &444510329
 GameObject:
@@ -32499,7 +32499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1024564621}
   m_Layer: 3
-  m_Name: Car 7
+  m_Name: Car 5
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32520,7 +32520,7 @@ Transform:
   - {fileID: 398729325}
   - {fileID: 89382920}
   m_Father: {fileID: 11875861}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1025182278
 GameObject:
@@ -37745,7 +37745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1188386587}
   m_Layer: 3
-  m_Name: Car 5
+  m_Name: Car 3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37766,7 +37766,7 @@ Transform:
   - {fileID: 1966633128}
   - {fileID: 460016661}
   m_Father: {fileID: 11875861}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1191151991
 GameObject:
@@ -44496,7 +44496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1363659062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51778,6 +51778,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7967268302530882943, guid: 5f28579ac8a4aef4c916ab4a3c0e322c, type: 3}
   m_PrefabInstance: {fileID: 1616952289}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1620034339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1620034340}
+  - component: {fileID: 1620034342}
+  - component: {fileID: 1620034341}
+  m_Layer: 5
+  m_Name: Car 32
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1620034340
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620034339}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1809283345}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0000014305115, y: -14}
+  m_SizeDelta: {x: 174.1177, y: 107.15}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1620034341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620034339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a34388179635d1a488697035bbb22eab, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1620034342
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620034339}
+  m_CullTransparentMesh: 1
 --- !u!1 &1620122046
 GameObject:
   m_ObjectHideFlags: 0
@@ -60183,11 +60258,11 @@ RectTransform:
   - {fileID: 1127078253}
   - {fileID: 1363659062}
   - {fileID: 699140892}
-  - {fileID: 421771271}
-  - {fileID: 2119308511}
   - {fileID: 1920987418}
-  - {fileID: 862251073}
+  - {fileID: 2119308511}
   - {fileID: 295605933}
+  - {fileID: 862251073}
+  - {fileID: 421771271}
   - {fileID: 787057375}
   - {fileID: 290253697}
   - {fileID: 2088063400}
@@ -60212,6 +60287,7 @@ RectTransform:
   - {fileID: 1321898324}
   - {fileID: 229922117}
   - {fileID: 1232181942}
+  - {fileID: 1620034340}
   m_Father: {fileID: 460937899}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63302,7 +63378,7 @@ GameObject:
   - component: {fileID: 1920987420}
   - component: {fileID: 1920987419}
   m_Layer: 5
-  m_Name: Car 5
+  m_Name: Car 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63320,11 +63396,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1809283345}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000014305115, y: -20.521}
+  m_AnchoredPosition: {x: 0, y: -20.521}
   m_SizeDelta: {x: 159.7681, y: 100.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1920987419
@@ -66942,11 +67018,11 @@ MonoBehaviour:
   selectedDogArray:
   - {fileID: 656494865}
   - {fileID: 1976372092}
-  - {fileID: 440062306}
-  - {fileID: 154508375}
   - {fileID: 1188386586}
-  - {fileID: 100611149}
+  - {fileID: 154508375}
   - {fileID: 1024564620}
+  - {fileID: 100611149}
+  - {fileID: 440062306}
   - {fileID: 1954426530}
   - {fileID: 808504018}
   - {fileID: 219736786}
@@ -66998,11 +67074,11 @@ MonoBehaviour:
   CarSprites:
   - {fileID: 1363659063}
   - {fileID: 699140893}
-  - {fileID: 421771272}
-  - {fileID: 2119308512}
   - {fileID: 1920987419}
-  - {fileID: 862251074}
+  - {fileID: 2119308512}
   - {fileID: 295605934}
+  - {fileID: 862251074}
+  - {fileID: 421771272}
   - {fileID: 787057376}
   - {fileID: 290253698}
   - {fileID: 2088063401}
@@ -67027,7 +67103,7 @@ MonoBehaviour:
   - {fileID: 1321898325}
   - {fileID: 229922118}
   - {fileID: 1232181943}
-  - {fileID: 1232181943}
+  - {fileID: 1620034341}
   CarIconImage: {fileID: 1363659063}
   fakeLoading: {fileID: 1727703967}
   AdBrakepanel: {fileID: 591141593}
