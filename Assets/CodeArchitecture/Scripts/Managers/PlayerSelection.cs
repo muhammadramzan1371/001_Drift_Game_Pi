@@ -243,17 +243,15 @@ public class PlayerSelection : MonoBehaviour
     public void BackToMainCanvas()
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
-        fakeLoading.SetActive(true);
+        CarSlection.SetActive(false);
         menuCanvas.SetActive(true);
         Logger.ShowLog("Enable Here");
-        Invoke("OffAnimator", 1.5f);
         SetstartPont();
     }
 
     private void OffAnimator()
     {
         MainCamera.GetComponent<Animator>().enabled = false;
-        
     }
 
     private void OnAnimator()
@@ -275,7 +273,6 @@ public class PlayerSelection : MonoBehaviour
     public void BackFromLevelScreen()
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
-        fakeLoading.SetActive(true);
         levelSelectionCanvas.SetActive(false);
         CarSlection.SetActive(true);
         ShowPlayerNow(PrefsManager.GetSelectedPlayerValue());

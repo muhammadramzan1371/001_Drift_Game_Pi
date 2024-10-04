@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     public GameObject[] Players;
    // public GameObject[] Character;
     public int[] Reward;
-    public LevelProperties CurrentLevelProperties;
+    public PI_LevelProperties CurrentLevelProperties;
     public GameObject SelectedPlayer,TpsPlayer,FreeMode;
     public static LevelManager instace;
     public int CurrentLevel, coinsCounter;
@@ -19,20 +19,14 @@ public class LevelManager : MonoBehaviour
     public RCC_Camera vehicleCamera;
     public PlayerCamera_New Tpscamera;
     public OpenWorldManager OpenWorldManager;
-   // public GameObject TpsPlayer;
     public DriftCanvasManager driftCanvasManagerNow;
     
     [Header("WheatherArea")]
-    
     public ParticleSystem snowParticleSystem;
-    
     public Material daySkybox;
     public Material nightSkybox;
-
-
-   
-  
     public GameObject directionalLightGO;
+    
     void Awake()
     {
         instace = this;
@@ -43,9 +37,13 @@ public class LevelManager : MonoBehaviour
                 SelectedPlayer = Players[PrefsManager.GetSelectedPlayerValue()];
                // Chracter = Character[PrefsManager.GetSelectedCracterValue()];
                 CurrentLevel = PrefsManager.GetCurrentLevel() - 1;
-                CurrentLevelProperties = Levels[CurrentLevel].GetComponent<LevelProperties>();
-                SelectedPlayer.transform.position = CurrentLevelProperties.PlayerPosition.position;
-                SelectedPlayer.transform.rotation = CurrentLevelProperties.PlayerPosition.rotation;
+                CurrentLevelProperties = Levels[CurrentLevel].GetComponent<PI_LevelProperties>();
+                
+                SelectedPlayer.transform.position = CurrentLevelProperties.CarPosition.position;
+                SelectedPlayer.transform.rotation = CurrentLevelProperties.CarPosition.rotation;
+                
+                TpsPlayer.transform.position = CurrentLevelProperties.TpsPosition.position;
+                TpsPlayer.transform.rotation = CurrentLevelProperties.TpsPosition.rotation;
                 CurrentLevelProperties.gameObject.SetActive(true);
             }
         }
@@ -68,7 +66,10 @@ public class LevelManager : MonoBehaviour
         SelectedPlayer.GetComponent<VehicleProperties>().ConeEffect.transform.GetChild(0).gameObject.SetActive(false);
         SelectedPlayer.GetComponent<VehicleProperties>().IsOnVedio=false;
         SelectedPlayer.GetComponent<CarShadow>().enabled = true;
+        SelectedPlayer.GetComponent<CarShadow>().ombrePlane.gameObject.SetActive(true);
     }
+    
+    
     public void SetTransform(Transform playerposition, Transform defulcar)
     {
         TpsPlayer.transform.position = playerposition.position;
@@ -79,19 +80,15 @@ public class LevelManager : MonoBehaviour
         
         SelectedPlayer.transform.position = defulcar.position;
         SelectedPlayer.transform.rotation = defulcar.rotation;
-        
     }
 
     public IEnumerator Start()
     {
-        if (PrefsManager.GetLevelMode() != 1)
+        if (PrefsManager.GetGameMode() != "free")
         {
             yield return new WaitForSeconds(0.5f);
             UiManagerObject.instance.ShowObjective(CurrentLevelProperties.LevelStatment);
         }
-        
-        
-       
     }
 
     public void DAy()
@@ -121,14 +118,10 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-       
         offset += Time.deltaTime * multiplaxer;
         foreach (var VARIABLE in CarEffect)
         {
-            VARIABLE.mainTextureOffset=new Vector2(0, offset);
+            VARIABLE.mainTextureOffset = new Vector2(0, offset);
         }
-       
     }
-    
-    
 }
