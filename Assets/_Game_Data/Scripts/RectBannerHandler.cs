@@ -12,6 +12,7 @@ public class RectBannerHandler : MonoBehaviour
         if (FindObjectOfType<Pi_AdsCall>())
         {
             FindObjectOfType<Pi_AdsCall>().showBigBannerAD(AdPosition.BottomLeft);
+            FindObjectOfType<Pi_AdsCall>().hideBanner1();
         }
     }
 
@@ -20,6 +21,7 @@ public class RectBannerHandler : MonoBehaviour
         if (FindObjectOfType<Pi_AdsCall>())
         {
             FindObjectOfType<Pi_AdsCall>().hideBigBanner();
+            FindObjectOfType<Pi_AdsCall>().showBanner1();
         }
     }
 }

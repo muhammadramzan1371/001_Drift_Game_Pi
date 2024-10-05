@@ -34,6 +34,7 @@ public class PrefsManager : MonoBehaviour
     static string NosCounter = "NosCounter";
     static string LoadInt = "LoadInt";
     public const string CurrentCarOnVideo = "CURRENT_CarOnVideo"; 
+    public const string CurrentCarShadow = "CURRENT_CarShadow"; 
     
     
     public static void SetCurrentCarOnVideo(int currentPlayer)
@@ -46,6 +47,14 @@ public class PrefsManager : MonoBehaviour
     }
     
     
+    public static void SetCurrentCarShadow(int currentPlayer)
+    {
+        PlayerPrefs.SetInt(CurrentCarShadow, currentPlayer);
+    }
+    public static int GetCurrentCarShadow()
+    {
+        return PlayerPrefs.GetInt(CurrentCarShadow, 0);
+    }
     
     
     

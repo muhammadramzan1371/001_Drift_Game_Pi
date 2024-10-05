@@ -19,7 +19,7 @@ public class MoneyCounterAdd : MonoBehaviour {
     private void OnEnable()
     {
 
-        reward = LevelManager.instace.Reward[PrefsManager.GetCurrentLevel() - 1];
+        reward = LevelManager.instace.CurrentLevelProperties.LevelReward;
         LevelManager.instace.SelectedPlayer.SetActive(false);
         if (isFail)
             reward = reward - 800;

@@ -35,15 +35,15 @@ public class UiManagerObject : MonoBehaviour
     public AudioSource CheckPointCollectSound;
 
 
-    // [Space(5)] [Header("Mobile Stuff")] public GameObject Mob_1stScreen;
-    // public GameObject CarSection;
-    // public GameObject BiCycleSection;
-    // public GameObject BikeSection;
-    // public GameObject heliSection;
-    // public GameObject Mobile;
-    // public GameObject MobileOffBtn;
-    //
-    // public GameObject MobileOnBtn;
+    [Space(5)] [Header("Mobile Stuff")] 
+    //public GameObject Mob_1stScreen;
+  //  public GameObject CarSection;
+  //  public GameObject BiCycleSection;
+   // public GameObject BikeSection;
+  //  public GameObject heliSection;
+    public GameObject Mobile;
+   // public GameObject MobileOffBtn;
+    public GameObject MobileOnBtn;
     /*public Sprite[] CarSprites;
     public Button[] CarButtons;
     public GameObject[] CarInsBtns;
@@ -353,33 +353,14 @@ public class UiManagerObject : MonoBehaviour
     
     
     
-    
-    // public void Mob_Off()
-    // {
-    //     MobileOnBtn.SetActive(true);
-    //     MobileOffBtn.SetActive(false);
-    //     CarSection.SetActive(false);
-    //     BiCycleSection.SetActive(false);
-    //     BikeSection.SetActive(false);
-    //     heliSection.SetActive(false);
-    //     Mobile.SetActive(false);
-    // }
-    //
-    // public void Mob_On()
-    // {
-    //     Mob_1stScreen.SetActive(true);
-    //     MobileOnBtn.SetActive(false);
-    //     MobileOffBtn.SetActive(true);
-    //     Mobile.SetActive(true);
-    // }
+    public void Mob_On()
+    {
+        Mobile.SetActive(true);
+        MobileOnBtn.SetActive(false);
+    }
 
-    
-    
-    
-    
-    
-    
-    
+
+
 
     public void SetTimeScale(float timescale)
     {

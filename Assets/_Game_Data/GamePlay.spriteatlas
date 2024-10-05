@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GamePlay
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 51
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 1bbb418233fe7b04baebb904d7d865d0, type: 3}
+    - {fileID: 2800000, guid: 9e62e87d8d28f4047b3de2a4f0ae11d1, type: 3}
+    - {fileID: 2800000, guid: 6a8ad1fed1d5f904a90705c343d8127d, type: 3}
+    - {fileID: 2800000, guid: 7a39645b9ced06d44abfcd38e20e70f9, type: 3}
+    - {fileID: 2800000, guid: fb74aee0bd994fd4a9d3d5cac5bda52a, type: 3}
+    - {fileID: 2800000, guid: ab262955727854542a068a4cf8b164fb, type: 3}
+    - {fileID: 2800000, guid: 6f3a62cc3dbd4d241ad9978c6444c9bc, type: 3}
+    - {fileID: 2800000, guid: 3fccf6793ff115f4985aeb1eb0fd6f86, type: 3}
+    - {fileID: 2800000, guid: 6176301384b42e34782cf6ac84e79f61, type: 3}
+    - {fileID: 2800000, guid: cf3b8e9102b2ff74ea81b021271ad0d6, type: 3}
+    - {fileID: 2800000, guid: ecf4fb8a1599e32498426106436eb32e, type: 3}
+    - {fileID: 2800000, guid: 988ee356f67b3724bbe277fdd458b87d, type: 3}
+    - {fileID: 2800000, guid: 1fd520748d2b7ba408d1ab21b34aa3db, type: 3}
+    - {fileID: 2800000, guid: 2cf0bae17f38b364294dbec0db3caf7f, type: 3}
+    - {fileID: 2800000, guid: 01ac1a042bafbba49917696e80f779da, type: 3}
+    - {fileID: 2800000, guid: 46e006c0bfffecb49b8459bc9945b8be, type: 3}
+    - {fileID: 2800000, guid: 7a077c3a740572143a11f970a0f272af, type: 3}
+    - {fileID: 2800000, guid: 3959fbe208b6cd84d98f5d63e3288ed8, type: 3}
+    - {fileID: 2800000, guid: 13aabef70e5b2bf4697d91bce5427859, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 46e006c0bfffecb49b8459bc9945b8be, type: 3}
+  - {fileID: 21300000, guid: fb74aee0bd994fd4a9d3d5cac5bda52a, type: 3}
+  - {fileID: 21300000, guid: cf3b8e9102b2ff74ea81b021271ad0d6, type: 3}
+  - {fileID: 21300000, guid: 2cf0bae17f38b364294dbec0db3caf7f, type: 3}
+  - {fileID: 21300000, guid: 1bbb418233fe7b04baebb904d7d865d0, type: 3}
+  - {fileID: 21300000, guid: 3959fbe208b6cd84d98f5d63e3288ed8, type: 3}
+  - {fileID: 21300000, guid: 6176301384b42e34782cf6ac84e79f61, type: 3}
+  - {fileID: 21300000, guid: 01ac1a042bafbba49917696e80f779da, type: 3}
+  - {fileID: 21300000, guid: 1fd520748d2b7ba408d1ab21b34aa3db, type: 3}
+  - {fileID: 21300000, guid: ab262955727854542a068a4cf8b164fb, type: 3}
+  - {fileID: 21300000, guid: 988ee356f67b3724bbe277fdd458b87d, type: 3}
+  - {fileID: 21300000, guid: 13aabef70e5b2bf4697d91bce5427859, type: 3}
+  - {fileID: 21300000, guid: 3fccf6793ff115f4985aeb1eb0fd6f86, type: 3}
+  - {fileID: 21300000, guid: 7a077c3a740572143a11f970a0f272af, type: 3}
+  - {fileID: 21300000, guid: ecf4fb8a1599e32498426106436eb32e, type: 3}
+  - {fileID: 21300000, guid: 7a39645b9ced06d44abfcd38e20e70f9, type: 3}
+  - {fileID: 21300000, guid: 6f3a62cc3dbd4d241ad9978c6444c9bc, type: 3}
+  - {fileID: 21300000, guid: 9e62e87d8d28f4047b3de2a4f0ae11d1, type: 3}
+  - {fileID: 21300000, guid: 6a8ad1fed1d5f904a90705c343d8127d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Race
+  - Jump_
+  - Door_
+  - Off
+  - Handle
+  - Right_
+  - Coin bar
+  - Pause_
+  - Needle
+  - Door_ 1
+  - Left_
+  - Speed meeter
+  - Brake
+  - Respone
+  - Drift Icon_
+  - Moon OFf_
+  - Mob_ (1)
+  - Toggle_
+  - Sun Off_
+  m_RenderDataMap: {}
+  m_Tag: GamePlay
+  m_IsVariant: 0

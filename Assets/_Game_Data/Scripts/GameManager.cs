@@ -10,37 +10,34 @@ public enum PlayerStatus
 {
     ThirdPerson,CarDriving,BikeDriving
 }
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    
+
     public delegate void VehicleInteraction(PlayerStatus Status);
+
     public static event VehicleInteraction OnVehicleInteraction;
 
 
     public PlayerStatus TpsStatus = PlayerStatus.ThirdPerson;
-    
-    [Header("ThirdPerson Stuff")]
-    [Space(5)]
+
+    [Header("ThirdPerson Stuff")] [Space(5)]
 
     public GameObject TPSPlayer;
 
-    [Space(5)]
-    [Header("Car Stuff")]
-    public Transform VehicleCamera;
-    public Transform TpsCamera; 
+    [Space(5)] [Header("Car Stuff")] public Transform VehicleCamera;
+    public Transform TpsCamera;
     public GameObject CurrentCar;
     public Transform TrafficSpawn;
     public Transform Weather;
     public HUDNavigationSystem hud;
-    
-    // [Header("Mobile Stuff")]
-    // [Space(5)]
-    // public GameObject DefaultCar;
-    // public GameObject[] AllCarsOnVedio/*,AllBiCyclesOnVido,AllBikesOnVideo,AllHeliOnVedio*/;
-    // public Transform DefaultCarPosition;
-    
-    
+
+    [Header("Mobile Stuff")] [Space(5)] public GameObject DefaultCar;
+    public GameObject[] AllCarsOnVedio, AllShadows /*,AllBiCyclesOnVido,AllBikesOnVideo,AllHeliOnVedio*/;
+    public Transform DefaultCarPosition;
+
+
     private void Awake()
     {
         Instance = this;
@@ -49,9 +46,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         hud.PlayerCamera = TpsCamera.GetComponent<Camera>();
-        hud.PlayerController = TPSPlayer.transform; 
+        hud.PlayerController = TPSPlayer.transform;
         TPSPlayer = LevelManager.instace?.TpsPlayer;
-       // UiManagerObject.instance.MobileOnBtn.SetActive(true);
     }
 
     public async void GetInVehicle()
@@ -61,6 +57,10 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        if (!CurrentCar.GetComponent<VehicleProperties>().NotShowAdForSit)
+        {
+            ShowInter();
+        }
         Time.timeScale = 1;
         UiManagerObject.instance.blankimage.SetActive(true);
         Invoke("offimage", 0.5f);
@@ -71,11 +71,10 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-
         CurrentCar.GetComponent<VehicleProperties>().enabled = true;
         CurrentCar.GetComponent<DriftPhysics>().enabled = true;
-       // CurrentCar.GetComponent<DriftPhysics>().Awakewhenicall();
-        CurrentCar.GetComponent<VehicleProperties>().VehicleReadyForDrive(); // = true;
+        // CurrentCar.GetComponent<DriftPhysics>().Awakewhenicall();
+        CurrentCar.GetComponent<VehicleProperties>().VehicleReadyForDrive();
         TPSPlayer.SetActive(false);
         TpsCamera.gameObject.SetActive(false);
         VehicleCamera.gameObject.SetActive(true);
@@ -85,13 +84,12 @@ public class GameManager : MonoBehaviour
         LevelManager.instace.vehicleCamera.SetTarget(CurrentCar);
         hud.PlayerCamera = VehicleCamera.GetComponentInChildren<Camera>();
         hud.PlayerController = CurrentCar.transform;
-      
     }
 
 
     private void Update()
     {
-        if (TpsStatus==PlayerStatus.CarDriving)
+        if (TpsStatus == PlayerStatus.CarDriving)
         {
             Weather.transform.position = VehicleCamera.transform.position;
             TrafficSpawn.position = VehicleCamera.position;
@@ -104,10 +102,12 @@ public class GameManager : MonoBehaviour
             TrafficSpawn.rotation = TpsCamera.rotation;
         }
     }
+
     public void offimage()
     {
         UiManagerObject.instance.blankimage.SetActive(false);
     }
+
     public async void GetOutVehicle()
     {
         Time.timeScale = 1;
@@ -115,51 +115,79 @@ public class GameManager : MonoBehaviour
         Logger.ShowLog("Here");
         UiManagerObject.instance.panels.CarControle.SetActive(false);
         UiManagerObject.instance.panels.TpsControle.SetActive(true);
-        Invoke("offimage",0.5f);
+        Invoke("offimage", 0.5f);
         TPSPlayer.SetActive(true);
         TpsCamera.gameObject.SetActive(true);
         VehicleCamera.gameObject.SetActive(false);
-        CurrentCar.GetComponent<VehicleProperties>().GetOutVehicle() ;//= false;
+        CurrentCar.GetComponent<VehicleProperties>().GetOutVehicle();
         CurrentCar.GetComponent<VehicleProperties>().enabled = false;
         CurrentCar.GetComponent<DriftPhysics>().enabled = false;
-        TPSPlayer.transform.position =CurrentCar.GetComponent<VehicleProperties>().TpsPosition.position; 
-        TPSPlayer.transform.eulerAngles =new Vector3(0,CurrentCar.GetComponent<VehicleProperties>().TpsPosition.rotation.y,0);
+        TPSPlayer.transform.position = CurrentCar.GetComponent<VehicleProperties>().TpsPosition.position;
+        TPSPlayer.transform.eulerAngles = new Vector3(0, CurrentCar.GetComponent<VehicleProperties>().TpsPosition.rotation.y, 0);
         OnVehicleInteraction?.Invoke(PlayerStatus.ThirdPerson);
         await Task.Delay(50);
         TpsStatus = PlayerStatus.ThirdPerson;
         hud.PlayerCamera = TpsCamera.GetComponent<Camera>();
         hud.PlayerController = TPSPlayer.transform;
     }
-    
+
+    public void ShowInter()
+    {
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
+            PrefsManager.SetInterInt(1);
+        }
+        Invoke(nameof(LoadInter),2);
+    }
+
+
+    public void LoadInter()
+    {
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            if (PrefsManager.GetInterInt() != 5)
+            {
+                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+            }
+        }
+    }
+
     public void StartEngein()
     {
         CurrentCar.GetComponent<RCC_CarControllerV3>().KillOrStartEngine();
     }
-    
-    
-    
-    // public void CarInstantiateNow(int lValue)
-    // {
-    //     PrefsManager.SetCurrentCarOnVideo(lValue);
-    //     /*CarInstantiateDone();
-    //     Showinter();
-    //     Invoke("Loadinter", 2);*/
-    //     Data.AdType = 25;
-    //     if (FindObjectOfType<Pi_AdsCall>())
-    //     {
-    //         FindObjectOfType<Pi_AdsCall>().showRewardVideo(CarInstantiateDone);
-    //     }
-    //     GameAnalytics.NewAdEvent(GAAdAction.RewardReceived, GAAdType.RewardedVideo, "Admob", "Get_Car_OnVideo_By_Mobile");
-    // }
-    // public void CarInstantiateDone()
-    // {
-    //     DefaultCar=Instantiate(AllCarsOnVedio[PrefsManager.GetCurrentCarOnVideo()],DefaultCarPosition.position,DefaultCarPosition.rotation);
-    //     DefaultCar.GetComponent<Rigidbody>().isKinematic = false;
-    //     if ( DefaultCar.GetComponent<VehicleProperties>())
-    //     {
-    //         DefaultCar.GetComponent<VehicleProperties>().NotShowAdForSit = true;
-    //     }
-    //     UiManagerObject.instance.Mob_Off();
-    // }
-    
+
+
+
+    public async void CarInstantiateNow(int lValue)
+    {
+        PrefsManager.SetCurrentCarOnVideo(lValue);
+        PrefsManager.SetCurrentCarShadow(lValue);
+        /*CarInstantiateDone();
+        Showinter();
+        Invoke("Loadinter", 2);*/
+        Data.AdType = 25;
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            FindObjectOfType<Pi_AdsCall>().showRewardVideo(CarInstantiateDone);
+        }
+
+        await Task.Delay(1000);
+        DefaultCar.GetComponent<CarShadow>().enabled = true;
+        DefaultCar.GetComponent<CarShadow>().ombrePlane = AllShadows[lValue].transform;
+        GameAnalytics.NewAdEvent(GAAdAction.RewardReceived, GAAdType.RewardedVideo, "Admob", "Get_Car_OnVideo_By_Mobile");
+    }
+
+    public void CarInstantiateDone()
+    {
+        DefaultCar = Instantiate(AllCarsOnVedio[PrefsManager.GetCurrentCarOnVideo()], DefaultCarPosition.position, DefaultCarPosition.rotation);
+        DefaultCar.GetComponent<Rigidbody>().isKinematic = false;
+        if (DefaultCar.GetComponent<VehicleProperties>())
+        {
+            DefaultCar.GetComponent<VehicleProperties>().NotShowAdForSit = true;
+        }
+        UiManagerObject.instance.Mobile.SetActive(false);
+        UiManagerObject.instance.MobileOnBtn.SetActive(true);
+    }
 }

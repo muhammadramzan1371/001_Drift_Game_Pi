@@ -30,7 +30,7 @@ public class VehicleProperties : MonoBehaviour
     public RCC_CarControllerV3 controller;
     
     public bool Highbrake = false;
-    public bool IsOnVedio = false;
+    //public bool IsOnVedio = false;
     
     [Header("SettIngWheel")]
     

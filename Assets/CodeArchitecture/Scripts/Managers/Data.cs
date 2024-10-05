@@ -178,6 +178,10 @@ public class Data : MonoBehaviour {
             PrefsManager.SetCoinsValue(PrefsManager.GetCoinsValue() + 500);
             FindObjectOfType<PlayerSelection>().OffNoCash();
         }
+        else if (AdType == 25)
+        {
+	        // For Mobile Use
+        }
 
         //GameObject.Find ("Canvas").GetComponent<ShowAds_GP>().EnableRewarded();
     }

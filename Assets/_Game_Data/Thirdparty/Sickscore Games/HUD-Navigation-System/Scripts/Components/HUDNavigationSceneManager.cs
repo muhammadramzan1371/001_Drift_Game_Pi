@@ -75,7 +75,7 @@ namespace SickscoreGames.HUDNavigationSystem
 		{
 			// return if no configuration is assigned
 			if (Configurations.Count <= 0) {
-				Debug.LogWarning("[HNS SceneManager] Could't find any scene configuration!");
+//				Debug.LogWarning("[HNS SceneManager] Could't find any scene configuration!");
 				return;
 			}
 

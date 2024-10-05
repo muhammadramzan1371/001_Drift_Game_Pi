@@ -18,7 +18,7 @@ public class LoadingScreen : MonoBehaviour
         if (FindObjectOfType<Pi_AdsCall>())
         {
             FindObjectOfType<Pi_AdsCall>().showBigBannerAD(AdPosition.BottomLeft);
-
+            FindObjectOfType<Pi_AdsCall>().hideBanner1();
             if (PrefsManager.GetInterInt()!=5)
             {
                 FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
@@ -43,6 +43,7 @@ public class LoadingScreen : MonoBehaviour
                 if (FindObjectOfType<Pi_AdsCall>())
                 {
                     FindObjectOfType<Pi_AdsCall>().hideBigBanner();
+                    FindObjectOfType<Pi_AdsCall>().showBanner1();
                     FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
                     PrefsManager.SetInterInt(1);
                     oneTime = true;

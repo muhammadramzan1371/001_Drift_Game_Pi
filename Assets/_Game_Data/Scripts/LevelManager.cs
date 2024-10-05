@@ -44,6 +44,8 @@ public class LevelManager : MonoBehaviour
                 
                 TpsPlayer.transform.position = CurrentLevelProperties.TpsPosition.position;
                 TpsPlayer.transform.rotation = CurrentLevelProperties.TpsPosition.rotation;
+                Tpscamera.transform.position = CurrentLevelProperties.TpsPosition.position;
+                Tpscamera.transform.rotation = CurrentLevelProperties.TpsPosition.rotation;
                 CurrentLevelProperties.gameObject.SetActive(true);
             }
         }
@@ -64,7 +66,6 @@ public class LevelManager : MonoBehaviour
         SelectedPlayer.GetComponent<Rigidbody>().isKinematic = false;
         SelectedPlayer.GetComponent<VehicleProperties>().ConeEffect.SetActive(false);
         SelectedPlayer.GetComponent<VehicleProperties>().ConeEffect.transform.GetChild(0).gameObject.SetActive(false);
-        SelectedPlayer.GetComponent<VehicleProperties>().IsOnVedio=false;
         SelectedPlayer.GetComponent<CarShadow>().enabled = true;
         SelectedPlayer.GetComponent<CarShadow>().ombrePlane.gameObject.SetActive(true);
     }

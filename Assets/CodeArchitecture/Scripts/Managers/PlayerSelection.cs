@@ -32,7 +32,7 @@ public class PlayerSelection : MonoBehaviour
         successPannel,
         unlockPlayerButton,
         TestDriveButton,
-        MainNextBack;
+        MainNextBack,Garage;
 
     public Text PriceText;
     bool isReadyForPurchase;
@@ -41,7 +41,7 @@ public class PlayerSelection : MonoBehaviour
     public static PlayerSelection instance;
     public Transform CarPos;
     public CameraRotate _CameraRotate;
-    public Animator CarChangeAnimator;
+    //public Animator CarChangeAnimator;
 
     [Header("CarSoldCutSSceane")] public GameObject Timeline;
     public PlayableDirector Director;
@@ -93,7 +93,7 @@ public class PlayerSelection : MonoBehaviour
 
     public void CarChangeEffect()
     {
-        CarChangeAnimator.Play("CarChangeAnim",0,0f);
+        //CarChangeAnimator.Play("CarChangeAnim",0,0f);
         _CameraRotate.ChangeCameraViewForCar();
     }
 
@@ -186,6 +186,7 @@ public class PlayerSelection : MonoBehaviour
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         fakeLoading.SetActive(true);
+        Garage.SetActive(false);
         levelSelectionCanvas.SetActive(true);
     }
 
@@ -224,6 +225,7 @@ public class PlayerSelection : MonoBehaviour
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         fakeLoading.SetActive(true);
         menuCanvas.SetActive(false);
+        Garage.SetActive(true);
         CarSlection.SetActive(true);
         ShowPlayerNow(PrefsManager.GetLastJeepUnlock());
         MainNextBack.SetActive(true);
@@ -274,6 +276,7 @@ public class PlayerSelection : MonoBehaviour
     {
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         levelSelectionCanvas.SetActive(false);
+        Garage.SetActive(true);
         CarSlection.SetActive(true);
         ShowPlayerNow(PrefsManager.GetSelectedPlayerValue());
         MainNextBack.SetActive(true);
@@ -359,7 +362,6 @@ public class PlayerSelection : MonoBehaviour
         Timeline.SetActive(true);
         Director.Play();
         Invoke("HideTimeline", (float)Director.duration - 0.9f);
-
     }
 
 
@@ -420,5 +422,6 @@ public class PlayerSelection : MonoBehaviour
         Invoke("Offsuccess", 3f);
         PriceText.transform.parent.gameObject.SetActive(false);
     }
-
+    
+    
 }
