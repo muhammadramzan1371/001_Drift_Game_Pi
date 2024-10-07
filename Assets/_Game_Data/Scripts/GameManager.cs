@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         }
         Time.timeScale = 1;
         UiManagerObject.instance.blankimage.SetActive(true);
-        Invoke("offimage", 0.5f);
+        Invoke("offimage", 2f);
         UiManagerObject.instance.panels.CarControle.SetActive(true);
         UiManagerObject.instance.panels.TpsControle.SetActive(false);
         CurrentCar.GetComponent<Rigidbody>().angularDrag = 0.05f;
@@ -112,10 +112,10 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         UiManagerObject.instance.blankimage.SetActive(true);
+        Invoke("offimage", 2f);
         Logger.ShowLog("Here");
         UiManagerObject.instance.panels.CarControle.SetActive(false);
         UiManagerObject.instance.panels.TpsControle.SetActive(true);
-        Invoke("offimage", 0.5f);
         TPSPlayer.SetActive(true);
         TpsCamera.gameObject.SetActive(true);
         VehicleCamera.gameObject.SetActive(false);
@@ -172,7 +172,6 @@ public class GameManager : MonoBehaviour
         {
             FindObjectOfType<Pi_AdsCall>().showRewardVideo(CarInstantiateDone);
         }
-
         await Task.Delay(1000);
         DefaultCar.GetComponent<CarShadow>().enabled = true;
         DefaultCar.GetComponent<CarShadow>().ombrePlane = AllShadows[lValue].transform;

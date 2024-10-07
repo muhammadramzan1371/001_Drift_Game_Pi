@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Linq;
+using System.Threading.Tasks;
+
 //using System.Security.Policy;
 
 public class CheckpointController : MonoBehaviour
@@ -38,17 +40,17 @@ public class CheckpointController : MonoBehaviour
     }
     
 
-    private void CheckpointActivated()
+    private async void CheckpointActivated()
     {
         CheckpointId++;
         if (CheckpointId >= CheckpointsList.Length)
         {
             CurrentCheckpoint.gameObject.SetActive(false);
             CurrentCheckpoint.CheckpointActivated -= CheckpointActivated;
+            await Task.Delay(1000);
             UiManagerObject.instance.ShowComplete();
             return;
         }
-
         SetCurrentCheckpoint(CheckpointsList[CheckpointId]);
     }
 

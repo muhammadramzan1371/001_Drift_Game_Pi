@@ -33,6 +33,7 @@ public class UiManagerObject : MonoBehaviour
     public Button Driftbutton;
     public GameObject CheckPointEffect, FinalCheckPointEffect;
     public AudioSource CheckPointCollectSound;
+    public Text LevelRewardText;
 
 
     [Space(5)] [Header("Mobile Stuff")] 
@@ -53,13 +54,14 @@ public class UiManagerObject : MonoBehaviour
     {
         instance = this;
         SoundManager.Instance.PlayAudio(SoundManager.Instance.BgSound);
-        Time.timeScale = 1f;
+        Time.timeScale = 1;
+        Invoke(nameof(FadeImageOff),3);
     }
 
     void Start()
     {
-        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, PrefsManager.GetGameMode(),
-            PrefsManager.GetCurrentLevel());
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, PrefsManager.GetGameMode(), PrefsManager.GetCurrentLevel());
+        LevelRewardText.text = LevelManager.instace.CurrentLevelProperties.LevelReward.ToString();
     }
 
     void OnEnable()
@@ -92,6 +94,12 @@ public class UiManagerObject : MonoBehaviour
         HideGamePlay();
     }
 
+
+    public void FadeImageOff()
+    {
+        blankimage.SetActive(false);
+    }
+
     public void ShowObjective(string statment)
     {
         ObjectiveText.text = statment;
@@ -103,7 +111,7 @@ public class UiManagerObject : MonoBehaviour
         else if (PrefsManager.GetLevelMode() == 0)
         {
             ObjectivePannel.SetActive(true);
-            SetTimeScale(0);
+            SetTimeScale(1);
             HideGamePlay();
         }
         else if (PrefsManager.GetLevelMode() == 1)
@@ -194,24 +202,12 @@ public class UiManagerObject : MonoBehaviour
         ShowPauseNow();
     }
 
-    public async void ShowPauseNow()
+    public void ShowPauseNow()
     {
-        if (FindObjectOfType<Pi_AdsCall>())
-        {
-            FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
-            PrefsManager.SetInterInt(1);
-        }
+        showInterAd();
         Pause.SetActive(true);
         SetTimeScale(0);
         HideGamePlay();
-        await Task.Delay(2000);
-        if (FindObjectOfType<Pi_AdsCall>())
-        {
-            if (PrefsManager.GetInterInt() != 5)
-            {
-                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
-            }
-        }
         GameManager.Instance.CurrentCar.GetComponent<Rigidbody>().velocity = Vector3.zero;
         GameManager.Instance.CurrentCar.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
@@ -222,13 +218,7 @@ public class UiManagerObject : MonoBehaviour
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         Pause.SetActive(false);
         ShowGamePlay();
-        if (FindObjectOfType<Pi_AdsCall>())
-        {
-            if (PrefsManager.GetInterInt() != 5)
-            {
-                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
-            }
-        }
+        LoadInter();
     }
 
     public void Restart()
@@ -237,10 +227,7 @@ public class UiManagerObject : MonoBehaviour
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         Loading.SetActive(true);
         Loading.GetComponentInChildren<bl_SceneLoader>().LoadLevel("GamePlay");
-        if (PrefsManager.GetInterInt() != 5)
-        {
-            FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
-        }
+        LoadInter();
         Invoke(nameof(showInterAd), 5f);
     }
 
@@ -250,10 +237,7 @@ public class UiManagerObject : MonoBehaviour
         SoundManager.Instance.PlayOneShotSounds(SoundManager.Instance.click);
         Loading.SetActive(true);
         Loading.GetComponentInChildren<bl_SceneLoader>().LoadLevel("MenuScene");
-        if (PrefsManager.GetInterInt() != 5)
-        {
-            FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
-        }
+        LoadInter();
         Invoke(nameof(showInterAd), 5f);
     }
 
@@ -270,12 +254,35 @@ public class UiManagerObject : MonoBehaviour
         }
         AdBrakepanel.SetActive(false);
         SetTimeScale(1);
+        Invoke(nameof(LoadInter),2);
+    }
+
+
+    public void ShowInter()
+    {
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
+            PrefsManager.SetInterInt(1);
+        }
+        Invoke(nameof(LoadInter),2);
+    }
+
+
+    public void LoadInter()
+    {
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            if (PrefsManager.GetInterInt() != 5)
+            {
+                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+            }
+        }
     }
 
     public void LevelCompleteNow()
     {
         Complete.SetActive(true);
-        // SetTimeScale(0);
         HideGamePlay();
         if (PrefsManager.GetGameMode() != "free")
         {
@@ -299,22 +306,13 @@ public class UiManagerObject : MonoBehaviour
                 }
 
                 Logger.ShowLog("SnowMode" + PrefsManager.GetCurrentLevel() + " " + PrefsManager.GetSnowLevelLocking());
-            }
-            //  GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, PrefsManager.GetGameMode(), PrefsManager.GetCurrentLevel());
-            //  Data.SendCompleteEvent(PrefsManager.GetCurrentLevel());
-            // Admob_LogHelper.MissionOrLevelCompletedEventLog(PrefsManager.GetGameMode(),PrefsManager.GetCurrentLevel());
-        }
-        else
-        {
-            //Data.SendCompleteEvent(20);
-            //   Admob_LogHelper.MissionOrLevelCompletedEventLog("Free",0);
-
+            } 
+            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, PrefsManager.GetGameMode(), PrefsManager.GetCurrentLevel());
         }
     }
 
     public void ShowComplete()
     {
-        //   AdmobAdsManager.Instance.ShowInt(LevelCompleteNow,true);
         LevelCompleteNow();
         SoundManager.Instance?.PlayAudio(SoundManager.Instance.LevelComplete);
     }
@@ -322,8 +320,6 @@ public class UiManagerObject : MonoBehaviour
     public void ShowFail()
     {
         SoundManager.Instance.PlayAudio(SoundManager.Instance.levelFail);
-        //  Data.SendFailEvent(PrefsManager.GetCurrentLevel());
-        //AdmobAdsManager.Instance.ShowInt(ShowLevelFailNow,true);
         ShowLevelFailNow();
     }
 
@@ -332,9 +328,8 @@ public class UiManagerObject : MonoBehaviour
 
         Fail.SetActive(true);
         SetTimeScale(0);
-        HideGamePlay();
-        //  GameAnalytics.NewProgressionEvent(GAProgressionStatus.Fail, PrefsManager.GetGameMode(), PrefsManager.GetCurrentLevel());
-        //  Admob_LogHelper.MissionOrLevelFailEventLog(PrefsManager.GetGameMode(),PrefsManager.GetCurrentLevel());
+        HideGamePlay(); 
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Fail, PrefsManager.GetGameMode(), PrefsManager.GetCurrentLevel());
     }
 
     public void Next()

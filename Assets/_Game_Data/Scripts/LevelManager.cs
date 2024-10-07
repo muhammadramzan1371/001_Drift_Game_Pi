@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using  SickscoreGames.HUDNavigationSystem;
@@ -27,7 +28,7 @@ public class LevelManager : MonoBehaviour
     public Material nightSkybox;
     public GameObject directionalLightGO;
     
-    void Awake()
+    private async void Awake()
     {
         instace = this;
         if (PrefsManager.GetGameMode() != "free")
@@ -38,7 +39,6 @@ public class LevelManager : MonoBehaviour
                // Chracter = Character[PrefsManager.GetSelectedCracterValue()];
                 CurrentLevel = PrefsManager.GetCurrentLevel() - 1;
                 CurrentLevelProperties = Levels[CurrentLevel].GetComponent<PI_LevelProperties>();
-                
                 SelectedPlayer.transform.position = CurrentLevelProperties.CarPosition.position;
                 SelectedPlayer.transform.rotation = CurrentLevelProperties.CarPosition.rotation;
                 
@@ -47,6 +47,8 @@ public class LevelManager : MonoBehaviour
                 Tpscamera.transform.position = CurrentLevelProperties.TpsPosition.position;
                 Tpscamera.transform.rotation = CurrentLevelProperties.TpsPosition.rotation;
                 CurrentLevelProperties.gameObject.SetActive(true);
+                await Task.Delay(500);
+                Time.timeScale = 1; 
             }
         }
         else

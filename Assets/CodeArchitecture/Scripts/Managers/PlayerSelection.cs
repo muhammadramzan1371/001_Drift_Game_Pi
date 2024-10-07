@@ -294,11 +294,8 @@ public class PlayerSelection : MonoBehaviour
     {
         LOADING.SetActive(true);
         LOADING.GetComponentInChildren<bl_SceneLoader>().LoadLevel("GamePlay");
-        if (PrefsManager.GetInterInt() != 5)
-        {
-            FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
-        }
-        Invoke(nameof(showInterAd), 7f);
+        LoadInter();
+        Invoke(nameof(showInterAd), 5f);
     }
 
     public GameObject AdBrakepanel;
@@ -310,11 +307,22 @@ public class PlayerSelection : MonoBehaviour
         if (FindObjectOfType<Pi_AdsCall>())
         {
             FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
-
             PrefsManager.SetInterInt(1);
         }
-
         AdBrakepanel.SetActive(false);
+        Invoke(nameof(LoadInter),2);
+    }
+
+
+    public void LoadInter()
+    {
+        if (FindObjectOfType<Pi_AdsCall>())
+        {
+            if (PrefsManager.GetInterInt() != 5)
+            {
+                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
+            }
+        }
     }
 
 
@@ -366,17 +374,10 @@ public class PlayerSelection : MonoBehaviour
 
 
 
-    public async void PlayCutScne()
+    public void PlayCutScne()
     {
         Time.timeScale = 1f;
-        if (FindObjectOfType<Pi_AdsCall>())
-        {
-            if (PrefsManager.GetInterInt() != 5)
-            {
-                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
-            }
-        }
-
+        LoadInter();
         if (FindObjectOfType<Pi_AdsCall>())
         {
             FindObjectOfType<Pi_AdsCall>().showInterstitialAD();
@@ -389,14 +390,7 @@ public class PlayerSelection : MonoBehaviour
         Timeline.SetActive(true);
         Director.Play();
         Invoke("StopCutScene", (float)Director.duration - 0.9f);
-        await Task.Delay(2000);
-        if (FindObjectOfType<Pi_AdsCall>())
-        {
-            if (PrefsManager.GetInterInt() != 5)
-            {
-                FindObjectOfType<Pi_AdsCall>().loadInterstitialAD();
-            }
-        }
+        Invoke(nameof(LoadInter), 2);
     }
 
 
