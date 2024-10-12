@@ -23,19 +23,20 @@ public class GameManager : MonoBehaviour
     public PlayerStatus TpsStatus = PlayerStatus.ThirdPerson;
 
     [Header("ThirdPerson Stuff")] [Space(5)]
-
     public GameObject TPSPlayer;
 
-    [Space(5)] [Header("Car Stuff")] public Transform VehicleCamera;
+    [Space(5)] [Header("Car Stuff")] 
+    public Transform VehicleCamera;
     public Transform TpsCamera;
     public GameObject CurrentCar;
     public Transform TrafficSpawn;
     public Transform Weather;
     public HUDNavigationSystem hud;
 
-    [Header("Mobile Stuff")] [Space(5)] public GameObject DefaultCar;
-    public GameObject[] AllCarsOnVedio, AllShadows /*,AllBiCyclesOnVido,AllBikesOnVideo,AllHeliOnVedio*/;
-    public Transform DefaultCarPosition;
+    [Header("Mobile Stuff")] [Space(5)] 
+    public GameObject DefaultCar;
+    public GameObject[] AllCarsOnVedio, AllShadows;
+    public Transform DefaultCarPosition,DefaultCarPositionInTps;
 
 
     private void Awake()
@@ -164,9 +165,6 @@ public class GameManager : MonoBehaviour
     {
         PrefsManager.SetCurrentCarOnVideo(lValue);
         PrefsManager.SetCurrentCarShadow(lValue);
-        /*CarInstantiateDone();
-        Showinter();
-        Invoke("Loadinter", 2);*/
         Data.AdType = 25;
         if (FindObjectOfType<Pi_AdsCall>())
         {
@@ -175,18 +173,51 @@ public class GameManager : MonoBehaviour
         await Task.Delay(1000);
         DefaultCar.GetComponent<CarShadow>().enabled = true;
         DefaultCar.GetComponent<CarShadow>().ombrePlane = AllShadows[lValue].transform;
+        GetInVehicle();
         GameAnalytics.NewAdEvent(GAAdAction.RewardReceived, GAAdType.RewardedVideo, "Admob", "Get_Car_OnVideo_By_Mobile");
     }
 
+
     public void CarInstantiateDone()
     {
-        DefaultCar = Instantiate(AllCarsOnVedio[PrefsManager.GetCurrentCarOnVideo()], DefaultCarPosition.position, DefaultCarPosition.rotation);
-        DefaultCar.GetComponent<Rigidbody>().isKinematic = false;
-        if (DefaultCar.GetComponent<VehicleProperties>())
+        if (TpsStatus == PlayerStatus.ThirdPerson)
         {
+            TPSPlayer.SetActive(false);
+            DefaultCar = Instantiate(AllCarsOnVedio[PrefsManager.GetCurrentCarOnVideo()],DefaultCarPositionInTps.position, DefaultCarPositionInTps.rotation);
+            DefaultCar.GetComponent<VehicleProperties>().enabled = true;
+            DefaultCar.GetComponent<VehicleProperties>().NotShowAdForSit = true;
+            CurrentCar = DefaultCar;
+        }
+        else if (TpsStatus == PlayerStatus.CarDriving)
+        {
+            GetOutVehicleForInstantiate();
+            DefaultCarPosition = CurrentCar.GetComponent<VehicleProperties>().DefaultCarPosition;
+            DefaultCar = Instantiate(AllCarsOnVedio[PrefsManager.GetCurrentCarOnVideo()], DefaultCarPosition.position, DefaultCarPosition.rotation);
+            CurrentCar = DefaultCar;
+            DefaultCar.GetComponent<VehicleProperties>().enabled = true;
             DefaultCar.GetComponent<VehicleProperties>().NotShowAdForSit = true;
         }
-        UiManagerObject.instance.Mobile.SetActive(false);
-        UiManagerObject.instance.MobileOnBtn.SetActive(true);
+    }
+
+
+
+    public async void GetOutVehicleForInstantiate()
+    {
+        Time.timeScale = 1;
+        UiManagerObject.instance.blankimage.SetActive(true);
+        Invoke("offimage", 2f);
+        TPSPlayer.SetActive(true);
+        TpsCamera.gameObject.SetActive(true);
+        VehicleCamera.gameObject.SetActive(false);
+        CurrentCar.GetComponent<VehicleProperties>().GetOutVehicle();
+        CurrentCar.GetComponent<VehicleProperties>().enabled = false;
+        CurrentCar.GetComponent<DriftPhysics>().enabled = false;
+        TPSPlayer.transform.position = CurrentCar.GetComponent<VehicleProperties>().TpsPosition.position;
+        TPSPlayer.transform.eulerAngles = new Vector3(0, CurrentCar.GetComponent<VehicleProperties>().TpsPosition.rotation.y, 0);
+        OnVehicleInteraction?.Invoke(PlayerStatus.ThirdPerson);
+        await Task.Delay(50);
+        TpsStatus = PlayerStatus.ThirdPerson;
+        hud.PlayerCamera = TpsCamera.GetComponent<Camera>();
+        hud.PlayerController = TPSPlayer.transform;
     }
 }

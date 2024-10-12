@@ -24,11 +24,10 @@ public enum  CarNames
 }
 public class VehicleProperties : MonoBehaviour
 {
-    public Transform TpsPosition;
+    public Transform TpsPosition,DefaultCarPosition;
     public GameObject ConeEffect,Lights;
     public Rigidbody Rb;
     public RCC_CarControllerV3 controller;
-    
     public bool Highbrake = false;
     //public bool IsOnVedio = false;
     
@@ -78,8 +77,10 @@ public class VehicleProperties : MonoBehaviour
     // Update is called once per frame
     public async void VehicleReadyForDrive()
     {
-        if (!TrafficVehicle)
-           GetComponent<CarShadow>().ombrePlane.gameObject.SetActive(true);
+        if (!TrafficVehicle && FindObjectOfType<CarShadow>().ombrePlane != null)
+        {
+            GetComponent<CarShadow>().ombrePlane.gameObject.SetActive(true);
+        }
         ConeEffect.SetActive(false);
         if (controller.chassis)
         {

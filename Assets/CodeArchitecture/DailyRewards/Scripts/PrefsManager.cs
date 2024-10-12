@@ -253,11 +253,7 @@ public class PrefsManager : MonoBehaviour
         PlayerPrefs.SetInt(controlls, quality);
     }
     
-  
-
-
-
-
+    
 
     public static float GetSound ()
 	{

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &476349719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476349720}
+  m_Layer: 3
+  m_Name: DefaultCarPosition (3)
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &476349720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476349719}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.66, y: 0.48, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3708430935482641991}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &452094005215473472
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +137,7 @@ GameObject:
   - component: {fileID: 4387873335969745260}
   - component: {fileID: 5444086212405115479}
   - component: {fileID: 4739795157841844853}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: disk_brack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,6 +674,7 @@ Transform:
   - {fileID: 3708430935126853378}
   - {fileID: 3708430935082031362}
   - {fileID: 3708430935700409611}
+  - {fileID: 476349720}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -1035,12 +1066,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TpsPosition: {fileID: 3708430935518046026}
+  DefaultCarPosition: {fileID: 476349720}
   ConeEffect: {fileID: 3708430935700409610}
   Lights: {fileID: 0}
   Rb: {fileID: 0}
   controller: {fileID: 0}
   Highbrake: 0
-  IsOnVedio: 1
   isSetWheelsModel: 0
   NotShowAdForSit: 0
   AllAudioSource: {fileID: 0}
@@ -1124,7 +1155,7 @@ GameObject:
   - component: {fileID: 3708430935615964612}
   - component: {fileID: 3708430935615964610}
   - component: {fileID: 3708430935615964613}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: disk_brack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1287,7 +1318,7 @@ GameObject:
   - component: {fileID: 3708430935672601968}
   - component: {fileID: 3708430935672601982}
   - component: {fileID: 3708430935672601969}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: disk_brack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3708430935700409611
 Transform:
   m_ObjectHideFlags: 0
@@ -1383,7 +1414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3708430935700409610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.2700005, z: 0}
+  m_LocalPosition: {x: 0, y: -0.7, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children:
   - {fileID: 4045227600929719621}
@@ -1874,7 +1905,7 @@ GameObject:
   - component: {fileID: 3708430936421565334}
   - component: {fileID: 3708430936421565332}
   - component: {fileID: 3708430936421565335}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: disk_brack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,6 +10,12 @@ using UnityEngine.UI;
 
 public class UiManagerObject : MonoBehaviour
 {
+    
+    public delegate void PanelAppear();
+
+    public static event PanelAppear OnPanelAppear;
+    
+    
     [Serializable]
     public class Panels
     {
@@ -22,7 +28,7 @@ public class UiManagerObject : MonoBehaviour
     public Panels panels;
 
     // Start is called before the first frame update
-    public GameObject ObjectivePannel, Pause, Fail, Complete, Loading, OutOfFuel, error, fadeimage;
+    public GameObject ObjectivePannel, Pause, Fail, Complete, Loading, OutOfFuel, error, fadeimage,AdPanel;
     public Text ObjectiveText, NosCountText;
     public static UiManagerObject instance;
     public int TotalLevels;
@@ -56,12 +62,32 @@ public class UiManagerObject : MonoBehaviour
         SoundManager.Instance.PlayAudio(SoundManager.Instance.BgSound);
         Time.timeScale = 1;
         Invoke(nameof(FadeImageOff),3);
+        Invoke(nameof(AdPanelOnFirstTime),90);
+    }
+    
+    public void OnAnyPannelAppear()
+    {
+        Debug.Log("Reset");
+        OnPanelAppear?.Invoke();
+    }
+
+    public void AdPanelOnFirstTime()
+    {
+        AdPanel.SetActive(true);
+    }
+
+    public void AdPanelOff()
+    {
+        AdPanel.SetActive(false);
     }
 
     void Start()
     {
         GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, PrefsManager.GetGameMode(), PrefsManager.GetCurrentLevel());
-        LevelRewardText.text = LevelManager.instace.CurrentLevelProperties.LevelReward.ToString();
+        if (PrefsManager.GetGameMode() != "free")
+        {
+            LevelRewardText.text = LevelManager.instace.CurrentLevelProperties.LevelReward.ToString();
+        }
     }
 
     void OnEnable()

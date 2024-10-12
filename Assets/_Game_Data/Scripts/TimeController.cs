@@ -5,8 +5,6 @@ using System;
 
 public class TimeController : MonoBehaviour
 {
-
-
     public Text timecounterText, TimeUptext, timeOnLevelComplete;
     public int[] timeToCompleteLevels;
     private float timeToCompleteLevel;
@@ -33,12 +31,15 @@ public class TimeController : MonoBehaviour
         isAttackMode = false;
         //		GetComponent<AudioSource> ().loop = true;
         checkIt = false;
-        if (PrefsManager.GetLevelMode()==0)
+        if (PrefsManager.GetGameMode()=="challange")
         {
-            remainder = PrefsManager.GetCurrentLevel() - 1;
-            timeToCompleteLevel = timeToCompleteLevels[remainder];
-            isTimerOn = false;
-            getTimeButton.SetActive(true);
+            if (PrefsManager.GetLevelMode() == 0)
+            {
+                remainder = PrefsManager.GetCurrentLevel() - 1;
+                timeToCompleteLevel = timeToCompleteLevels[remainder];
+                isTimerOn = false;
+                getTimeButton.SetActive(true);
+            }
         }
         else if (PrefsManager.GetGameMode() == "free")
         {
@@ -90,12 +91,12 @@ public class TimeController : MonoBehaviour
         {
             TimeUptext.gameObject.SetActive(true);
             TimeUptext.text = "Time's Up You Are Late ";
-            if (PrefsManager.GetLevelMode()==0)
+            if (PrefsManager.GetGameMode() == "challange")
             {
                 UiManagerObject.instance.ShowFail();
+                SoundManager.Instance.OffPlayTimmerSound();
+                isTimeOver = true;
             }
-            SoundManager.Instance.OffPlayTimmerSound();
-            isTimeOver = true;
         }
 
         timecounterText.text = "0" + Minutes.ToString() + ":";

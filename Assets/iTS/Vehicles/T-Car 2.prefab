@@ -2321,87 +2321,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5896767610144822533
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5896767610144819912}
-  - component: {fileID: 5896767610144829207}
-  - component: {fileID: 5896767610144831653}
-  m_Layer: 3
-  m_Name: CarShadow (3)
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5896767610144819912
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5896767610144822533}
-  m_LocalRotation: {x: -0.0000037666807, y: 0, z: -0.00000003619053, w: 1}
-  m_LocalPosition: {x: -0, y: 0.095, z: 0}
-  m_LocalScale: {x: 7.0146203, y: 1.13421, z: 5.587003}
-  m_Children: []
-  m_Father: {fileID: 6335183031223854907}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
---- !u!33 &5896767610144829207
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5896767610144822533}
-  m_Mesh: {fileID: 4300000, guid: 4da23cbd55058b744a81b4a4362d6bac, type: 2}
---- !u!23 &5896767610144831653
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5896767610144822533}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: ff03392160404c44d92ba7696b45800c, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6335183030140512348
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,7 +3123,6 @@ Transform:
   - {fileID: 5481498289196181535}
   - {fileID: 6335183031806677776}
   - {fileID: 6335183031082661752}
-  - {fileID: 5896767610144819912}
   - {fileID: 1935860762840903094}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3855,8 +3773,8 @@ MonoBehaviour:
   Rb: {fileID: 0}
   controller: {fileID: 0}
   Highbrake: 0
-  IsOnVedio: 0
   isSetWheelsModel: 0
+  NotShowAdForSit: 0
   AllAudioSource: {fileID: 0}
   TrafficVehicle: 1
   IsOnInterSitail: 1
@@ -3916,7 +3834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978d66fa28ee3dd449ff193fc4c3c7d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ombrePlane: {fileID: 5896767610144819912}
+  ombrePlane: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -4223,7 +4141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 960286719801493165, guid: 14aa39afe9064ef488ad9568b1ff492d, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 960286719801493165, guid: 14aa39afe9064ef488ad9568b1ff492d, type: 3}
       propertyPath: m_LocalPosition.x
