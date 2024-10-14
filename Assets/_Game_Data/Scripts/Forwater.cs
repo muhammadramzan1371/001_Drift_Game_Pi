@@ -10,6 +10,7 @@ public class Forwater : MonoBehaviour
    {
       if (other.gameObject.tag == "Player" || GameManager.Instance.CurrentCar.GetComponent<VehicleProperties>().TrafficVehicle)
       {
+         Logger.ShowLog(" Fail" + name);
          transform.gameObject.SetActive(false);
          UiManagerObject.instance.HideGamePlay();
          if (GameManager.Instance.TpsStatus == PlayerStatus.ThirdPerson)

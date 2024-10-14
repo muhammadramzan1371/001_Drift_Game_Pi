@@ -41,9 +41,9 @@ GameObject:
   - component: {fileID: 4411603843630336666}
   - component: {fileID: 4542096889032905522}
   - component: {fileID: 4583517717029914829}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: back_number
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -900,13 +900,13 @@ MonoBehaviour:
   engineInertia: 1
   useRevLimiter: 0
   useExhaustFlame: 0
-  steerAngle: 40
-  highspeedsteerAngle: 15
+  steerAngle: 35
+  highspeedsteerAngle: 20
   highspeedsteerAngleAtspeed: 100
-  antiRollFrontHorizontal: 5000
-  antiRollRearHorizontal: 5000
+  antiRollFrontHorizontal: 6000
+  antiRollRearHorizontal: 6000
   antiRollVertical: 0
-  downForce: 1000
+  downForce: 300
   speed: 0
   defMaxSpeed: 200
   maxspeed: 200
