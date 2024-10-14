@@ -971,8 +971,8 @@ MonoBehaviour:
   overSteering: 0
   underSteering: 0
   applyCounterSteering: 1
-  frontCamber: 0
-  rearCamber: 0
+  frontCamber: 9
+  rearCamber: 9
   frontSlip: 0
   rearSlip: 0
   turboBoost: 0
@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automatic: 0
-  distance: 4.9
+  distance: 5.1
   height: 1.27
   TpsPichAngle: 11.5
 --- !u!1 &6288413754977527354
@@ -1447,13 +1447,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.25
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!114 &6288413755806977929
 MonoBehaviour:
@@ -1468,7 +1468,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 6288413755962004684}
-  camberAngle: -7
 --- !u!1 &6288413755863667849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,7 +1513,7 @@ WheelCollider:
     spring: 40000
     damper: 2500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.2
+  m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0
   m_Mass: 40
   m_WheelDampingRate: 1
@@ -1523,13 +1522,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.25
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!114 &6288413755863667855
 MonoBehaviour:
@@ -1544,7 +1543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 6288413755606675427}
-  camberAngle: -7
 --- !u!1 &6288413755962004687
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,13 +1929,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.25
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!114 &6288413756387981228
 MonoBehaviour:
@@ -1952,7 +1950,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 6288413754904645874}
-  camberAngle: 7
 --- !u!1 &6288413756443350340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,7 +1995,7 @@ WheelCollider:
     spring: 40000
     damper: 2500
     targetPosition: 0.5
-  m_SuspensionDistance: 0.2
+  m_SuspensionDistance: 0.1
   m_ForceAppPointDistance: 0
   m_Mass: 40
   m_WheelDampingRate: 1
@@ -2007,13 +2004,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.25
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1.5
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!114 &6288413756443350330
 MonoBehaviour:
@@ -2028,7 +2025,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 6288413755071485268}
-  camberAngle: 7
 --- !u!1 &6288413756522468374
 GameObject:
   m_ObjectHideFlags: 0

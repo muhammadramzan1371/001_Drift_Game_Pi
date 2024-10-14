@@ -330,7 +330,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 7577160148212636653}
-  camberAngle: 0
 --- !u!1 &7577160146907263725
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7577160147366516666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.59, z: -0.21}
+  m_LocalPosition: {x: -0, y: -0.917, z: -0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7577160148269222866}
@@ -854,7 +853,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 7577160146697303015}
-  camberAngle: 0
 --- !u!1 &7577160147881085938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 7577160148728232989}
-  camberAngle: 0
 --- !u!1 &7577160148212636650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 7577160147760571175}
-  camberAngle: 0
 --- !u!1 &7577160148269222877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,8 +1666,8 @@ MonoBehaviour:
   overSteering: 0
   underSteering: 0
   applyCounterSteering: 1
-  frontCamber: 0
-  rearCamber: 0
+  frontCamber: 9
+  rearCamber: 9
   frontSlip: 0
   rearSlip: 0
   turboBoost: 0
@@ -1775,9 +1771,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automatic: 0
-  distance: 7.1
-  height: 1.73
-  TpsPichAngle: 7
+  distance: 6.1
+  height: 1.55
+  TpsPichAngle: 11.5
 --- !u!1 &7577160148567819922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +1849,10 @@ PrefabInstance:
     - target: {fileID: 816690142333319862, guid: 75d474b2a5022a841aafa1d1d3dbc7d9, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 816690142333319862, guid: 75d474b2a5022a841aafa1d1d3dbc7d9, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 816690142333319865, guid: 75d474b2a5022a841aafa1d1d3dbc7d9, type: 3}
       propertyPath: m_RootOrder

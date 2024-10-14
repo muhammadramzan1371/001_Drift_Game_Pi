@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public Transform TrafficSpawn;
     public Transform Weather;
     public HUDNavigationSystem hud;
+    private RCC_CarControllerV3 RccController;
 
     [Header("Mobile Stuff")] [Space(5)] 
     public GameObject DefaultCar;
@@ -85,6 +86,8 @@ public class GameManager : MonoBehaviour
         LevelManager.instace.vehicleCamera.SetTarget(CurrentCar);
         hud.PlayerCamera = VehicleCamera.GetComponentInChildren<Camera>();
         hud.PlayerController = CurrentCar.transform;
+        await Task.Delay(500);
+        CurrentCar.GetComponent<RCC_CarControllerV3>().steeringHelper = false;
     }
 
 

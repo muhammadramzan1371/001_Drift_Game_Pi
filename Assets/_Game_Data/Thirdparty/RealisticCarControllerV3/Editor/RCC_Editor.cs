@@ -437,7 +437,8 @@ public class RCC_Editor : Editor {
 
 		}
 
-		if(StabilitySettings){
+		if(StabilitySettings)
+		{
 
 			EditorGUILayout.Space();
 			GUI.color = Color.cyan;
@@ -453,7 +454,8 @@ public class RCC_Editor : Editor {
 			EditorGUILayout.Space();
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("TCS"), new GUIContent("TCS"), false);
 
-			if(carScript.TCS){
+			if(carScript.TCS)
+			{
 				EditorGUILayout.PropertyField(serializedObject.FindProperty("TCSThreshold"), new GUIContent("TCS Threshold"), false);
 				EditorGUILayout.PropertyField(serializedObject.FindProperty("TCSStrength"), new GUIContent("TCS Strength"), false);
 			}
@@ -461,7 +463,8 @@ public class RCC_Editor : Editor {
 			EditorGUILayout.Space();
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("ESP"), new GUIContent("ESP"), false);
 
-			if(carScript.ESP){
+			if(carScript.ESP)
+			{
 				EditorGUILayout.PropertyField(serializedObject.FindProperty("ESPThreshold"), new GUIContent("ESP Threshold"), false);
 				EditorGUILayout.PropertyField(serializedObject.FindProperty("ESPStrength"), new GUIContent("ESP Strength"), false);
 			}
@@ -469,7 +472,8 @@ public class RCC_Editor : Editor {
 			EditorGUILayout.Space();
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("steeringHelper"), new GUIContent("Steering Helper"), false);
 
-			if (carScript.steeringHelper) {
+			if (carScript.steeringHelper) 
+			{
 				EditorGUILayout.PropertyField (serializedObject.FindProperty ("steerHelperLinearVelStrength"), new GUIContent ("Steering Helper Linear Velocity Strength"), false);
 				EditorGUILayout.PropertyField (serializedObject.FindProperty ("steerHelperAngularVelStrength"), new GUIContent ("Steering Helper Angular Velocity Strength"), false);
 			}

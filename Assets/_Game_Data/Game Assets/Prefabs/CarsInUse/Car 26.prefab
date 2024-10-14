@@ -498,8 +498,8 @@ MonoBehaviour:
   overSteering: 0
   underSteering: 0
   applyCounterSteering: 1
-  frontCamber: 0
-  rearCamber: 0
+  frontCamber: 9
+  rearCamber: 9
   frontSlip: 0
   rearSlip: 0
   turboBoost: 0
@@ -603,9 +603,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automatic: 0
-  distance: 7.1
-  height: 1.73
-  TpsPichAngle: 7
+  distance: 5.85
+  height: 1.5
+  TpsPichAngle: 12
 --- !u!1 &7721113803127079223
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +763,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 7721113804710905276}
-  camberAngle: 0
 --- !u!1 &7721113803289278294
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,7 +868,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 7721113805120514362}
-  camberAngle: 0
 --- !u!1 &7721113803622791627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,7 +1600,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 7721113804774205387}
-  camberAngle: 0
 --- !u!1 &7721113805093792549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,7 +1675,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 7721113805158582734}
-  camberAngle: 0
 --- !u!1 &7721113805120514363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,6 +1833,10 @@ PrefabInstance:
     - target: {fileID: 816690142333319862, guid: 75d474b2a5022a841aafa1d1d3dbc7d9, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 816690142333319862, guid: 75d474b2a5022a841aafa1d1d3dbc7d9, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 816690142333319865, guid: 75d474b2a5022a841aafa1d1d3dbc7d9, type: 3}
       propertyPath: m_RootOrder

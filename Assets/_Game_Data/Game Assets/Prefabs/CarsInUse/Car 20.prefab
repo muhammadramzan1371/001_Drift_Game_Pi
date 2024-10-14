@@ -105,7 +105,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 5134702750042618938}
-  camberAngle: 0
 --- !u!1 &5134702749023075054
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +624,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 5134702749995782378}
-  camberAngle: 0
 --- !u!1 &5134702749803153466
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,8 +996,8 @@ MonoBehaviour:
   overSteering: 0
   underSteering: 0
   applyCounterSteering: 1
-  frontCamber: 0
-  rearCamber: 0
+  frontCamber: 9
+  rearCamber: 9
   frontSlip: 0
   rearSlip: 0
   turboBoost: 0
@@ -1103,8 +1101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automatic: 0
-  distance: 6.02
-  height: 1.22
+  distance: 6.15
+  height: 1.45
   TpsPichAngle: 7
 --- !u!1 &5134702749972734336
 GameObject:
@@ -1181,7 +1179,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 5134702749023075053}
-  camberAngle: 0
 --- !u!1 &5134702749995782379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,7 +1626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 5134702749297095283}
-  camberAngle: 0
 --- !u!1 &6640587523066522413
 GameObject:
   m_ObjectHideFlags: 0

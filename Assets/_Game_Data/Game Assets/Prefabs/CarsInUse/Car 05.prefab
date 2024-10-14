@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 4739795157841844853}
   m_Layer: 3
   m_Name: disk_brack
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -344,7 +344,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 3708430936676419414}
-  camberAngle: -9
 --- !u!1 &3708430934895819767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,8 +1005,8 @@ MonoBehaviour:
   overSteering: 0
   underSteering: 0
   applyCounterSteering: 1
-  frontCamber: 0
-  rearCamber: 0
+  frontCamber: 9
+  rearCamber: 9
   frontSlip: 0
   rearSlip: 0
   turboBoost: 0
@@ -1157,7 +1156,7 @@ GameObject:
   - component: {fileID: 3708430935615964613}
   m_Layer: 3
   m_Name: disk_brack
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1320,7 +1319,7 @@ GameObject:
   - component: {fileID: 3708430935672601969}
   m_Layer: 3
   m_Name: disk_brack
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1735,7 +1734,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 3708430934946793363}
-  camberAngle: -9
 --- !u!1 &3708430936212332129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,7 +1809,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 3708430934977155267}
-  camberAngle: 9
 --- !u!1 &3708430936417798621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,7 +1904,7 @@ GameObject:
   - component: {fileID: 3708430936421565335}
   m_Layer: 3
   m_Name: disk_brack
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2205,7 +2202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 3708430936618979209}
-  camberAngle: 9
 --- !u!1 &3708430936952029286
 GameObject:
   m_ObjectHideFlags: 0
