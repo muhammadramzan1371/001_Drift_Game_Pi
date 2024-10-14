@@ -602,7 +602,7 @@ MonoBehaviour:
   useRevLimiter: 0
   useExhaustFlame: 0
   steerAngle: 40
-  highspeedsteerAngle: 15
+  highspeedsteerAngle: 18
   highspeedsteerAngleAtspeed: 100
   antiRollFrontHorizontal: 5000
   antiRollRearHorizontal: 5000
@@ -655,9 +655,9 @@ MonoBehaviour:
   velocityAngle: 0
   ABS: 1
   TCS: 1
-  ESP: 1
+  ESP: 0
   steeringHelper: 1
-  tractionHelper: 0
+  tractionHelper: 1
   ABSThreshold: 0.25
   TCSThreshold: 0.25
   TCSStrength: 0.5

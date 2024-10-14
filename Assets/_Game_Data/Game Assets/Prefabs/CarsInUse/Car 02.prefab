@@ -554,7 +554,7 @@ MonoBehaviour:
   useRevLimiter: 0
   useExhaustFlame: 0
   steerAngle: 40
-  highspeedsteerAngle: 15
+  highspeedsteerAngle: 18
   highspeedsteerAngleAtspeed: 100
   antiRollFrontHorizontal: 5000
   antiRollRearHorizontal: 5000
@@ -606,10 +606,10 @@ MonoBehaviour:
   steeringDirection: {fileID: 0}
   velocityAngle: 0
   ABS: 1
-  TCS: 1
+  TCS: 0
   ESP: 1
   steeringHelper: 1
-  tractionHelper: 0
+  tractionHelper: 1
   ABSThreshold: 0.25
   TCSThreshold: 0.25
   TCSStrength: 0.5
@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automatic: 0
-  distance: 5.2
+  distance: 5.1
   height: 1.7
   TpsPichAngle: 17
 --- !u!1 &4517923936408263882

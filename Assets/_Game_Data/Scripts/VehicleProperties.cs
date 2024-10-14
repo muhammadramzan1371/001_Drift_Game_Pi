@@ -82,10 +82,10 @@ public class VehicleProperties : MonoBehaviour
             GetComponent<CarShadow>().ombrePlane.gameObject.SetActive(true);
         }
         ConeEffect.SetActive(false);
-        if (controller.chassis)
-        {
-            controller.chassis.GetComponent<RCC_Chassis>().enabled = true;
-        }
+        // if (controller.chassis)
+        // {
+        //     controller.chassis.GetComponent<RCC_Chassis>().enabled = true;
+        // }
 
         if (Lights!=null)
         {
@@ -93,7 +93,7 @@ public class VehicleProperties : MonoBehaviour
         } 
         
         controller.enabled = true;
-        Rb.drag=0.05f;
+        Rb.drag = 0.2f;
         if (Rb)
         {
             Rb.constraints = RigidbodyConstraints.None;
@@ -105,13 +105,13 @@ public class VehicleProperties : MonoBehaviour
         GetComponent<RCC_CameraConfig>().enabled = true;
         if (GetComponent<TSSimpleCar>())
         {
-            if (controller.chassis)
-            {
-                if (controller.chassis.GetComponent<RCC_Chassis>().ColliderParent!=null)
-                {
-                    controller.chassis.GetComponent<RCC_Chassis>().ColliderParent?.SetActive(true);
-                }
-            }
+            // if (controller.chassis)
+            // {
+            //     if (controller.chassis.GetComponent<RCC_Chassis>().ColliderParent!=null)
+            //     {
+            //         controller.chassis.GetComponent<RCC_Chassis>().ColliderParent?.SetActive(true);
+            //     }
+            // }
             GetComponent<TSSimpleCar>().enabled = false;
             GetComponent<TSTrafficAI>().enabled = false;
             GetComponent<TSAntiRollBar>().enabled = false;
@@ -134,9 +134,6 @@ public class VehicleProperties : MonoBehaviour
         controller.FrontRightWheelCollider.transform.GetChild(0).gameObject.SetActive(true);
         controller.RearLeftWheelCollider.transform.GetChild(0).gameObject.SetActive(true);
         controller.RearRightWheelCollider.transform.GetChild(0).gameObject.SetActive(true);
-        
-        
-        
         
         UiManagerObject.instance.PressButton();
         if ( GetComponent<CarShadow>())
@@ -182,10 +179,10 @@ public class VehicleProperties : MonoBehaviour
         HighForceBrake();
         ConeEffect.SetActive(true);
         controller.KillOrStartEngine();
-        if (controller.chassis)
-        {
-            controller.chassis.GetComponent<RCC_Chassis>().enabled = false;
-        }
+        // if (controller.chassis)
+        // {
+        //     controller.chassis.GetComponent<RCC_Chassis>().enabled = false;
+        // }
         controller.enabled = false;
         controller.FrontLeftWheelCollider.enabled = false;
         controller.FrontRightWheelCollider.enabled = false;
@@ -254,7 +251,7 @@ public class VehicleProperties : MonoBehaviour
             }
             else
             {
-               Logger.ShowLog("Grounded Car is in the Air");
+                Logger.ShowLog("Grounded Car is in the Air");
                 Rb.isKinematic = true;
                 await Task.Delay(500);
                 Rb.isKinematic = false;

@@ -415,7 +415,8 @@ public class RCC_Editor : Editor {
 			EditorGUILayout.Space();
 			EditorGUILayout.PropertyField(serializedObject.FindProperty("chassis"), new GUIContent("Chassis", "Script will simulate chassis movement based on vehicle rigidbody situation."), false);
 
-			if (RCC_Settings.Instance.dontUseChassisJoint) {
+			if (RCC_Settings.Instance.dontUseChassisJoint) 
+			{
 				EditorGUILayout.PropertyField (serializedObject.FindProperty ("chassisVerticalLean"), new GUIContent ("Chassis Vertical Sensitivity", "Script will simulate chassis movement based on vehicle rigidbody situation."), false);
 				EditorGUILayout.PropertyField (serializedObject.FindProperty ("chassisHorizontalLean"), new GUIContent ("Chassis Horizontal Sensitivity", "Script will simulate chassis movement based on vehicle rigidbody situation."), false);
 			}

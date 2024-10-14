@@ -47,7 +47,7 @@ MonoBehaviour:
   UIButtonGravity: 5
   gyroSensitivity: 2
   useLightsAsVertexLights: 1
-  useLightProjectorForLightingEffect: 1
+  useLightProjectorForLightingEffect: 0
   setTagsAndLayers: 1
   RCCLayer: Player
   RCCTag: Player
@@ -65,7 +65,7 @@ MonoBehaviour:
   indicatorLights: {fileID: 166118, guid: 580925c070bc6064c90563e08cb421f0, type: 3}
   mirrors: {fileID: 132014, guid: 42ab1ab32651fc74dad3e9cedf0b5270, type: 3}
   dontUseAnyParticleEffects: 0
-  dontUseChassisJoint: 0
+  dontUseChassisJoint: 1
   dontUseSkidmarks: 0
   gearShiftingClips:
   - {fileID: 8300000, guid: fd92e514f75331e4085d0846a166fef8, type: 3}
