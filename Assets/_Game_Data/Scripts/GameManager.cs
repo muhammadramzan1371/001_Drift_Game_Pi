@@ -173,15 +173,16 @@ public class GameManager : MonoBehaviour
         {
             FindObjectOfType<Pi_AdsCall>().showRewardVideo(CarInstantiateDone);
         }
-        await Task.Delay(1000);
+        await Task.Delay(500);
         DefaultCar.GetComponent<CarShadow>().enabled = true;
         DefaultCar.GetComponent<CarShadow>().ombrePlane = AllShadows[lValue].transform;
-        GetInVehicle();
+        UiManagerObject.instance.Mobile.SetActive(false);
+        UiManagerObject.instance.MobileOnBtn.SetActive(true);
         GameAnalytics.NewAdEvent(GAAdAction.RewardReceived, GAAdType.RewardedVideo, "Admob", "Get_Car_OnVideo_By_Mobile");
     }
 
 
-    public void CarInstantiateDone()
+    public async void CarInstantiateDone()
     {
         if (TpsStatus == PlayerStatus.ThirdPerson)
         {
@@ -189,17 +190,19 @@ public class GameManager : MonoBehaviour
             DefaultCar = Instantiate(AllCarsOnVedio[PrefsManager.GetCurrentCarOnVideo()],DefaultCarPositionInTps.position, DefaultCarPositionInTps.rotation);
             DefaultCar.GetComponent<VehicleProperties>().enabled = true;
             DefaultCar.GetComponent<VehicleProperties>().NotShowAdForSit = true;
-            CurrentCar = DefaultCar;
         }
         else if (TpsStatus == PlayerStatus.CarDriving)
         {
             GetOutVehicleForInstantiate();
             DefaultCarPosition = CurrentCar.GetComponent<VehicleProperties>().DefaultCarPosition;
             DefaultCar = Instantiate(AllCarsOnVedio[PrefsManager.GetCurrentCarOnVideo()], DefaultCarPosition.position, DefaultCarPosition.rotation);
-            CurrentCar = DefaultCar;
             DefaultCar.GetComponent<VehicleProperties>().enabled = true;
             DefaultCar.GetComponent<VehicleProperties>().NotShowAdForSit = true;
         }
+        await Task.Delay(1000);
+        Logger.ShowLog(" CurrentCar = Defaultcar Done");
+        CurrentCar = DefaultCar;
+        GetInVehicle();
     }
 
 

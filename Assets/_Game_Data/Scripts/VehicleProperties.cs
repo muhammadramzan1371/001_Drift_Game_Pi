@@ -100,7 +100,7 @@ public class VehicleProperties : MonoBehaviour
             Rb.isKinematic = false;
             Rb.useGravity = true;
         }
-        controller.KillOrStartEngine();
+        controller.StartEngine();
         transform.name = "PlayerCar";
         GetComponent<RCC_CameraConfig>().enabled = true;
         if (GetComponent<TSSimpleCar>())
@@ -178,7 +178,7 @@ public class VehicleProperties : MonoBehaviour
         Highbrake = true;
         HighForceBrake();
         ConeEffect.SetActive(true);
-        controller.KillOrStartEngine();
+        controller.KillEngine();
         // if (controller.chassis)
         // {
         //     controller.chassis.GetComponent<RCC_Chassis>().enabled = false;

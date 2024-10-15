@@ -3,31 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="a6615de0-4504-45da-b871-90c4c4877f45" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.001_Drift_Game_Pi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.001_Drift_Game_Pi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_00.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_00.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_01.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_02.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_02.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_03.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_03.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_04.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_04.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_05.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_05.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_06.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_06.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_07.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_08.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoSave/AutoSave_09.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeArchitecture/Scripts/Logger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeArchitecture/Scripts/Logger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player Interactive-Ads Mediation/Pi-Scripts/PlayerInteractive_Admob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player Interactive-Ads Mediation/Pi-Scripts/PlayerInteractive_Admob.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Green.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Orange.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Orange.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/Yellow.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/blue.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Materials/red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Prefabs/Prefab/AsphaltSlip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Prefabs/Prefab/AsphaltSlip.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Prefabs/CarsInUse/Car 05.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Game Assets/Prefabs/CarsInUse/Car 05.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/GamePlay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/GamePlay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/MenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scenes/MenuScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/UiManagerObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/UiManagerObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Resources/RCCAssets/RCC_GroundMaterials.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Resources/RCCAssets/RCC_GroundMaterials.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Scripts/RCC_WheelCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Thirdparty/RealisticCarControllerV3/Scripts/RCC_WheelCollider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/VehicleProperties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/Scripts/VehicleProperties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/01- Pannel Update/1/BuildInfoUtility/Resources/BuildRuntimeInfoSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game_Data/UI &amp; Font/UI/Ui Art/01- Pannel Update/1/BuildInfoUtility/Resources/BuildRuntimeInfoSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +157,7 @@
       <workItem from="1728891754779" duration="3061000" />
       <workItem from="1728913675253" duration="2362000" />
       <workItem from="1728975584096" duration="3056000" />
+      <workItem from="1728987701250" duration="2290000" />
     </task>
     <servers />
   </component>

@@ -1110,9 +1110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   automatic: 0
-  distance: 4.73
-  height: 1.1
-  TpsPichAngle: 11.5
+  distance: 5.25
+  height: 1.2
+  TpsPichAngle: 7
 --- !u!1 &3708430935518046029
 GameObject:
   m_ObjectHideFlags: 0
