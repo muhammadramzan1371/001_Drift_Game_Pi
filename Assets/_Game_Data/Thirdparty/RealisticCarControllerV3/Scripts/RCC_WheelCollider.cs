@@ -99,7 +99,7 @@ public class RCC_WheelCollider : MonoBehaviour
 			}
 			else
 			{
-				Debug.Log("No skidmarks object found. Creating new one...");
+				Logger.ShowLog("No skidmarks object found. Creating new one...");
 				skidmarks = (RCC_Skidmarks)Instantiate(RCC_Settings.Instance.skidmarksManager, Vector3.zero,
 					Quaternion.identity);
 			}

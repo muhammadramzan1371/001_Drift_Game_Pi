@@ -37,7 +37,7 @@ public class UiManagerObject : MonoBehaviour
     public Image NosFiller;
     public GameObject NosButton;
     public Button Driftbutton;
-    public GameObject CheckPointEffect, FinalCheckPointEffect;
+    public GameObject CheckPointEffect, FinalCheckPointEffect,TimeBar;
     public AudioSource CheckPointCollectSound;
     public Text LevelRewardText;
 
@@ -308,6 +308,7 @@ public class UiManagerObject : MonoBehaviour
 
     public void LevelCompleteNow()
     {
+        TimeBar.SetActive(false);
         Complete.SetActive(true);
         HideGamePlay();
         if (PrefsManager.GetGameMode() != "free")
@@ -341,17 +342,19 @@ public class UiManagerObject : MonoBehaviour
     {
         LevelCompleteNow();
         SoundManager.Instance?.PlayAudio(SoundManager.Instance.LevelComplete);
+        SoundManager.Instance.GetComponent<AudioSource>().loop = false;
     }
 
     public void ShowFail()
     {
         SoundManager.Instance.PlayAudio(SoundManager.Instance.levelFail);
+        SoundManager.Instance.GetComponent<AudioSource>().loop = false;
         ShowLevelFailNow();
     }
 
     public void ShowLevelFailNow()
     {
-
+        TimeBar.SetActive(false);
         Fail.SetActive(true);
         SetTimeScale(0);
         HideGamePlay(); 

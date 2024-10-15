@@ -22,11 +22,11 @@ public class LevelManager : MonoBehaviour
     public OpenWorldManager OpenWorldManager;
     public DriftCanvasManager driftCanvasManagerNow;
     
-    [Header("WheatherArea")]
+    [Header("WheatherStuff")]
     public ParticleSystem snowParticleSystem;
     public Material daySkybox;
     public Material nightSkybox;
-    public GameObject directionalLightGO;
+    public GameObject directionalLight_Night,DirectionLight_Day;
     
     private async void Awake()
     {
@@ -98,14 +98,16 @@ public class LevelManager : MonoBehaviour
     {
         snowParticleSystem.Play();
         RenderSettings.skybox = nightSkybox;
-        directionalLightGO.GetComponent<Light>().intensity = 0f;
+        directionalLight_Night.SetActive(true);
+        DirectionLight_Day.SetActive(false);
         snowParticleSystem.gameObject.SetActive(true);
     }
     
     public void Night()
     {
         RenderSettings.skybox = daySkybox;
-        directionalLightGO.GetComponent<Light>().intensity = 0.8f;
+        directionalLight_Night.SetActive(false);
+        DirectionLight_Day.SetActive(true);
         snowParticleSystem.Stop();
         snowParticleSystem.gameObject.SetActive(false);
     }

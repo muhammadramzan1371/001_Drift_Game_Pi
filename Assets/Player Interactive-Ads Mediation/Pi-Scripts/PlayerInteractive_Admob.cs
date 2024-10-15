@@ -612,7 +612,8 @@ namespace PlayerInteractive_Mediation
                     {
                         if (Pi_appOpenHandler.Instance)
                             Pi_appOpenHandler.Instance.AdShowing = true;
-                        GameAnalytics.NewAdEvent(GAAdAction.Show,GAAdType.Interstitial,"Admob","Admob_Interstitial");
+                        
+                        
                         PlayerInteractive_Logger.Pi_LogSender(Pi_AdmobEvents.Pi_Interstitial_WillDisplay_High_Ecpm);
 
                         this.Interstitial_High_Ecpm.Show();
@@ -861,16 +862,9 @@ namespace PlayerInteractive_Mediation
                             reward.Type));
                     });
                 }
-                else if (UnityRewarded)
+                else
                 {
-
-                    if (Pi_appOpenHandler.Instance)
-                        Pi_appOpenHandler.Instance.AdShowing = true;
-
-                    Debug.Log("PI_Unity Rewarded Second Statment pass ");
-                    NotifyReward = _delegate;
-
-                    //  Advertisement.Show(Unity_RewardedVideo, this);
+                    ToastHelper.ShowToast(" Ad Not Available ");
                 }
             }
             else if (UnityRewarded)
@@ -881,10 +875,6 @@ namespace PlayerInteractive_Mediation
                 NotifyReward = _delegate;
 
                 //  Advertisement.Show(Unity_RewardedVideo, this);
-            }
-            else
-            {
-                ToastHelper.ShowToast(" Ad Not Available ");
             }
         }
 

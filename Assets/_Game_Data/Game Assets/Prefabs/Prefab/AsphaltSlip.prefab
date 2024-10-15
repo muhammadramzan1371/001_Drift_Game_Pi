@@ -2832,7 +2832,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 2
   m_MinParticleSize: 0
-  m_MaxParticleSize: 20
+  m_MaxParticleSize: 25
   m_CameraVelocityScale: 0
   m_VelocityScale: 1
   m_LengthScale: 1
